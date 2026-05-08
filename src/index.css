@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Kalam:wght@300;400;700&family=Architects+Daughter&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Wireframe design tokens ── */
+:root {
+  --c-navy:   #225379;
+  --c-teal:   #56BBC2;
+  --c-ink:    #1A1A1A;
+  --c-paper:  #FBFAF6;
+  --c-paper2: #F2F0E8;
+  --c-line:   #1A1A1A;
+  --c-line2:  rgba(26,26,26,0.45);
+  --c-line3:  rgba(26,26,26,0.20);
+  --c-mute:   rgba(26,26,26,0.55);
+  --c-shade:  rgba(26,26,26,0.06);
+  --wf-hand:  'Kalam', 'Caveat', 'Architects Daughter', cursive;
+  --wf-hand2: 'Caveat', cursive;
+  --wf-body:  'Architects Daughter', 'Kalam', cursive;
+}
+
+/* ── Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: #EFEDE6;
+  color: var(--c-ink);
+  font-family: var(--wf-body);
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; }
+
+/* ── Wireframe typography ── */
+.wf-h1 { font-family: var(--wf-hand); font-weight: 700; font-size: 38px; line-height: 1.1; margin: 0; }
+.wf-h2 { font-family: var(--wf-hand); font-weight: 700; font-size: 26px; line-height: 1.15; margin: 0; }
+.wf-h3 { font-family: var(--wf-hand); font-weight: 700; font-size: 20px; line-height: 1.2; margin: 0; }
+.wf-h4 { font-family: var(--wf-hand); font-weight: 700; font-size: 16px; line-height: 1.25; margin: 0; }
+
+.wf-label {
+  font-family: var(--wf-hand);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.hand  { font-family: var(--wf-hand); }
+.hand2 { font-family: var(--wf-hand2); font-size: 1.15em; }
+.mute  { color: var(--c-mute); }
+
+/* ── Teal hand-drawn underline ── */
+.wf-underline {
+  position: relative;
+  display: inline;
+}
+.wf-underline::after {
+  content: '';
+  position: absolute;
+  left: -2px; right: -4px; bottom: -6px;
+  height: 6px;
+  background: var(--c-teal);
+  opacity: 0.55;
+  border-radius: 4px;
+  transform: rotate(-0.6deg);
+}
+
+/* ── Boxes / cards ── */
+.wf-box {
+  border: 1.5px solid var(--c-line);
+  background: #fff;
+}
+.wf-box-paper { background: var(--c-paper); border: 1.5px solid var(--c-line); }
+
+/* ── Dividers ── */
+.wf-divider       { height: 0; border-top: 1.5px solid var(--c-line); margin: 14px 0; }
+.wf-divider-dash  { height: 0; border-top: 1px dashed var(--c-line2); margin: 10px 0; }
+.wf-divider-thin  { height: 0; border-top: 1px dashed var(--c-line3); }
+
+/* ── Buttons ── */
+.wf-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--wf-hand); font-weight: 700; font-size: 14px;
+  padding: 8px 14px;
+  border: 1.5px solid var(--c-line);
+  background: #fff;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  border-radius: 0;
+  transition: background 0.1s;
+}
+.wf-btn:hover { background: var(--c-shade); }
+.wf-btn-primary { background: var(--c-ink); color: #fff; border-color: var(--c-ink); }
+.wf-btn-primary:hover { background: #333; }
+.wf-btn-ghost { background: transparent; }
+.wf-btn-ghost:hover { background: var(--c-shade); }
+.wf-btn-sm { padding: 4px 10px; font-size: 12px; }
+
+/* ── Chips (pills) ── */
+.wf-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--wf-hand); font-size: 12px; font-weight: 700;
+  padding: 3px 10px;
+  border: 1.5px solid var(--c-line);
+  background: #fff;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.wf-chip-on    { background: var(--c-ink); color: #fff; }
+.wf-chip-teal  { background: var(--c-teal); border-color: var(--c-navy); color: var(--c-navy); }
+.wf-chip-shade { background: var(--c-shade); }
+.wf-chip-sm    { font-size: 11px; padding: 2px 8px; }
+
+/* ── Inputs / Selects ── */
+.wf-input {
+  display: flex; align-items: center; gap: 8px;
+  height: 38px; padding: 0 12px;
+  border: 1.5px solid var(--c-line);
+  background: #fff;
+  font-family: var(--wf-hand); font-size: 14px;
+  color: var(--c-mute);
+  border-radius: 0;
+  outline: none;
+}
+.wf-input:focus { border-color: var(--c-teal); }
+.wf-input-sm { height: 30px; font-size: 12px; }
+
+.wf-select {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 36px; padding: 0 12px;
+  border: 1.5px solid var(--c-line);
+  background: #fff;
+  font-family: var(--wf-hand); font-size: 13px;
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="text"].wf-input-el,
+input[type="text"].wf-input-el:focus {
+  width: 100%;
+  border: 1.5px solid var(--c-line);
+  border-radius: 0;
+  background: #fff;
+  font-family: var(--wf-hand);
+  font-size: 14px;
+  padding: 0 12px;
+  height: 38px;
+  outline: none;
+  color: var(--c-ink);
+}
+input[type="text"].wf-input-el::placeholder { color: var(--c-mute); }
+input[type="text"].wf-input-el:focus { border-color: var(--c-teal); }
+
+select.wf-select-el {
+  width: 100%;
+  border: 1.5px solid var(--c-line);
+  border-radius: 0;
+  background: #fff;
+  font-family: var(--wf-hand);
+  font-size: 13px;
+  height: 36px;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  color: var(--c-ink);
+}
+
+textarea.wf-textarea {
+  width: 100%;
+  border: 1.5px solid var(--c-line);
+  border-radius: 0;
+  background: #fff;
+  font-family: var(--wf-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  outline: none;
+  resize: none;
+  color: var(--c-ink);
+  line-height: 1.5;
+}
+textarea.wf-textarea:focus { border-color: var(--c-teal); }
+
+/* ── Checkboxes ── */
+input[type="checkbox"].wf-check {
+  appearance: none; -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border: 1.5px solid var(--c-line);
+  background: #fff; cursor: pointer;
+  flex-shrink: 0; position: relative;
+  border-radius: 0;
+}
+input[type="checkbox"].wf-check:checked { background: var(--c-ink); }
+input[type="checkbox"].wf-check:checked::after {
+  content: '';
+  position: absolute;
+  left: 2px; top: -1px;
+  width: 4px; height: 8px;
+  border: 2px solid white;
+  border-top: none; border-left: none;
+  transform: rotate(40deg);
+}
+
+/* ── Company logo squares ── */
+.wf-logo {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--c-line);
+  background: var(--c-shade);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--wf-hand); font-weight: 700; font-size: 14px;
+  color: var(--c-ink); flex-shrink: 0;
+  border-radius: 0;
+}
+.wf-logo-lg { width: 52px; height: 52px; font-size: 18px; }
+.wf-logo-sm { width: 28px; height: 28px; font-size: 11px; }
+
+/* ── Top nav ── */
+.wf-topnav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 24px;
+  border-bottom: 1.5px solid var(--c-line);
+  background: var(--c-paper);
+  font-family: var(--wf-hand);
+}
+.wf-topnav .brand {
+  display: flex; align-items: center; gap: 10px;
+  font-weight: 700; font-size: 16px;
+  letter-spacing: 0.18em; text-transform: uppercase;
+}
+.wf-topnav nav { display: flex; gap: 22px; font-size: 13px; }
+
+/* ── Spiral mark ── */
+.wf-spiral {
+  width: 20px; height: 20px;
+  border: 1.5px solid var(--c-line);
+  border-radius: 50%;
+  position: relative; flex-shrink: 0;
+}
+.wf-spiral::before {
+  content: '';
+  position: absolute; inset: 4px;
+  border: 1.5px solid var(--c-line);
+  border-radius: 50%;
+  border-right-color: transparent;
+  transform: rotate(20deg);
+}
+
+/* ── Scribble placeholder ── */
+.wf-scribble {
+  display: block; height: 8px;
+  background: var(--c-line2);
+  border-radius: 4px; opacity: 0.35;
+}
+.wf-scribble + .wf-scribble { margin-top: 6px; }
+
+/* ── Utility ── */
+.wf-truncate { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wf-row { display: flex; align-items: center; gap: 14px; }
+.wf-col { display: flex; flex-direction: column; gap: 14px; }
+.wf-grow { flex: 1; min-width: 0; }
+
+/* ── Sidebar nav active item ── */
+.wf-nav-active {
+  background: #fff;
+  border: 1.5px solid var(--c-line) !important;
+  font-weight: 700;
+  color: var(--c-ink);
+}
+.wf-nav-item {
+  border: 1.5px solid transparent;
+  color: var(--c-mute);
+}
+.wf-nav-item:hover { color: var(--c-ink); }
+
+/* ── Toast ── */
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.toast-enter { animation: slideUp 0.2s ease; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--c-line3); }
