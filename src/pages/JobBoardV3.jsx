@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom'
 import TopNav from '../components/TopNav.jsx'
 import CompanyLogo from '../components/CompanyLogo.jsx'
 import ModeChip from '../components/ModeChip.jsx'
-import { JOBS, COMPANIES, COMPANY } from '../data/jobs.js'
+import { JOBS, COMPANIES, COMPANY, AREAS, LEVELS, MODES } from '../data/jobs.js'
 import { useLang } from '../context/LangContext.jsx'
 
-const ALL_AREAS  = ['Engineering', 'Product', 'Design', 'Data', 'Sales', 'CS', 'Operations', 'Marketing']
-const ALL_LEVELS = ['Junior', 'Mid', 'Senior', 'Lead']
-const ALL_MODES  = ['Remoto', 'Híbrido', 'Presencial']
+const ALL_AREAS  = AREAS
+const ALL_LEVELS = LEVELS
+const ALL_MODES  = MODES
 const PAGE_SIZE  = 14
 
 function Chip({ label, active, onClick }) {
@@ -73,7 +73,7 @@ export default function JobBoardV3() {
         <div style={{ textAlign: 'right' }}>
           <div className="wf-label mute">{t.updated}</div>
           <div className="hand" style={{ fontWeight: 700, marginTop: 4 }}>{t.ago} 12 min</div>
-          <div className="hand mute" style={{ fontSize: 11, marginTop: 2 }}>LinkedIn · Gupy · Lever</div>
+          <div className="hand mute" style={{ fontSize: 11, marginTop: 2 }}>LinkedIn</div>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 export const I18N = {
   pt: {
     tagline: "Vagas no portfólio Astella.",
-    sub: "Oportunidades nas empresas que investimos. Atualizadas diariamente do LinkedIn, Gupy e Lever.",
+    sub: "Oportunidades nas empresas que investimos. Atualizadas diariamente do LinkedIn.",
     search: "Buscar por título, empresa ou stack…",
     filters: "Filtros", all: "Todas", company: "Empresa", role: "Função",
     level: "Senioridade", location: "Localização", mode: "Modelo",
@@ -29,7 +29,7 @@ export const I18N = {
   },
   en: {
     tagline: "Jobs in the Astella portfolio.",
-    sub: "Roles at the companies we back. Synced daily from LinkedIn, Gupy and Lever.",
+    sub: "Roles at the companies we back. Synced daily from LinkedIn.",
     search: "Search by title, company or stack…",
     filters: "Filters", all: "All", company: "Company", role: "Function",
     level: "Seniority", location: "Location", mode: "Work mode",

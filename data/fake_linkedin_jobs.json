@@ -1,0 +1,122 @@
+{
+  "rd-station": [
+    {
+      "external_id": "rd-001",
+      "title": "Engenheiro(a) de Software Pleno",
+      "department": "Engineering",
+      "location": "Sao Paulo, SP",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/rd-001/",
+      "created_at": "2026-05-06T12:00:00Z"
+    },
+    {
+      "external_id": "rd-002",
+      "title": "Product Manager - Marketing Hub",
+      "department": "Product",
+      "location": "Florianopolis, SC",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/rd-002/",
+      "created_at": "2026-05-04T12:00:00Z"
+    },
+    {
+      "external_id": "rd-003",
+      "title": "Data Engineer",
+      "department": "Data",
+      "location": "Remoto",
+      "remote": true,
+      "url": "https://www.linkedin.com/jobs/view/rd-003/",
+      "created_at": "2026-05-07T12:00:00Z"
+    }
+  ],
+  "olist": [
+    {
+      "external_id": "olist-001",
+      "title": "Senior Product Designer",
+      "department": "Design",
+      "location": "Curitiba, PR",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/olist-001/",
+      "created_at": "2026-05-05T12:00:00Z"
+    },
+    {
+      "external_id": "olist-002",
+      "title": "Backend Engineer",
+      "department": "Engineering",
+      "location": "Remoto",
+      "remote": true,
+      "url": "https://www.linkedin.com/jobs/view/olist-002/",
+      "created_at": "2026-05-07T12:00:00Z"
+    },
+    {
+      "external_id": "olist-003",
+      "title": "Tech Lead - Payments",
+      "department": "Engineering",
+      "location": "Sao Paulo, SP",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/olist-003/",
+      "created_at": "2026-05-02T12:00:00Z"
+    }
+  ],
+  "conta-simples": [
+    {
+      "external_id": "cs-001",
+      "title": "Account Executive",
+      "department": "Sales",
+      "location": "Sao Paulo, SP",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/cs-001/",
+      "created_at": "2026-05-05T12:00:00Z"
+    },
+    {
+      "external_id": "cs-002",
+      "title": "Customer Success Manager",
+      "department": "CS",
+      "location": "Remoto",
+      "remote": true,
+      "url": "https://www.linkedin.com/jobs/view/cs-002/",
+      "created_at": "2026-05-06T12:00:00Z"
+    }
+  ],
+  "dr-consulta": [
+    {
+      "external_id": "dr-001",
+      "title": "Coordenador(a) de Operacoes",
+      "department": "Operations",
+      "location": "Sao Paulo, SP",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/dr-001/",
+      "created_at": "2026-05-01T12:00:00Z"
+    }
+  ],
+  "asaas": [
+    {
+      "external_id": "asaas-001",
+      "title": "Senior Platform Engineer",
+      "department": "Engineering",
+      "location": "Joinville, SC",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/asaas-001/",
+      "created_at": "2026-05-05T12:00:00Z"
+    },
+    {
+      "external_id": "asaas-002",
+      "title": "Product Manager - Banking",
+      "department": "Product",
+      "location": "Remoto",
+      "remote": true,
+      "url": "https://www.linkedin.com/jobs/view/asaas-002/",
+      "created_at": "2026-05-03T12:00:00Z"
+    }
+  ],
+  "trinks": [
+    {
+      "external_id": "trinks-001",
+      "title": "Frontend Engineer",
+      "department": "Engineering",
+      "location": "Rio de Janeiro, RJ",
+      "remote": true,
+      "url": "https://www.linkedin.com/jobs/view/trinks-001/",
+      "created_at": "2026-05-07T12:00:00Z"
+    }
+  ]
+}

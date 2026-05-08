@@ -3,20 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import { COMPANIES, JOBS } from '../data/jobs.js'
 
 const SYNC_LOGS = [
-  { time: '12:04', src: 'Gupy · RD Station',       status: 'ok',   msg: '8 vagas / +1 nova' },
-  { time: '12:04', src: 'Lever · Olist',            status: 'ok',   msg: '12 vagas / 0 alterações' },
-  { time: '12:03', src: 'LinkedIn · Trinks',        status: 'ok',   msg: '3 vagas / -1 fechada' },
-  { time: '12:01', src: 'Gupy · Asaas',             status: 'warn', msg: 'rate-limited, retry em 10min' },
-  { time: '11:58', src: 'Gupy · Conta Simples',     status: 'ok',   msg: '5 vagas / 0 alterações' },
-  { time: '11:55', src: 'LinkedIn · Dr. Consulta',  status: 'err',  msg: '401 — re-autenticar cookie' },
-  { time: '11:48', src: 'Lever · Tag Imóveis',      status: 'ok',   msg: '2 vagas / +2 novas' },
-  { time: '11:30', src: 'Gupy · Worc',              status: 'ok',   msg: '1 vaga / 0 alterações' },
+  { time: '12:04', src: 'LinkedIn · RD Station',      status: 'ok', msg: '3 vagas / 0 alterações' },
+  { time: '12:04', src: 'LinkedIn · Olist',           status: 'ok', msg: '3 vagas / 0 alterações' },
+  { time: '12:03', src: 'LinkedIn · Conta Simples',   status: 'ok', msg: '2 vagas / 0 alterações' },
+  { time: '12:02', src: 'LinkedIn · Asaas',           status: 'ok', msg: '2 vagas / 0 alterações' },
+  { time: '12:01', src: 'LinkedIn · Dr. Consulta',    status: 'ok', msg: '1 vaga / 0 alterações' },
+  { time: '12:00', src: 'LinkedIn · Trinks',          status: 'ok', msg: '1 vaga / 0 alterações' },
 ]
 
 const SCRAPERS = [
-  { name: 'LinkedIn', kind: 'scraping via cookie auth', freq: 'intervalo 6h', count: '12 empresas', status: 'ok' },
-  { name: 'Gupy',     kind: 'API oficial',              freq: 'intervalo 1h', count: '14 empresas', status: 'ok' },
-  { name: 'Lever',    kind: 'API oficial',              freq: 'intervalo 1h', count: '6 empresas',  status: 'warn' },
+  { name: 'LinkedIn', kind: 'fixture fake local', freq: '2x por dia no cron final', count: '6 empresas', status: 'ok' },
 ]
 
 const NAV_ITEMS = [
@@ -49,12 +45,9 @@ export default function AdminDashboard() {
 
   const showToast = msg => { setToast(msg); setTimeout(() => setToast(null), 3000) }
 
-  const companyStatus = id => {
-    if (id === 'dr')     return 'err'
-    if (id === 'trinks') return 'pausado'
-    return 'ok'
-  }
+  const companyStatus = () => 'ok'
   const jobCount = id => JOBS.filter(j => j.company === id).length
+  const sourceCount = [...new Set(JOBS.map(j => j.source))].length
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', height: '100vh', background: 'var(--c-paper2)' }}>
@@ -106,10 +99,10 @@ export default function AdminDashboard() {
         {/* KPI tiles */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 22 }}>
           {[
-            ['Vagas ativas',      '127', '+8 esta semana'],
-            ['Empresas',          '32',  '28 com ATS · 4 LinkedIn'],
-            ['Cliques (7d)',       '1.4k','+22% vs sem. ant.'],
-            ['Candidaturas (7d)', '182', 'via redirect'],
+            ['Vagas ativas',      String(JOBS.length), 'dados fake do sync local'],
+            ['Empresas',          String(COMPANIES.length), `${sourceCount} fonte ativa`],
+            ['Cliques (7d)',       '0', 'Plausible pendente'],
+            ['Candidaturas (7d)', '0', 'via redirect'],
           ].map(([label, val, sub]) => (
             <div key={label} className="wf-box" style={{ padding: 16 }}>
               <div className="wf-label mute" style={{ fontSize: 10 }}>{label}</div>
@@ -125,7 +118,7 @@ export default function AdminDashboard() {
           <div className="wf-box" style={{ padding: 0, overflow: 'hidden' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', borderBottom: '1.5px solid var(--c-line)' }}>
               <span className="wf-label">Empresas investidas</span>
-              <span className="mute hand" style={{ fontSize: 12 }}>32 · ver todas</span>
+              <span className="mute hand" style={{ fontSize: 12 }}>{COMPANIES.length} · ver todas</span>
             </div>
             <div style={{
               display: 'grid', gridTemplateColumns: '1.4fr 0.9fr 0.6fr 0.7fr 60px',

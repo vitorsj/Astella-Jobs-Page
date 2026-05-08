@@ -1,0 +1,275 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Product Manager - Banking",
+    "datePosted": "2026-05-03",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Asaas",
+      "sameAs": "https://www.linkedin.com/company/asaas/"
+    },
+    "industry": "Product",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/asaas-002/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Brazil"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Senior Platform Engineer",
+    "datePosted": "2026-05-05",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Asaas",
+      "sameAs": "https://www.linkedin.com/company/asaas/"
+    },
+    "industry": "Engineering",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/asaas-001/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Joinville, SC",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Account Executive",
+    "datePosted": "2026-05-05",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Conta Simples",
+      "sameAs": "https://www.linkedin.com/company/conta-simples/"
+    },
+    "industry": "Sales",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/cs-001/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sao Paulo, SP",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Customer Success Manager",
+    "datePosted": "2026-05-06",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Conta Simples",
+      "sameAs": "https://www.linkedin.com/company/conta-simples/"
+    },
+    "industry": "CS",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/cs-002/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Brazil"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Coordenador(a) de Operacoes",
+    "datePosted": "2026-05-01",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Dr. Consulta",
+      "sameAs": "https://www.linkedin.com/company/dr-consulta/"
+    },
+    "industry": "Operations",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/dr-001/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sao Paulo, SP",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Backend Engineer",
+    "datePosted": "2026-05-07",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Olist",
+      "sameAs": "https://www.linkedin.com/company/olist/"
+    },
+    "industry": "Engineering",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/olist-002/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Brazil"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Senior Product Designer",
+    "datePosted": "2026-05-05",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Olist",
+      "sameAs": "https://www.linkedin.com/company/olist/"
+    },
+    "industry": "Design",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/olist-001/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Curitiba, PR",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Tech Lead - Payments",
+    "datePosted": "2026-05-02",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Olist",
+      "sameAs": "https://www.linkedin.com/company/olist/"
+    },
+    "industry": "Engineering",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/olist-003/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sao Paulo, SP",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Data Engineer",
+    "datePosted": "2026-05-07",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "RD Station",
+      "sameAs": "https://www.linkedin.com/company/rd-station/"
+    },
+    "industry": "Data",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/rd-003/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Brazil"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Engenheiro(a) de Software Pleno",
+    "datePosted": "2026-05-06",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "RD Station",
+      "sameAs": "https://www.linkedin.com/company/rd-station/"
+    },
+    "industry": "Engineering",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/rd-001/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sao Paulo, SP",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Product Manager - Marketing Hub",
+    "datePosted": "2026-05-04",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "RD Station",
+      "sameAs": "https://www.linkedin.com/company/rd-station/"
+    },
+    "industry": "Product",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/rd-002/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Florianopolis, SC",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Frontend Engineer",
+    "datePosted": "2026-05-07",
+    "validThrough": "2026-05-15",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Trinks",
+      "sameAs": "https://www.linkedin.com/company/trinks/"
+    },
+    "industry": "Engineering",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/trinks-001/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": {
+      "@type": "Country",
+      "name": "Brazil"
+    }
+  }
+]

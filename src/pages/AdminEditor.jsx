@@ -7,12 +7,12 @@ const QUEUE = JOBS.slice(0, 9)
 
 export default function AdminEditor() {
   const navigate = useNavigate()
-  const [selectedId,  setSelectedId]  = useState(3)
+  const [selectedId,  setSelectedId]  = useState(JOBS[0]?.id)
   const [status,      setStatus]      = useState('rascunho')
   const [mode,        setMode]        = useState('Híbrido')
   const [signals,     setSignals]     = useState({ bilingual: true, newsletter: true, featured: false, confidential: false })
-  const [titlePt,     setTitlePt]     = useState('Engenheiro(a) de Software Pleno')
-  const [titleEn,     setTitleEn]     = useState('Software Engineer, Mid-level')
+  const [titlePt,     setTitlePt]     = useState(JOBS[0]?.title.pt || '')
+  const [titleEn,     setTitleEn]     = useState(JOBS[0]?.title.en || '')
   const [description, setDescription] = useState('Estamos buscando um(a) engenheiro(a) pleno para integrar nosso time. Você trabalhará com tecnologias modernas e colaborará com os times de design e produto.')
 
   const sel = JOBS.find(j => j.id === selectedId) || JOBS[0]
@@ -93,7 +93,7 @@ export default function AdminEditor() {
             <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <CompanyLogo id={sel.company} size="lg" />
               <div>
-                <div className="wf-label mute">VAGA #00{sel.id} · puxada de {COMPANY[sel.company].source} · há {sel.posted}</div>
+                <div className="wf-label mute">VAGA {sel.id} · puxada de {COMPANY[sel.company].source} · há {sel.posted}</div>
                 <h2 className="wf-h2" style={{ marginTop: 4 }}>{sel.title.pt}</h2>
                 <div className="mute hand" style={{ fontSize: 13, marginTop: 4 }}>
                   {COMPANY[sel.company].name} · {sel.loc} · {sel.mode}

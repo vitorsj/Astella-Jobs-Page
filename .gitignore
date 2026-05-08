@@ -1,5 +1,9 @@
 # Dependencies
 node_modules/
+.venv/
+.pytest_cache/
+__pycache__/
+*.py[cod]
 
 # Build output
 dist/

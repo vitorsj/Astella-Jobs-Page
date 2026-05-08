@@ -1,0 +1,44 @@
+[
+  {
+    "id": "rd-station-001",
+    "name": "RD Station",
+    "slug": "rd-station",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/rd-station/"
+  },
+  {
+    "id": "olist-001",
+    "name": "Olist",
+    "slug": "olist",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/olist/"
+  },
+  {
+    "id": "conta-simples-001",
+    "name": "Conta Simples",
+    "slug": "conta-simples",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/conta-simples/"
+  },
+  {
+    "id": "dr-consulta-001",
+    "name": "Dr. Consulta",
+    "slug": "dr-consulta",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/dr-consulta/"
+  },
+  {
+    "id": "asaas-001",
+    "name": "Asaas",
+    "slug": "asaas",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/asaas/"
+  },
+  {
+    "id": "trinks-001",
+    "name": "Trinks",
+    "slug": "trinks",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/trinks/"
+  }
+]
