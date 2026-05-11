@@ -14,6 +14,7 @@ from jobs_sync import (  # noqa: E402
     job_id,
     merge_jobs,
     normalize_job,
+    _map_apify_raw,
 )
 
 
@@ -124,6 +125,42 @@ def test_error_handling_skip_and_log():
     assert len(fetched) == 1
     assert fetched[0]["id"] == job_id("linkedin", "olist", "olist-1")
     assert any("skip nubank" in line for line in logs)
+
+
+def test_apify_field_mapping():
+    item = {
+        "id": "4087123",
+        "title": "Senior Software Engineer",
+        "companyName": "Nubank",
+        "location": "Sao Paulo, SP",
+        "postedAt": "2 days ago",
+        "employmentType": "Full-time",
+        "jobFunction": "Engineering",
+    }
+    mapped = _map_apify_raw(item)
+
+    assert mapped["external_id"] == "4087123"
+    assert mapped["title"] == "Senior Software Engineer"
+    assert mapped["department"] == "Engineering"
+    assert mapped["location"] == "Sao Paulo, SP"
+    assert mapped["remote"] is False
+    assert mapped["url"] == "https://www.linkedin.com/jobs/view/4087123/"
+    assert mapped["created_at"] is None
+
+
+def test_skip_company_without_search_url():
+    from jobs_sync import fetch_apify_jobs, SyncError
+    import pytest
+
+    company = {
+        "id": "widget-001",
+        "name": "Widget Co",
+        "slug": "widget-co",
+        "logo_url": "",
+        "linkedin_url": "https://www.linkedin.com/company/widget-co/",
+    }
+    with pytest.raises(SyncError, match="no linkedin_search_url"):
+        fetch_apify_jobs(company, token="fake-token", now=NOW)
 
 
 def test_utm_tracking_is_added_without_dropping_existing_params():

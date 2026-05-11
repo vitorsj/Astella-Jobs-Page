@@ -6,12 +6,16 @@ import hashlib
 import html
 import json
 import logging
+import os
+import time
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
+import requests
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +28,10 @@ COMPANY_PAGES_DIR = ROOT / "public" / "empresas"
 JSONLD_PATH = ROOT / "public" / "job-postings.jsonld"
 UTM_PARAMS = {"utm_source": "astella", "utm_medium": "jobs_board"}
 SOFT_DELETE_DAYS = 7
+APIFY_BASE_URL = "https://api.apify.com/v2"
+APIFY_ACTOR_ID = "hKByXkMQaC5Qt9UMN"
+APIFY_POLL_INTERVAL_S = 5
+APIFY_MAX_ATTEMPTS = 60  # ~5 min timeout
 
 
 class SyncError(RuntimeError):
@@ -101,6 +109,93 @@ def normalize_job(raw: dict[str, Any], company: dict[str, Any], now: datetime) -
     }
 
 
+def _map_apify_raw(item: dict[str, Any]) -> dict[str, Any]:
+    external_id = str(item["id"])
+    location = item.get("location") or "Remoto"
+    return {
+        "external_id": external_id,
+        "title": item.get("title") or "",
+        "department": item.get("jobFunction") or item.get("employmentType") or "Operations",
+        "location": location,
+        "remote": "remot" in location.lower(),
+        "url": f"https://www.linkedin.com/jobs/view/{external_id}/",
+        "created_at": None,  # postedAt do Apify é texto relativo, não ISO
+    }
+
+
+def fetch_apify_jobs(
+    company: dict[str, Any],
+    token: str,
+    now: datetime,
+) -> list[dict[str, Any]]:
+    search_url = company.get("linkedin_search_url")
+    if not search_url:
+        raise SyncError(f"no linkedin_search_url configured for {company['slug']}")
+
+    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
+
+    # 1. Disparar run
+    run_resp = requests.post(
+        f"{APIFY_BASE_URL}/acts/{APIFY_ACTOR_ID}/runs",
+        headers=headers,
+        json={"urls": [search_url]},
+        timeout=30,
+    )
+    if not run_resp.ok:
+        raise SyncError(
+            f"Apify run start failed for {company['slug']}: "
+            f"HTTP {run_resp.status_code} — {run_resp.text[:200]}"
+        )
+    run_data = run_resp.json()["data"]
+    run_id = run_data["id"]
+    dataset_id = run_data["defaultDatasetId"]
+    logging.info("Apify run started for %s: runId=%s", company["slug"], run_id)
+
+    # 2. Polling até status terminal
+    terminal = {"SUCCEEDED", "FAILED", "ABORTED", "TIMED-OUT"}
+    status = "RUNNING"
+    for attempt in range(1, APIFY_MAX_ATTEMPTS + 1):
+        time.sleep(APIFY_POLL_INTERVAL_S)
+        status_resp = requests.get(
+            f"{APIFY_BASE_URL}/acts/{APIFY_ACTOR_ID}/runs/{run_id}",
+            headers=headers,
+            timeout=30,
+        )
+        if not status_resp.ok:
+            raise SyncError(
+                f"Apify status check failed for {company['slug']}: "
+                f"HTTP {status_resp.status_code}"
+            )
+        status = status_resp.json()["data"]["status"]
+        logging.debug("Apify run %s status=%s attempt=%d", run_id, status, attempt)
+        if status in terminal:
+            break
+    else:
+        raise SyncError(
+            f"Apify run timed out after {APIFY_MAX_ATTEMPTS} attempts for {company['slug']}"
+        )
+
+    if status != "SUCCEEDED":
+        raise SyncError(f"Apify run ended with status={status} for {company['slug']}")
+
+    # 3. Buscar itens do dataset
+    items_resp = requests.get(
+        f"{APIFY_BASE_URL}/datasets/{dataset_id}/items",
+        headers=headers,
+        params={"format": "json"},
+        timeout=60,
+    )
+    if not items_resp.ok:
+        raise SyncError(
+            f"Apify dataset fetch failed for {company['slug']}: "
+            f"HTTP {items_resp.status_code}"
+        )
+    items = items_resp.json()
+    logging.info("Apify fetched %d items for %s", len(items), company["slug"])
+
+    return [normalize_job(_map_apify_raw(item), company, now) for item in items]
+
+
 def fetch_fake_jobs(
     company: dict[str, Any],
     fixtures: dict[str, list[dict[str, Any]]],
@@ -115,15 +210,23 @@ def fetch_fake_jobs(
 
 def fetch_all_company_jobs(
     companies: list[dict[str, Any]],
-    fixtures: dict[str, list[dict[str, Any]]],
+    fetch_fn_or_fixtures,  # callable (company) -> list[dict] OU dict de fixtures (legado)
     now: datetime,
     error_slugs: set[str] | None = None,
 ) -> tuple[list[dict[str, Any]], list[str]]:
+    if callable(fetch_fn_or_fixtures):
+        fetch_fn = fetch_fn_or_fixtures
+    else:
+        # Caminho legado: fixtures dict (usado pelos testes existentes)
+        fixtures = fetch_fn_or_fixtures
+        def fetch_fn(company: dict[str, Any]) -> list[dict[str, Any]]:
+            return fetch_fake_jobs(company, fixtures, now, error_slugs)
+
     fetched: list[dict[str, Any]] = []
     logs: list[str] = []
     for company in companies:
         try:
-            company_jobs = fetch_fake_jobs(company, fixtures, now, error_slugs)
+            company_jobs = fetch_fn(company)
             fetched.extend(company_jobs)
             logs.append(f"ok {company['slug']}: {len(company_jobs)} jobs")
         except SyncError as exc:
@@ -254,12 +357,24 @@ def generate_static_assets(payload: dict[str, Any]) -> None:
         (COMPANY_PAGES_DIR / f"{company['slug']}.html").write_text(page, encoding="utf-8")
 
 
-def run_sync(now: datetime | None = None, error_slugs: set[str] | None = None) -> SyncResult:
+def run_sync(
+    now: datetime | None = None,
+    error_slugs: set[str] | None = None,
+    apify_token: str | None = None,
+) -> SyncResult:
     now = now or utc_now()
     companies = read_json(COMPANIES_PATH, [])
-    fixtures = read_json(FAKE_SOURCE_PATH, {})
     existing_payload = read_json(JOBS_PATH, {"jobs": [], "companies": companies})
-    fetched_jobs, logs = fetch_all_company_jobs(companies, fixtures, now, error_slugs)
+
+    if apify_token:
+        def fetch_fn(company: dict[str, Any]) -> list[dict[str, Any]]:
+            return fetch_apify_jobs(company, apify_token, now)
+    else:
+        fixtures = read_json(FAKE_SOURCE_PATH, {})
+        def fetch_fn(company: dict[str, Any]) -> list[dict[str, Any]]:
+            return fetch_fake_jobs(company, fixtures, now, error_slugs)
+
+    fetched_jobs, logs = fetch_all_company_jobs(companies, fetch_fn, now)
     merged_jobs = merge_jobs(existing_payload.get("jobs", []), fetched_jobs, now, len(fetched_jobs))
     next_payload = build_payload(companies, merged_jobs, now)
     changed = stable_json(comparable_payload(existing_payload)) != stable_json(comparable_payload(next_payload))
@@ -278,15 +393,31 @@ def run_sync(now: datetime | None = None, error_slugs: set[str] | None = None) -
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Sync Astella portfolio jobs from fake LinkedIn fixtures.")
-    parser.add_argument("--simulate-error", action="append", default=[], help="Company slug to skip with a fake API error.")
+    parser = argparse.ArgumentParser(
+        description="Sync Astella portfolio jobs from LinkedIn via Apify."
+    )
+    parser.add_argument(
+        "--simulate-error",
+        action="append",
+        default=[],
+        help="Company slug to skip with a fake API error (fake mode only).",
+    )
+    parser.add_argument(
+        "--apify-token",
+        default=None,
+        help="Apify API token. Falls back to APIFY_TOKEN env var. Sem nenhum: usa fixtures.",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     args = parse_args()
-    result = run_sync(error_slugs=set(args.simulate_error))
+    apify_token = args.apify_token or os.environ.get("APIFY_TOKEN")
+    result = run_sync(
+        error_slugs=set(args.simulate_error) if not apify_token else None,
+        apify_token=apify_token,
+    )
     for line in result.logs:
         logging.info(line)
     logging.info("fetched=%s active=%s changed=%s", result.total_fetched, result.total_active, result.changed)
