@@ -11,8 +11,8 @@ export default function App() {
     <BrowserRouter>
       <LangProvider>
         <Routes>
-          <Route path="/"            element={<JobBoardV1 />} />
-          <Route path="/jobs/v2"     element={<JobBoardV2 />} />
+          <Route path="/"            element={<JobBoardV2 />} />
+          <Route path="/jobs/v1"     element={<JobBoardV1 />} />
           <Route path="/jobs/v3"     element={<JobBoardV3 />} />
           <Route path="/admin"       element={<AdminDashboard />} />
           <Route path="/admin/edit/:id" element={<AdminEditor />} />
