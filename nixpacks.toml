@@ -1,5 +1,7 @@
+providers = ["python"]
+
 [phases.setup]
 nixPkgs = ["python312", "git", "curl"]
 
 [phases.install]
-cmds = ["pip install -r requirements.txt"]
+cmds = ["python -m pip install -r requirements.txt"]

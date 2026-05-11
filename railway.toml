@@ -1,2 +1,2 @@
-[build]
-builder = "dockerfile"
+[deploy]
+startCommand = "bash scripts/run_cron.sh"
