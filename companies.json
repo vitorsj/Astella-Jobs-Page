@@ -40,5 +40,13 @@
     "slug": "trinks",
     "logo_url": "",
     "linkedin_url": "https://www.linkedin.com/company/trinks/"
+  },
+  {
+    "id": "gabriel-001",
+    "name": "Gabriel",
+    "slug": "gabriel",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/gabriel/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=52181017&position=1&pageNum=0"
   }
 ]
