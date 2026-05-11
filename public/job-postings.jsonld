@@ -2,44 +2,23 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Product Manager - Banking",
-    "datePosted": "2026-05-03",
-    "validThrough": "2026-05-15",
+    "title": "Analista Fiscal Sênior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Asaas",
-      "sameAs": "https://www.linkedin.com/company/asaas/"
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
     },
-    "industry": "Product",
+    "industry": "Accounting/Auditing and Finance",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/asaas-002/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocationType": "TELECOMMUTE",
-    "applicantLocationRequirements": {
-      "@type": "Country",
-      "name": "Brazil"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Senior Platform Engineer",
-    "datePosted": "2026-05-05",
-    "validThrough": "2026-05-15",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Asaas",
-      "sameAs": "https://www.linkedin.com/company/asaas/"
-    },
-    "industry": "Engineering",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/asaas-001/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4392443900/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Joinville, SC",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -47,23 +26,23 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Account Executive",
-    "datePosted": "2026-05-05",
-    "validThrough": "2026-05-15",
+    "title": "Analista de Crédito Júnior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Conta Simples",
-      "sameAs": "https://www.linkedin.com/company/conta-simples/"
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
     },
-    "industry": "Sales",
+    "industry": "Finance and Sales",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/cs-001/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4402166703/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Sao Paulo, SP",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -71,44 +50,695 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Customer Success Manager",
-    "datePosted": "2026-05-06",
-    "validThrough": "2026-05-15",
+    "title": "Analista de Dados Pleno - Crédito Massificado",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Conta Simples",
-      "sameAs": "https://www.linkedin.com/company/conta-simples/"
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
     },
-    "industry": "CS",
+    "industry": "Information Technology",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/cs-002/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocationType": "TELECOMMUTE",
-    "applicantLocationRequirements": {
-      "@type": "Country",
-      "name": "Brazil"
+    "url": "https://www.linkedin.com/jobs/view/4392492586/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
     }
   },
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Coordenador(a) de Operacoes",
-    "datePosted": "2026-05-01",
-    "validThrough": "2026-05-15",
+    "title": "Analista de Operações Júnior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Dr. Consulta",
-      "sameAs": "https://www.linkedin.com/company/dr-consulta/"
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
     },
-    "industry": "Operations",
+    "industry": "Management and Manufacturing",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/dr-001/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4324648359/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Sao Paulo, SP",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Banco de Talentos",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Human Resources",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4323388541/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Business Development Representative",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4388549338/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Closer Full Cycle",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Sales and Management",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4323771433/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Design Manager",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Design, Art/Creative, and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4315058728/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Engineer Manager",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Engineering and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4406226538/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo(a) de Crescimento de Parcerias - Hunter",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "General Business, Management, and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4343924829/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Gerente Comercial - Academia Cayena",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4377987283/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Gerente de Vendas - Porta a Porta",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4377993104/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Group Product Manager",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Product Management and Marketing",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4406220318/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Key Account Executive",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4389325194/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Product Designer Sênior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Product Management",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4411244695/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Product Designer Sênior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Design, Art/Creative, and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4409379875/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Programa Trainee Cayena - 2026",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4410876500/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Recrutador (a) Comercial - Closer",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Human Resources",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4409967467/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Senior QA",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Quality Assurance",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4406213510/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Senior Software Engineer",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Engineering and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4406226519/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Software Engineer Junior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Engineering and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4406233400/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Software Engineer Pleno",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Engineering and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4406228489/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Supervisor de Vendas",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4389306794/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Supervisor(a) de Operações e Melhoria Contínua",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4402767689/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Supervisor(a) de Vendas",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4377978814/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Advogada(o) Júnior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Estoca",
+      "sameAs": "https://www.linkedin.com/company/estoca/"
+    },
+    "industry": "Legal",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4407650566/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de Marketing de Performance Sr.",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Estoca",
+      "sameAs": "https://www.linkedin.com/company/estoca/"
+    },
+    "industry": "Marketing and Sales",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4376000417/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Engineering Manager",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Estoca",
+      "sameAs": "https://www.linkedin.com/company/estoca/"
+    },
+    "industry": "Engineering and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4402329871/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo(a) de Vendas Sr.",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Estoca",
+      "sameAs": "https://www.linkedin.com/company/estoca/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4371579717/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Gerente de CS",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Estoca",
+      "sameAs": "https://www.linkedin.com/company/estoca/"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4410867796/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Product Manager Staff",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Estoca",
+      "sameAs": "https://www.linkedin.com/company/estoca/"
+    },
+    "industry": "Product Management and Marketing",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4360827230/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -476,44 +1106,23 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Backend Engineer",
-    "datePosted": "2026-05-07",
-    "validThrough": "2026-05-15",
+    "title": "Advogado(a) – Compliance e Empresarial",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Olist",
-      "sameAs": "https://www.linkedin.com/company/olist/"
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/"
     },
-    "industry": "Engineering",
+    "industry": "Legal",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/olist-002/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocationType": "TELECOMMUTE",
-    "applicantLocationRequirements": {
-      "@type": "Country",
-      "name": "Brazil"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Senior Product Designer",
-    "datePosted": "2026-05-05",
-    "validThrough": "2026-05-15",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Olist",
-      "sameAs": "https://www.linkedin.com/company/olist/"
-    },
-    "industry": "Design",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/olist-001/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4367275001/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Curitiba, PR",
+        "addressLocality": "Brazil",
         "addressCountry": "BR"
       }
     }
@@ -521,23 +1130,23 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Tech Lead - Payments",
-    "datePosted": "2026-05-02",
-    "validThrough": "2026-05-15",
+    "title": "Analista Sênior de Eventos & Brand Experience",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Olist",
-      "sameAs": "https://www.linkedin.com/company/olist/"
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/"
     },
-    "industry": "Engineering",
+    "industry": "Business Development and Sales",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/olist-003/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4393035167/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Sao Paulo, SP",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -545,44 +1154,23 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Data Engineer",
-    "datePosted": "2026-05-07",
-    "validThrough": "2026-05-15",
+    "title": "Analista Sênior de Eventos & Brand Experience",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "RD Station",
-      "sameAs": "https://www.linkedin.com/company/rd-station/"
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/"
     },
-    "industry": "Data",
+    "industry": "Marketing",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/rd-003/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocationType": "TELECOMMUTE",
-    "applicantLocationRequirements": {
-      "@type": "Country",
-      "name": "Brazil"
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Engenheiro(a) de Software Pleno",
-    "datePosted": "2026-05-06",
-    "validThrough": "2026-05-15",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "RD Station",
-      "sameAs": "https://www.linkedin.com/company/rd-station/"
-    },
-    "industry": "Engineering",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/rd-001/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4399577168/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Sao Paulo, SP",
+        "addressLocality": "São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -590,23 +1178,23 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Product Manager - Marketing Hub",
-    "datePosted": "2026-05-04",
-    "validThrough": "2026-05-15",
+    "title": "Analista de Suporte ao Cliente Pleno [N2]",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "RD Station",
-      "sameAs": "https://www.linkedin.com/company/rd-station/"
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/"
     },
-    "industry": "Product",
+    "industry": "Other",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/rd-002/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4395466705/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Florianopolis, SC",
+        "addressLocality": "Brazil",
         "addressCountry": "BR"
       }
     }
@@ -614,22 +1202,241 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Frontend Engineer",
-    "datePosted": "2026-05-07",
-    "validThrough": "2026-05-15",
+    "title": "Revenue Operations Specialist",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Trinks",
-      "sameAs": "https://www.linkedin.com/company/trinks/"
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/"
     },
-    "industry": "Engineering",
+    "industry": "Management and Manufacturing",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/trinks-001/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocationType": "TELECOMMUTE",
-    "applicantLocationRequirements": {
-      "@type": "Country",
-      "name": "Brazil"
+    "url": "https://www.linkedin.com/jobs/view/4389579459/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de Inteligência Comercial Sênior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Research, Analyst, and Information Technology",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4379477400/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de Treinamento Sênior",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Human Resources",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4376444396/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Especialista em BizOps",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4404453209/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Especialista em Pesquisa Clínica",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Marketing and Sales",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4384267502/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo Key Accounts - Perfumaria e Novos Canais",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4407083532/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Greater Porto Alegre",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo de Contas [Farma Indireto]",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4407090528/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo de Contas [Farma Indireto]",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4397298773/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte, Minas Gerais, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo de Contas [Farma Indireto]",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Sales and Business Development",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4385968309/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro, Rio de Janeiro, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Gerente de E-commerce e CRM",
+    "datePosted": "2026-05-11",
+    "validThrough": "2026-05-18",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Product Management and Marketing",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4373625318/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
     }
   }
 ]

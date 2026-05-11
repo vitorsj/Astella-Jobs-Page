@@ -1,52 +1,82 @@
 [
   {
-    "id": "rd-station-001",
-    "name": "RD Station",
-    "slug": "rd-station",
-    "logo_url": "",
-    "linkedin_url": "https://www.linkedin.com/company/rd-station/"
-  },
-  {
-    "id": "olist-001",
-    "name": "Olist",
-    "slug": "olist",
-    "logo_url": "",
-    "linkedin_url": "https://www.linkedin.com/company/olist/"
-  },
-  {
-    "id": "conta-simples-001",
-    "name": "Conta Simples",
-    "slug": "conta-simples",
-    "logo_url": "",
-    "linkedin_url": "https://www.linkedin.com/company/conta-simples/"
-  },
-  {
-    "id": "dr-consulta-001",
-    "name": "Dr. Consulta",
-    "slug": "dr-consulta",
-    "logo_url": "",
-    "linkedin_url": "https://www.linkedin.com/company/dr-consulta/"
-  },
-  {
-    "id": "asaas-001",
-    "name": "Asaas",
-    "slug": "asaas",
-    "logo_url": "",
-    "linkedin_url": "https://www.linkedin.com/company/asaas/"
-  },
-  {
-    "id": "trinks-001",
-    "name": "Trinks",
-    "slug": "trinks",
-    "logo_url": "",
-    "linkedin_url": "https://www.linkedin.com/company/trinks/"
-  },
-  {
     "id": "gabriel-001",
     "name": "Gabriel",
     "slug": "gabriel",
     "logo_url": "",
     "linkedin_url": "https://www.linkedin.com/company/gabriel/",
     "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=52181017&position=1&pageNum=0"
+  },
+  {
+    "id": "purple-metrics-001",
+    "name": "Purple Metrics",
+    "slug": "purple-metrics",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/purple-metrics/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=75029802&f_TPR="
+  },
+  {
+    "id": "cienty-001",
+    "name": "Cienty",
+    "slug": "cienty",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/cienty/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=86386211&f_TPR="
+  },
+  {
+    "id": "cayena-001",
+    "name": "Cayena",
+    "slug": "cayena",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/cayena/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=14048993&f_TPR=&position=1&pageNum=0"
+  },
+  {
+    "id": "bem-te-vi-001",
+    "name": "Bem-Te-Vi",
+    "slug": "bem-te-vi",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/bem-te-vi/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=70398380&f_TPR="
+  },
+  {
+    "id": "kompa-001",
+    "name": "Kompa",
+    "slug": "kompa",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/kompa/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=48911970&f_TPR="
+  },
+  {
+    "id": "estoca-001",
+    "name": "Estoca",
+    "slug": "estoca",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/estoca/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=42904066&f_TPR=&position=1&pageNum=0"
+  },
+  {
+    "id": "sallve-001",
+    "name": "Sallve",
+    "slug": "sallve",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/sallve/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=35446815&f_TPR=&position=1&pageNum=0"
+  },
+  {
+    "id": "taon-001",
+    "name": "TaOn",
+    "slug": "taon",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/taon/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=TaOn&location=Brasil&geoId=106057199&trk=public_jobs_jobs-search-bar_search-submit"
+  },
+  {
+    "id": "lastlink-001",
+    "name": "Lastlink",
+    "slug": "lastlink",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/lastlink/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Lastlink&location=Brasil&geoId=106057199&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0"
   }
 ]
