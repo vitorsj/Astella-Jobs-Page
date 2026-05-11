@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Configure git identity for the commit
+REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/vitorsj/Astella-Jobs-Page.git"
+WORK_DIR="/tmp/astella-jobs"
+
+# Clone fresh so we have a proper .git directory for commit + push
+git clone "$REPO_URL" "$WORK_DIR"
+cd "$WORK_DIR"
+
 git config user.email "cron@astella.vc"
 git config user.name "Astella Jobs Cron"
-
-# Inject GITHUB_TOKEN into remote URL so push works without SSH keys
-git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/vitorsj/Astella-Jobs-Page.git"
 
 # Run sync
 python scripts/jobs_sync.py
