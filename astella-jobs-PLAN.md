@@ -181,20 +181,32 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 ## Setup Checklist
 
 ```
-[ ] Criar repo (sugerido: vitorsj/astella-jobs)
-[ ] Configurar subdomain jobs.astella.vc → Vercel
-[ ] Vercel: conectar ao repo, free tier
-[ ] Railway: criar projeto, adicionar GITHUB_TOKEN env var
-[ ] GitHub: criar Fine-grained PAT (1 ano, write neste repo)
-[ ] Healthchecks.io: criar check, adicionar URL como env var
+[x] Criar repo → vitorsj/Astella-Jobs-Page
+[x] Vercel: conectar ao repo, free tier
+[ ] Configurar subdomain jobs.astella.vc → Vercel (CNAME: cname.vercel-dns.com)
+[x] Railway: criar projeto, cron job, GITHUB_TOKEN + APIFY_TOKEN configurados
+[x] GitHub: Fine-grained PAT (1 ano, write neste repo)
+[ ] Healthchecks.io: criar check, adicionar HEALTHCHECKS_URL no Railway
 [ ] Plausible: criar site jobs.astella.vc, adicionar script no template HTML
-[ ] companies.json: lista inicial (puxar do Attio ou manual)
-[ ] jobs_sync.py: implementação + 8 unit tests
-[ ] index.html template + /empresas/:slug.html template
-[ ] First run manual no Railway, validar jobs.json + push
-[ ] Configurar cron schedule no Railway (1x/semana — `0 12 * * 1`)
+[x] companies.json: 10 empresas com linkedin_search_url (Gabriel, Purple Metrics,
+    Cienty, Cayena, Bem-Te-Vi, Kompa, Estoca, Sallve, TaOn, Lastlink)
+[x] jobs_sync.py: implementação com Apify + 11 unit tests
+[x] /empresas/:slug.html gerado automaticamente pelo sync
+[x] First run manual no Railway validado — 60 vagas reais
+[x] Cron schedule no Railway: 0 12 * * 1 (segunda, 9h BRT)
 [ ] Spot-check 5–10 vagas no site antes de divulgar
 ```
+
+## Stack atual (maio/2026)
+
+- **Frontend**: React + Vite + Tailwind — 3 variações de layout (V1, V2, V3)
+- **Backend**: `scripts/jobs_sync.py` — Apify `hKByXkMQaC5Qt9UMN` (curious_coder/linkedin-jobs-scraper)
+- **Dados**: `jobs.json` + `src/data/jobs.generated.json` no repo (fonte de verdade)
+- **Cron**: Railway, `bash scripts/run_cron.sh`, `0 12 * * 1`
+- **Deploy**: Vercel auto-deploy a cada push no `main`
+- **Repo**: vitorsj/Astella-Jobs-Page (privado)
+- **Apify token**: configurado como env var `APIFY_TOKEN` no Railway
+- **Input format**: `{"urls": ["<linkedin_search_url>"]}` (strings, não objetos)
 
 ## NÃO no escopo (deferido)
 
