@@ -39,7 +39,7 @@ External Source
 └──────────────────┬───────────────────┘
                    │
           ┌────────▼────────┐
-          │  jobs_sync.py   │  (Railway cron, 2x/dia)
+          │  jobs_sync.py   │  (Railway cron, 1x/semana)
           │                 │
           │  1. git pull    │  ← jobs.json atual do repo
           │  2. fetch API   │  ← skip-and-log por empresa
@@ -69,7 +69,7 @@ External Source
 
 **Componentes:**
 
-- **Cron**: Railway (~$5–10/mês), Python 3, roda 2x/dia.
+- **Cron**: Railway (~$5–10/mês), Python 3, roda 1x/semana (segunda-feira, 9h BRT — cron: `0 12 * * 1`).
 - **Frontend**: Vercel free tier, serve HTML/CSS/JS estático. Auto-deploy no git push.
 - **Analytics**: Plausible (client-side, sem backend).
 - **Monitoring**: Healthchecks.io (free).
@@ -192,7 +192,7 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 [ ] jobs_sync.py: implementação + 8 unit tests
 [ ] index.html template + /empresas/:slug.html template
 [ ] First run manual no Railway, validar jobs.json + push
-[ ] Configurar cron schedule no Railway (2x/dia)
+[ ] Configurar cron schedule no Railway (1x/semana — `0 12 * * 1`)
 [ ] Spot-check 5–10 vagas no site antes de divulgar
 ```
 
