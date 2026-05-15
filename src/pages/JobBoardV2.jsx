@@ -234,13 +234,14 @@ export default function JobBoardV2() {
 function PillSelect({ value, onChange, label, children }) {
   return (
     <div className={`jbv2-fpill ${value ? 'on' : ''}`}>
+      <span className="jbv2-fpill-label">{label}</span>
+      <svg viewBox="0 0 10 6" fill="none">
+        <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+      </svg>
       <select value={value} onChange={e => onChange(e.target.value)}>
         <option value="">{label}</option>
         {children}
       </select>
-      <svg viewBox="0 0 10 6" fill="none">
-        <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-      </svg>
     </div>
   )
 }
