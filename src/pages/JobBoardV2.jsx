@@ -52,11 +52,7 @@ export default function JobBoardV2() {
       <nav className="jbv2-nav">
         <a href="#" className="jbv2-brand">
           <span className="jbv2-mark">
-            <svg viewBox="0 0 15 15" fill="none">
-              <path d="M7.5 1.5C7.5 1.5 3 4.5 3 9C3 11.5 5 13.5 7.5 13.5C10 13.5 12 11.5 12 9C12 4.5 7.5 1.5 7.5 1.5Z" stroke="#56BBC2" strokeWidth="1.2" fill="none"/>
-              <path d="M7.5 1.5V9" stroke="rgba(255,255,255,0.4)" strokeWidth="1.2" strokeLinecap="round"/>
-              <path d="M4.5 7C5.5 7.8 7.5 8.5 7.5 8.5C7.5 8.5 9.5 7.8 10.5 7" stroke="#56BBC2" strokeWidth="1.2" strokeLinecap="round"/>
-            </svg>
+            <img src="/astella-logo.png" alt="Astella" />
           </span>
           <span className="jbv2-wordmark"><em>astella</em> careers</span>
         </a>
@@ -300,11 +296,11 @@ const CSS = `
 }
 .jbv2-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
 .jbv2-mark {
-  width: 26px; height: 26px;
-  border: 1.5px solid rgba(86,187,194,0.55);
+  width: 32px; height: 32px;
   display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
-.jbv2-mark svg { width: 15px; height: 15px; }
+.jbv2-mark img { width: 100%; height: 100%; object-fit: contain; }
 .jbv2-wordmark {
   font-family: 'Kalam', cursive; font-weight: 700;
   font-size: 15.5px; color: var(--white); letter-spacing: 0.02em;
