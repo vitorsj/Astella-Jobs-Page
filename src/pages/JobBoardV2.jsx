@@ -295,7 +295,7 @@ const CSS = `
 }
 .jbv2-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
 .jbv2-mark {
-  width: 36px; height: 36px;
+  width: 29px; height: 29px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
