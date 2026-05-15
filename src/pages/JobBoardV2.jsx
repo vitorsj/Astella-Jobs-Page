@@ -50,11 +50,10 @@ export default function JobBoardV2() {
     <div className="jbv2-root">
       {/* NAV */}
       <nav className="jbv2-nav">
-        <a href="#" className="jbv2-brand">
+        <a href="#" className="jbv2-brand" aria-label="Astella Careers">
           <span className="jbv2-mark">
             <img src="/astella-logo.png" alt="Astella" />
           </span>
-          <span className="jbv2-wordmark"><em>astella</em> careers</span>
         </a>
         <ul className="jbv2-nav-links">
           <li><a href="#" className="active">{t.nav.jobs}</a></li>
