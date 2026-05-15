@@ -295,7 +295,7 @@ const CSS = `
 }
 .jbv2-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
 .jbv2-mark {
-  width: 44px; height: 44px;
+  width: 42px; height: 42px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -545,7 +545,7 @@ const CSS = `
 }
 .jbv2-footer-logo {
   display: block;
-  width: 56px; height: 56px;
+  width: 53px; height: 53px;
   margin: 0 auto 14px;
   object-fit: contain;
 }
