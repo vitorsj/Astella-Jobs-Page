@@ -545,7 +545,7 @@ const CSS = `
 }
 .jbv2-footer-logo {
   display: block;
-  width: 53px; height: 53px;
+  width: 56px; height: 56px;
   margin: 0 auto 14px;
   object-fit: contain;
 }
