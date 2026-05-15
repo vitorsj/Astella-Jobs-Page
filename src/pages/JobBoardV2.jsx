@@ -212,7 +212,7 @@ export default function JobBoardV2() {
 
       {/* FOOTER */}
       <footer className="jbv2-footer">
-        <div className="jbv2-footer-brand"><span>astella</span> careers</div>
+        <img className="jbv2-footer-logo" src="/astella-logo.png" alt="Astella" />
         <div className="jbv2-footer-links">
           <a href="https://astella.com.br" target="_blank" rel="noopener noreferrer">
             {lang === 'pt' ? 'Sobre a Astella' : 'About Astella'}
@@ -290,12 +290,12 @@ const CSS = `
 .jbv2-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: var(--navy-dark);
-  height: 52px;
+  height: 60px;
   display: flex; align-items: center; padding: 0 40px; gap: 32px;
 }
 .jbv2-brand { display: flex; align-items: center; gap: 9px; text-decoration: none; flex-shrink: 0; }
 .jbv2-mark {
-  width: 32px; height: 32px;
+  width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -326,7 +326,7 @@ const CSS = `
 .jbv2-lang:hover { border-color: var(--teal); color: var(--teal); }
 
 .jbv2-hero {
-  margin-top: 52px;
+  margin-top: 60px;
   background: var(--navy-dark);
   padding: 52px 40px 48px;
   position: relative; overflow: hidden;
@@ -381,7 +381,7 @@ const CSS = `
 }
 
 .jbv2-filterbar {
-  position: sticky; top: 52px; z-index: 90;
+  position: sticky; top: 60px; z-index: 90;
   background: var(--white);
   border-bottom: 1.5px solid var(--line-med);
 }
@@ -543,11 +543,12 @@ const CSS = `
   background: var(--navy-dark);
   padding: 36px 40px; text-align: center;
 }
-.jbv2-footer-brand {
-  font-family: 'Caveat', cursive; font-size: 20px; font-weight: 700;
-  color: var(--white); margin-bottom: 8px;
+.jbv2-footer-logo {
+  display: block;
+  width: 56px; height: 56px;
+  margin: 0 auto 14px;
+  object-fit: contain;
 }
-.jbv2-footer-brand span { color: var(--teal); }
 .jbv2-footer-links { font-size: 12.5px; color: rgba(255,255,255,0.35); }
 .jbv2-footer-links a {
   color: rgba(255,255,255,0.50); text-decoration: none;
