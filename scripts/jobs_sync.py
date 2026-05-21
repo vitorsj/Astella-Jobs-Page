@@ -29,7 +29,8 @@ GENERATED_JOBS_PATH = ROOT / "src" / "data" / "jobs.generated.json"
 COMPANY_PAGES_DIR = ROOT / "public" / "empresas"
 JSONLD_PATH = ROOT / "public" / "job-postings.jsonld"
 UTM_PARAMS = {"utm_source": "astella", "utm_medium": "jobs_board"}
-SOFT_DELETE_DAYS = 7
+MISSING_SOURCE_GRACE_DAYS = 0
+JSONLD_VALID_THROUGH_DAYS = 7
 STALE_POSTED_DAYS = 100
 APIFY_BASE_URL = "https://api.apify.com/v2"
 APIFY_ACTOR_ID = "hKByXkMQaC5Qt9UMN"
@@ -425,7 +426,7 @@ def merge_jobs(
         successful_company_slugs = {job["company_slug"] for job in by_key.values()}
 
     if successful_company_slugs:
-        expires_before = now - timedelta(days=SOFT_DELETE_DAYS)
+        expires_before = now - timedelta(days=MISSING_SOURCE_GRACE_DAYS)
         stale_before = now - timedelta(days=STALE_POSTED_DAYS)
         for job in by_key.values():
             if job["company_slug"] not in successful_company_slugs:
@@ -465,7 +466,7 @@ def generate_jsonld(job: dict[str, Any], company: dict[str, Any]) -> dict[str, A
         "@type": "JobPosting",
         "title": job["title"],
         "datePosted": job["created_at"][:10],
-        "validThrough": (parse_iso(job["last_seen_at"]) + timedelta(days=SOFT_DELETE_DAYS)).date().isoformat(),
+        "validThrough": (parse_iso(job["last_seen_at"]) + timedelta(days=JSONLD_VALID_THROUGH_DAYS)).date().isoformat(),
         "employmentType": "FULL_TIME",
         "hiringOrganization": {
             "@type": "Organization",

@@ -65,7 +65,7 @@ def test_dedup_existing_job():
     assert merged[0]["last_seen_at"] == "2026-05-08T18:00:00Z"
 
 
-def test_soft_delete_active():
+def test_missing_job_stays_active_when_seen_now():
     existing = make_job(last_seen_at="2026-05-08T18:00:00Z")
 
     merged = merge_jobs([existing], [], NOW, total_fetched=1)
@@ -73,15 +73,16 @@ def test_soft_delete_active():
     assert merged[0]["is_active"] is True
 
 
-def test_soft_delete_expired():
-    existing = make_job(last_seen_at="2026-04-30T18:00:00Z")
+def test_missing_job_expires_immediately_after_successful_company_fetch():
+    existing = make_job(last_seen_at="2026-05-08T17:59:59Z")
 
-    merged = merge_jobs([existing], [], NOW, total_fetched=1)
+    merged = merge_jobs([existing], [], NOW, total_fetched=0, successful_company_slugs={"nubank"})
 
     assert merged[0]["is_active"] is False
+    assert merged[0]["inactive_reason"] == "missing_from_source"
 
 
-def test_soft_delete_floor_on_outage():
+def test_missing_job_is_preserved_on_total_outage():
     existing = make_job(last_seen_at="2026-04-30T18:00:00Z", is_active=True)
 
     merged = merge_jobs([existing], [], NOW, total_fetched=0)
@@ -127,6 +128,17 @@ def test_error_handling_skip_and_log():
     assert fetched[0]["id"] == job_id("linkedin", "olist", "senior software engineer|sao paulo")
     assert successful_slugs == {"olist"}
     assert any("skip nubank" in line for line in logs)
+
+
+def test_successful_empty_api_response_is_distinct_from_error():
+    companies = [COMPANY]
+    fixtures = {"nubank": []}
+
+    fetched, logs, successful_slugs = fetch_all_company_jobs(companies, fixtures, NOW)
+
+    assert fetched == []
+    assert successful_slugs == {"nubank"}
+    assert logs == ["ok nubank: 0 jobs"]
 
 
 def test_apify_field_mapping():
