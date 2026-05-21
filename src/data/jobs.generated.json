@@ -1,249 +1,355 @@
 {
-  "generated_at": "2026-05-18T00:02:59Z",
-  "total_active": 61,
+  "generated_at": "2026-05-21T17:26:02Z",
+  "total_active": 59,
   "jobs": [
     {
-      "id": "17bedac303c78c9d",
+      "id": "993fafc136bc1a12",
       "external_id": "4392443900",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Analista Fiscal Sênior",
-      "department": "Accounting/Auditing and Finance",
+      "department": "Finance",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4392443900/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4392443900"
+      ],
+      "raw_department": "Accounting/Auditing and Finance",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:analista fiscal senior|sao paulo"
     },
     {
-      "id": "a5ad628ba2236c14",
+      "id": "ce8c138e19f2dbf3",
       "external_id": "4402166703",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Analista de Crédito Júnior",
-      "department": "Finance and Sales",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4402166703/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-11T17:12:29Z",
       "last_seen_at": "2026-05-11T17:12:29Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4402166703"
+      ],
+      "raw_department": "Finance and Sales",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:analista de credito junior|sao paulo"
     },
     {
-      "id": "cedacd5f5eba0ebb",
+      "id": "bbc63b6cc3460b29",
       "external_id": "4392492586",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Analista de Dados Pleno - Crédito Massificado",
-      "department": "Information Technology",
+      "department": "Data",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4392492586/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4392492586"
+      ],
+      "raw_department": "Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:analista de dados pleno credito massificado|sao paulo"
     },
     {
-      "id": "a265945663a18822",
+      "id": "d188c7105a6da1b4",
       "external_id": "4324648359",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Analista de Operações Júnior",
-      "department": "Management and Manufacturing",
+      "department": "Operations",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4324648359/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4324648359"
+      ],
+      "raw_department": "Management and Manufacturing",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:analista de operacoes junior|sao paulo"
     },
     {
-      "id": "e1a57cf6c26fe6c9",
+      "id": "290fb1d58ca101a1",
       "external_id": "4323388541",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Banco de Talentos",
-      "department": "Human Resources",
+      "department": "People",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4323388541/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4323388541"
+      ],
+      "raw_department": "Human Resources",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:banco de talentos|sao paulo"
     },
     {
-      "id": "274c00a324f56c82",
+      "id": "3782a9802eb9a56e",
       "external_id": "4388549338",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Business Development Representative",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4388549338/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4388549338"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:business development representative|sao paulo"
     },
     {
-      "id": "5cfae49b1cb9d7af",
+      "id": "0d6aba97667cd069",
       "external_id": "4323771433",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Closer Full Cycle",
-      "department": "Sales and Management",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4323771433/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4323771433"
+      ],
+      "raw_department": "Sales and Management",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:closer full cycle|sao paulo"
     },
     {
-      "id": "433025a43f85aa48",
+      "id": "69aaf9bc47567529",
       "external_id": "4315058728",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Design Manager",
-      "department": "Design, Art/Creative, and Information Technology",
+      "department": "Design",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4315058728/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4315058728"
+      ],
+      "raw_department": "Design, Art/Creative, and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:design manager|brazil"
     },
     {
-      "id": "ad9a10f84a54cbb8",
+      "id": "9aa30a48fc4a5515",
       "external_id": "4406226538",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Engineer Manager",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4406226538/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4406226538"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:engineer manager|sao paulo"
     },
     {
-      "id": "389aee8808c20bbf",
+      "id": "0ffc5ea0e05c9c51",
       "external_id": "4343924829",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Executivo(a) de Crescimento de Parcerias - Hunter",
-      "department": "General Business, Management, and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4343924829/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4343924829"
+      ],
+      "raw_department": "General Business, Management, and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:executivo a de crescimento de parcerias hunter|sao paulo"
     },
     {
-      "id": "6f938731fe86f6b8",
+      "id": "47763f0f3d821ba3",
       "external_id": "4377987283",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Gerente Comercial - Academia Cayena",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4377987283/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4377987283"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:gerente comercial academia cayena|sao paulo"
     },
     {
-      "id": "ca634175d6d25370",
+      "id": "fed443cb81b75242",
       "external_id": "4377993104",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Gerente de Vendas - Porta a Porta",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4377993104/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4377993104"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:gerente de vendas porta a porta|sao paulo"
     },
     {
-      "id": "4d198b4d7988dc59",
+      "id": "3dbd51e8a4b102d2",
       "external_id": "4406220318",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Group Product Manager",
-      "department": "Product Management and Marketing",
+      "department": "Marketing",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4406220318/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4406220318"
+      ],
+      "raw_department": "Product Management and Marketing",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:group product manager|sao paulo"
     },
     {
-      "id": "83587e0fda65ea6d",
+      "id": "b24419fc7c54968b",
       "external_id": "4389325194",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Key Account Executive",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4389325194/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4389325194"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:key account executive|sao paulo"
     },
     {
-      "id": "81f0e23a553abe03",
-      "external_id": "4411244695",
-      "source": "linkedin",
-      "company_slug": "cayena",
-      "title": "Product Designer Sênior",
-      "department": "Product Management",
-      "location": "São Paulo, São Paulo, Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4411244695/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-11T17:12:29Z",
-      "last_seen_at": "2026-05-11T17:12:29Z",
-      "is_active": true
-    },
-    {
-      "id": "050f11c2363f0439",
+      "id": "290f1d4dfe822ab8",
       "external_id": "4409379875",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Product Designer Sênior",
-      "department": "Design, Art/Creative, and Information Technology",
+      "department": "Design",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4409379875/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4409379875",
+        "4411244695"
+      ],
+      "raw_department": "Design, Art/Creative, and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:product designer senior|sao paulo"
     },
     {
-      "id": "6f3a33d8757f9cca",
+      "id": "b5a92f791b9e4058",
       "external_id": "4410876500",
       "source": "linkedin",
       "company_slug": "cayena",
@@ -255,130 +361,202 @@
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4410876500"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:programa trainee cayena 2026|sao paulo"
     },
     {
-      "id": "69b53dae8130dae5",
+      "id": "adf800c931ed999a",
       "external_id": "4409967467",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Recrutador (a) Comercial - Closer",
-      "department": "Human Resources",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4409967467/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4409967467"
+      ],
+      "raw_department": "Human Resources",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:recrutador a comercial closer|sao paulo"
     },
     {
-      "id": "0022207b66a7f578",
+      "id": "bc06fe80eb58baf0",
       "external_id": "4406213510",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Senior QA",
-      "department": "Quality Assurance",
+      "department": "Operations",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4406213510/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4406213510"
+      ],
+      "raw_department": "Quality Assurance",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:senior qa|brazil"
     },
     {
-      "id": "02fbafba29d35e1f",
+      "id": "ff647b9d47c70ca3",
       "external_id": "4406226519",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Senior Software Engineer",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4406226519/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4406226519"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:senior software engineer|brazil"
     },
     {
-      "id": "5610d57ebeb78495",
+      "id": "f02e397ad6b1cc05",
       "external_id": "4406233400",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Software Engineer Junior",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4406233400/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4406233400"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:software engineer junior|brazil"
     },
     {
-      "id": "c596a308324c8304",
+      "id": "473808b16a5eb2ad",
       "external_id": "4406228489",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Software Engineer Pleno",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4406228489/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4406228489"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:software engineer pleno|brazil"
     },
     {
-      "id": "8818087a97a4fe17",
+      "id": "da4647d8f6e5ad47",
       "external_id": "4389306794",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Supervisor de Vendas",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4389306794/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4389306794"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:supervisor de vendas|sao paulo"
     },
     {
-      "id": "bc59a4171cc3bd84",
+      "id": "27b178836cc6f58d",
       "external_id": "4402767689",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Supervisor(a) de Operações e Melhoria Contínua",
-      "department": "Other",
+      "department": "Operations",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4402767689/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-11T17:12:29Z",
       "last_seen_at": "2026-05-11T17:12:29Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4402767689"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:supervisor a de operacoes e melhoria continua|sao paulo"
     },
     {
-      "id": "4a95c666aa157e6a",
+      "id": "6ab7040fc2ec0916",
       "external_id": "4377978814",
       "source": "linkedin",
       "company_slug": "cayena",
       "title": "Supervisor(a) de Vendas",
-      "department": "Other",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4377978814/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4377978814"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:cayena:supervisor a de vendas|sao paulo"
     },
     {
-      "id": "4337fe19510917bc",
+      "id": "77e7cd86bd0036ff",
       "external_id": "4407650566",
       "source": "linkedin",
       "company_slug": "estoca",
@@ -390,115 +568,179 @@
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4407650566"
+      ],
+      "raw_department": "Legal",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:estoca:advogada o junior|sao paulo"
     },
     {
-      "id": "928023376921d12c",
+      "id": "feed7ba85878d3f4",
       "external_id": "4376000417",
       "source": "linkedin",
       "company_slug": "estoca",
       "title": "Analista de Marketing de Performance Sr.",
-      "department": "Marketing and Sales",
+      "department": "Marketing",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4376000417/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4376000417"
+      ],
+      "raw_department": "Marketing and Sales",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:estoca:analista de marketing de performance sr|sao paulo"
     },
     {
-      "id": "ba18717f0aa3989e",
+      "id": "1c41a7b757d1ed7f",
       "external_id": "4402329871",
       "source": "linkedin",
       "company_slug": "estoca",
       "title": "Engineering Manager",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4402329871/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4402329871"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:estoca:engineering manager|sao paulo"
     },
     {
-      "id": "9c4cb1508a272e17",
+      "id": "6353a1102a40a437",
       "external_id": "4371579717",
       "source": "linkedin",
       "company_slug": "estoca",
       "title": "Executivo(a) de Vendas Sr.",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4371579717/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4371579717"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:estoca:executivo a de vendas sr|sao paulo"
     },
     {
-      "id": "d290b05c8d4cbc86",
+      "id": "85506e9a26f93810",
       "external_id": "4410867796",
       "source": "linkedin",
       "company_slug": "estoca",
       "title": "Gerente de CS",
-      "department": "Other",
+      "department": "Customer Success",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4410867796/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4410867796"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:estoca:gerente de cs|sao paulo"
     },
     {
-      "id": "92c06f8a708063d5",
+      "id": "a153169b62f24bcf",
       "external_id": "4360827230",
       "source": "linkedin",
       "company_slug": "estoca",
       "title": "Product Manager Staff",
-      "department": "Product Management and Marketing",
+      "department": "Marketing",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4360827230/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4360827230"
+      ],
+      "raw_department": "Product Management and Marketing",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:estoca:product manager staff|sao paulo"
     },
     {
-      "id": "7f491ecaca16393d",
+      "id": "3afb4132a3d0d7d7",
       "external_id": "4386479513",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Analista de Contabilidade SR",
-      "department": "Accounting/Auditing and Finance",
+      "department": "Finance",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4386479513/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4386479513"
+      ],
+      "raw_department": "Accounting/Auditing and Finance",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:analista de contabilidade sr|sao paulo"
     },
     {
-      "id": "cd3f8d5f10727d17",
+      "id": "72665b688b4612e4",
       "external_id": "4404492766",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Analista de Controle de Qualidade de Campo - Belo Horizonte (MG)",
-      "department": "Quality Assurance",
+      "department": "Operations",
       "location": "Belo Horizonte, Minas Gerais, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4404492766/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4404492766"
+      ],
+      "raw_department": "Quality Assurance",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:analista de controle de qualidade de campo belo horizonte mg|belo horizonte"
     },
     {
-      "id": "384e6f7f26dbcda9",
+      "id": "2a9ad33111140ba8",
       "external_id": "4386492233",
       "source": "linkedin",
       "company_slug": "gabriel",
@@ -510,190 +752,294 @@
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4386492233"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:analista de experiencia do cliente relacionamento|sao paulo"
     },
     {
-      "id": "a88fa2bea05e1dd9",
+      "id": "e02899becfe0bb71",
       "external_id": "4400013959",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Analista de Relações Institucionais e Governamentais - São Paulo (SP)",
-      "department": "Business Development and Sales",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4400013959/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4400013959"
+      ],
+      "raw_department": "Business Development and Sales",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:analista de relacoes institucionais e governamentais sao paulo sp|sao paulo"
     },
     {
-      "id": "f6991f29f1e9895e",
+      "id": "a3cb1810f56ebe68",
       "external_id": "4387101991",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Banco de Talentos",
-      "department": "Human Resources",
+      "department": "People",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4387101991/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4387101991"
+      ],
+      "raw_department": "Human Resources",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:banco de talentos|sao paulo"
     },
     {
-      "id": "aa6e7922d0670681",
+      "id": "143884dab823b180",
       "external_id": "4389822800",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Engenheiro(a) Backend Multimídia SR",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4389822800/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4389822800"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:engenheiro a backend multimidia sr|sao paulo"
     },
     {
-      "id": "a96855db76c3c9c6",
+      "id": "f725834f90961d5c",
       "external_id": "4389818900",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Engenheiro(a) Backend SR",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4389818900/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4389818900"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:engenheiro a backend sr|sao paulo"
     },
     {
-      "id": "72573771250c9200",
+      "id": "2c9214a187596c5c",
       "external_id": "4389816960",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Engenheiro(a) Mobile SR",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4389816960/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4389816960"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:engenheiro a mobile sr|sao paulo"
     },
     {
-      "id": "b7d98de85a2ffab0",
+      "id": "c7674fffdf8fb0c9",
       "external_id": "4392133466",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Engenheiro(a) de Machine Learning SR",
-      "department": "Engineering and Information Technology",
+      "department": "Engineering",
       "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4392133466/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4392133466"
+      ],
+      "raw_department": "Engineering and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:engenheiro a de machine learning sr|rio de janeiro"
     },
     {
-      "id": "da997a61c488f86c",
+      "id": "e2ec7889e1113222",
       "external_id": "4400028087",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Especialista de Inteligência e Relacionamento com Autoridades - Belo Horizonte (MG)",
-      "department": "Other, Information Technology, and Management",
+      "department": "Engineering",
       "location": "Belo Horizonte, Minas Gerais, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4400028087/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4400028087"
+      ],
+      "raw_department": "Other, Information Technology, and Management",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:especialista de inteligencia e relacionamento com autoridades belo horizonte mg|belo horizonte"
     },
     {
-      "id": "ece140fe47e433f1",
+      "id": "66a2307f83cba8e8",
       "external_id": "4400022809",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Especialista de Inteligência e Relacionamento com Autoridades - Rio de Janeiro (RJ)",
-      "department": "Other, Information Technology, and Management",
+      "department": "Engineering",
       "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4400022809/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4400022809"
+      ],
+      "raw_department": "Other, Information Technology, and Management",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:especialista de inteligencia e relacionamento com autoridades rio de janeiro rj|rio de janeiro"
     },
     {
-      "id": "27a1565a7af99ff6",
+      "id": "cf71ac5172400d1a",
       "external_id": "4400028093",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Especialista de Inteligência e Relacionamento com Autoridades - São Paulo (SP)",
-      "department": "Other, Information Technology, and Management",
+      "department": "Engineering",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4400028093/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4400028093"
+      ],
+      "raw_department": "Other, Information Technology, and Management",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:especialista de inteligencia e relacionamento com autoridades sao paulo sp|sao paulo"
     },
     {
-      "id": "5944fb77ecf05997",
+      "id": "f3fd2d17ee52b112",
       "external_id": "4386495083",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Executivo(a) de Vendas Externas - Belo Horizonte",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "Belo Horizonte, Minas Gerais, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4386495083/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4386495083"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:executivo a de vendas externas belo horizonte|belo horizonte"
     },
     {
-      "id": "5df78220722a4e23",
+      "id": "551173bc71205a74",
       "external_id": "4386488263",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Executivo(a) de Vendas Externas - Rio de Janeiro",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4386488263/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4386488263"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:executivo a de vendas externas rio de janeiro|rio de janeiro"
     },
     {
-      "id": "2fe6cf4a6f6c942b",
+      "id": "3250f8394d5f4309",
       "external_id": "4393808199",
       "source": "linkedin",
       "company_slug": "gabriel",
       "title": "Executivo(a) de Vendas Externas - São Paulo",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4393808199/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4393808199"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:gabriel:executivo a de vendas externas sao paulo|sao paulo"
     },
     {
-      "id": "5b1958eb6c454e25",
+      "id": "5348c0e0a2f3fe3f",
       "external_id": "4367275001",
       "source": "linkedin",
       "company_slug": "lastlink",
@@ -705,100 +1051,134 @@
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4367275001"
+      ],
+      "raw_department": "Legal",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:lastlink:advogado a compliance e empresarial|brazil"
     },
     {
-      "id": "23f40125581ad1fd",
+      "id": "7abd05cf0a269965",
       "external_id": "4393035167",
       "source": "linkedin",
       "company_slug": "lastlink",
       "title": "Analista Sênior de Eventos & Brand Experience",
-      "department": "Business Development and Sales",
+      "department": "Marketing",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4393035167/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4393035167",
+        "4399577168"
+      ],
+      "raw_department": "Business Development and Sales",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:lastlink:analista senior de eventos brand experience|sao paulo"
     },
     {
-      "id": "4c42117c627b7abe",
-      "external_id": "4399577168",
-      "source": "linkedin",
-      "company_slug": "lastlink",
-      "title": "Analista Sênior de Eventos & Brand Experience",
-      "department": "Marketing",
-      "location": "São Paulo, Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4399577168/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-11T17:12:29Z",
-      "last_seen_at": "2026-05-11T17:12:29Z",
-      "is_active": true
-    },
-    {
-      "id": "c87b3d489e44ef03",
+      "id": "93e0983391eebe6f",
       "external_id": "4395466705",
       "source": "linkedin",
       "company_slug": "lastlink",
       "title": "Analista de Suporte ao Cliente Pleno [N2]",
-      "department": "Other",
+      "department": "Customer Success",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4395466705/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4395466705"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:lastlink:analista de suporte ao cliente pleno n2|brazil"
     },
     {
-      "id": "fd42a7d3a824df4c",
+      "id": "d92e2bb2b25af6cc",
       "external_id": "4389579459",
       "source": "linkedin",
       "company_slug": "lastlink",
       "title": "Revenue Operations Specialist",
-      "department": "Management and Manufacturing",
+      "department": "Operations",
       "location": "Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4389579459/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4389579459"
+      ],
+      "raw_department": "Management and Manufacturing",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:lastlink:revenue operations specialist|brazil"
     },
     {
-      "id": "dfc3f9027f49fd6d",
+      "id": "ed39d3f8bc0b4027",
       "external_id": "4379477400",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Analista de Inteligência Comercial Sênior",
-      "department": "Research, Analyst, and Information Technology",
+      "department": "Data",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4379477400/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4379477400"
+      ],
+      "raw_department": "Research, Analyst, and Information Technology",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:analista de inteligencia comercial senior|sao paulo"
     },
     {
-      "id": "7f8ddf35c48f6666",
+      "id": "13eec719f2609b98",
       "external_id": "4376444396",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Analista de Treinamento Sênior",
-      "department": "Human Resources",
+      "department": "People",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4376444396/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-11T17:12:29Z",
       "last_seen_at": "2026-05-11T17:12:29Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4376444396"
+      ],
+      "raw_department": "Human Resources",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:analista de treinamento senior|sao paulo"
     },
     {
-      "id": "c84958c62bb490e0",
+      "id": "8ba2c1839d12e454",
       "external_id": "4404453209",
       "source": "linkedin",
       "company_slug": "sallve",
@@ -810,100 +1190,156 @@
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4404453209"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:especialista em bizops|sao paulo"
     },
     {
-      "id": "1e66d016f4a26707",
+      "id": "115660c6318ce8c2",
       "external_id": "4384267502",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Especialista em Pesquisa Clínica",
-      "department": "Marketing and Sales",
+      "department": "Marketing",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4384267502/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-11T17:12:29Z",
       "last_seen_at": "2026-05-11T17:12:29Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4384267502"
+      ],
+      "raw_department": "Marketing and Sales",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:especialista em pesquisa clinica|sao paulo"
     },
     {
-      "id": "cabf386d32aedc6b",
+      "id": "73c09dd79b86077a",
       "external_id": "4407083532",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Executivo Key Accounts - Perfumaria e Novos Canais",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "Greater Porto Alegre",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4407083532/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4407083532"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:executivo key accounts perfumaria e novos canais|greater porto alegre"
     },
     {
-      "id": "5131aca8963b31ef",
-      "external_id": "4407090528",
-      "source": "linkedin",
-      "company_slug": "sallve",
-      "title": "Executivo de Contas [Farma Indireto]",
-      "department": "Sales and Business Development",
-      "location": "São Paulo, São Paulo, Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4407090528/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-18T00:02:59Z",
-      "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
-    },
-    {
-      "id": "83c29e2845e49100",
+      "id": "47fdbc2d74715e3d",
       "external_id": "4397298773",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Executivo de Contas [Farma Indireto]",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "Belo Horizonte, Minas Gerais, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4397298773/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4397298773"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:executivo de contas farma indireto|belo horizonte"
     },
     {
-      "id": "b7d400b45a4e13fb",
+      "id": "2d1a5553fa9beb80",
       "external_id": "4385968309",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Executivo de Contas [Farma Indireto]",
-      "department": "Sales and Business Development",
+      "department": "Sales",
       "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4385968309/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4385968309"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:executivo de contas farma indireto|rio de janeiro"
     },
     {
-      "id": "3699131b985f6813",
+      "id": "f482cd82360c0466",
+      "external_id": "4407090528",
+      "source": "linkedin",
+      "company_slug": "sallve",
+      "title": "Executivo de Contas [Farma Indireto]",
+      "department": "Sales",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4407090528/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-05-11T15:37:13Z",
+      "updated_at": "2026-05-18T00:02:59Z",
+      "last_seen_at": "2026-05-18T00:02:59Z",
+      "is_active": true,
+      "external_ids": [
+        "4407090528"
+      ],
+      "raw_department": "Sales and Business Development",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:executivo de contas farma indireto|sao paulo"
+    },
+    {
+      "id": "608445ec94ca8e54",
       "external_id": "4373625318",
       "source": "linkedin",
       "company_slug": "sallve",
       "title": "Gerente de E-commerce e CRM",
-      "department": "Product Management and Marketing",
+      "department": "Marketing",
       "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
       "url": "https://www.linkedin.com/jobs/view/4373625318/?utm_source=astella&utm_medium=jobs_board",
       "created_at": "2026-05-11T15:37:13Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4373625318"
+      ],
+      "raw_department": "Product Management and Marketing",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "posted_at": "2026-05-11T15:37:13Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:gerente de e commerce e crm|sao paulo"
     },
     {
-      "id": "f482ce9dde2519e5",
+      "id": "e7268140c788ed8f",
       "external_id": "4414734891",
       "source": "linkedin",
       "company_slug": "sallve",
@@ -915,7 +1351,15 @@
       "created_at": "2026-05-18T00:02:59Z",
       "updated_at": "2026-05-18T00:02:59Z",
       "last_seen_at": "2026-05-18T00:02:59Z",
-      "is_active": true
+      "is_active": true,
+      "external_ids": [
+        "4414734891"
+      ],
+      "raw_department": "Other",
+      "first_seen_at": "2026-05-18T00:02:59Z",
+      "posted_at": "2026-05-18T00:02:59Z",
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:gerente de marketplaces|sao paulo"
     }
   ],
   "companies": [

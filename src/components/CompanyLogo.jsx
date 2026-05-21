@@ -24,6 +24,12 @@ const COLOR_BY_SLUG = {
   'lastlink': '#1e5e40',
 }
 
+const SIZE_PX = {
+  sm: 28,
+  md: 52,
+  lg: 64,
+}
+
 export default function CompanyLogo({ id, size = 'md' }) {
   const c = COMPANY[id]
   const [errored, setErrored] = useState(false)
@@ -32,17 +38,32 @@ export default function CompanyLogo({ id, size = 'md' }) {
   const url = LOGO_FILES[id]
   const color = COLOR_BY_SLUG[id] || '#225379'
   const cls = `jlogo jlogo-${size}`
+  const sizePx = SIZE_PX[size] || SIZE_PX.md
+  const logoStyle = {
+    width: sizePx,
+    height: sizePx,
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+    overflow: 'hidden',
+  }
 
   if (!url || errored) {
     return (
-      <span className={`${cls} jlogo-fallback`} style={{ background: color }}>
+      <span className={`${cls} jlogo-fallback`} style={{ ...logoStyle, background: color }}>
         {initials}
       </span>
     )
   }
   return (
-    <span className={cls}>
-      <img src={url} alt={c.name} onError={() => setErrored(true)} />
+    <span className={cls} style={logoStyle}>
+      <img
+        src={url}
+        alt={c.name}
+        onError={() => setErrored(true)}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
     </span>
   )
 }

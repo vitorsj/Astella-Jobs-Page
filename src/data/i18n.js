@@ -2,15 +2,17 @@ export const I18N = {
   pt: {
     tagline: "Vagas no portfólio Astella.",
     sub: "Oportunidades nas empresas que investimos. Atualizadas diariamente do LinkedIn.",
-    search: "Buscar por título, empresa ou stack…",
-    filters: "Filtros", all: "Todas", company: "Empresa", role: "Função",
+    search: "Procure por título, empresa ou área",
+    filters: "Filtros", all: "Todas", company: "Empresa", role: "Área",
     level: "Senioridade", location: "Localização", mode: "Modelo",
     clear: "Limpar", apply: "Aplicar", open: "Abrir vaga", view_all: "Ver todas",
     jobs: "vagas", posted: "publicada há", sort_recent: "Mais recentes",
     levels: { Junior: "Júnior", Mid: "Pleno", Senior: "Sênior", Lead: "Liderança" },
     areas: {
       Engineering: "Engenharia", Product: "Produto", Design: "Design",
-      Data: "Dados", Sales: "Vendas", CS: "CS", Operations: "Operações", Marketing: "Marketing"
+      Data: "Dados", Sales: "Vendas", "Customer Success": "Customer Success",
+      Operations: "Operações", Marketing: "Marketing", Finance: "Financeiro",
+      People: "Pessoas", Legal: "Jurídico", Other: "Outras"
     },
     modes: { Remoto: "Remoto", Híbrido: "Híbrido", Presencial: "Presencial" },
     nav: { jobs: "Vagas", companies: "Empresas", about: "Sobre", contact: "Contato" },
@@ -30,15 +32,17 @@ export const I18N = {
   en: {
     tagline: "Jobs in the Astella portfolio.",
     sub: "Roles at the companies we back. Synced daily from LinkedIn.",
-    search: "Search by title, company or stack…",
-    filters: "Filters", all: "All", company: "Company", role: "Function",
+    search: "Search by title, company or area",
+    filters: "Filters", all: "All", company: "Company", role: "Area",
     level: "Seniority", location: "Location", mode: "Work mode",
     clear: "Clear", apply: "Apply", open: "Open job", view_all: "View all",
     jobs: "jobs", posted: "posted", sort_recent: "Most recent",
     levels: { Junior: "Junior", Mid: "Mid", Senior: "Senior", Lead: "Lead" },
     areas: {
       Engineering: "Engineering", Product: "Product", Design: "Design",
-      Data: "Data", Sales: "Sales", CS: "CS", Operations: "Operations", Marketing: "Marketing"
+      Data: "Data", Sales: "Sales", "Customer Success": "Customer Success",
+      Operations: "Operations", Marketing: "Marketing", Finance: "Finance",
+      People: "People", Legal: "Legal", Other: "Other"
     },
     modes: { Remoto: "Remote", Híbrido: "Hybrid", Presencial: "On-site" },
     nav: { jobs: "Jobs", companies: "Companies", about: "About", contact: "Contact" },

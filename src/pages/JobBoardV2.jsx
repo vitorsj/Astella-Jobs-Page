@@ -21,7 +21,12 @@ export default function JobBoardV2() {
 
   const filteredJobs = useMemo(() => JOBS.filter(j => {
     const q = search.toLowerCase()
-    if (q && !titleOf(j).toLowerCase().includes(q) && !COMPANY[j.company].name.toLowerCase().includes(q)) return false
+    if (
+      q &&
+      !titleOf(j).toLowerCase().includes(q) &&
+      !COMPANY[j.company].name.toLowerCase().includes(q) &&
+      !j.area.toLowerCase().includes(q)
+    ) return false
     if (selCompany && j.company !== selCompany) return false
     if (selArea    && j.area    !== selArea)    return false
     if (selLevel   && j.level   !== selLevel)   return false
@@ -278,7 +283,7 @@ const CSS = `
   --muted:      rgba(26,26,26,0.46);
   --line:       rgba(26,26,26,0.09);
   --line-med:   rgba(26,26,26,0.14);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-intelo);
   background: var(--paper);
   color: var(--ink);
   font-size: 14px;
@@ -301,7 +306,7 @@ const CSS = `
 }
 .jbv2-mark img { width: 100%; height: 100%; object-fit: contain; }
 .jbv2-wordmark {
-  font-family: 'Kalam', cursive; font-weight: 700;
+  font-family: var(--font-intelo); font-weight: 700;
   font-size: 15.5px; color: var(--white); letter-spacing: 0.02em;
 }
 .jbv2-wordmark em { color: var(--teal); font-style: normal; }
@@ -320,7 +325,7 @@ const CSS = `
   background: transparent;
   border: 1px solid rgba(255,255,255,0.12);
   padding: 3px 10px; cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-intelo);
   transition: all .15s;
 }
 .jbv2-lang:hover { border-color: var(--teal); color: var(--teal); }
@@ -356,7 +361,7 @@ const CSS = `
   content: ''; display: block; width: 22px; height: 1.5px; background: var(--teal);
 }
 .jbv2-h1 {
-  font-family: 'Caveat', cursive; font-weight: 700;
+  font-family: var(--font-intelo); font-weight: 700;
   font-size: 52px; line-height: 1.02;
   color: var(--white); margin: 0 0 14px;
 }
@@ -372,7 +377,7 @@ const CSS = `
 }
 .jbv2-hstat:first-child { padding-right: 28px; border-left: none; padding-left: 0; }
 .jbv2-hstat-num {
-  font-family: 'Caveat', cursive; font-size: 46px; font-weight: 700;
+  font-family: var(--font-intelo); font-size: 46px; font-weight: 700;
   color: var(--white); line-height: 1;
 }
 .jbv2-hstat-label {
@@ -398,7 +403,7 @@ const CSS = `
 .jbv2-fsearch svg { color: var(--muted); width: 14px; height: 14px; flex-shrink: 0; }
 .jbv2-fsearch input {
   flex: 1; border: none; background: transparent;
-  font-family: 'DM Sans', sans-serif; font-size: 13.5px;
+  font-family: var(--font-intelo); font-size: 13.5px;
   color: var(--ink); outline: none;
 }
 .jbv2-fsearch input::placeholder { color: var(--muted); }
@@ -408,7 +413,7 @@ const CSS = `
   padding: 0 16px;
   border-right: 1.5px solid var(--line);
   background: transparent;
-  font-family: 'DM Sans', sans-serif; font-size: 13px;
+  font-family: var(--font-intelo); font-size: 13px;
   color: var(--muted);
   cursor: pointer; transition: color .12s, background .12s;
   white-space: nowrap;
@@ -438,7 +443,7 @@ const CSS = `
   display: flex; align-items: baseline; justify-content: space-between;
 }
 .jbv2-section-title {
-  font-family: 'Caveat', cursive; font-size: 22px; font-weight: 700;
+  font-family: var(--font-intelo); font-size: 22px; font-weight: 700;
   color: var(--ink);
 }
 .jbv2-section-meta { font-size: 12px; color: var(--muted); }
@@ -450,7 +455,7 @@ const CSS = `
   border-top: 1.5px solid var(--line);
 }
 .jbv2-co-name {
-  font-family: 'Kalam', cursive; font-size: 15.5px; font-weight: 700;
+  font-family: var(--font-intelo); font-size: 15.5px; font-weight: 700;
   color: var(--ink);
 }
 .jbv2-co-count {
@@ -486,7 +491,7 @@ const CSS = `
 .jlogo img { width: 100%; height: 100%; object-fit: cover; }
 .jlogo.jlogo-fallback {
   border: none;
-  font-family: 'Kalam', cursive; font-weight: 700;
+  font-family: var(--font-intelo); font-weight: 700;
   font-size: 17px; color: var(--white);
 }
 
@@ -516,7 +521,7 @@ const CSS = `
   display: inline-flex; align-items: center; gap: 5px;
   height: 30px; padding: 0 13px;
   background: var(--navy); color: var(--white);
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-intelo);
   font-size: 12px; font-weight: 500;
   white-space: nowrap;
   transition: background .15s;
@@ -529,7 +534,7 @@ const CSS = `
   font-size: 12px; font-weight: 500;
   color: var(--teal-dark);
   background: none; border: none; cursor: pointer;
-  font-family: 'DM Sans', sans-serif; padding: 0;
+  font-family: var(--font-intelo); padding: 0;
   transition: color .12s;
 }
 .jbv2-expand-btn:hover { color: var(--navy); }

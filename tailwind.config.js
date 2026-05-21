@@ -11,9 +11,9 @@ export default {
         paper2: "#F2F0E8",
       },
       fontFamily: {
-        hand:  ["'Kalam'", "'Caveat'", "'Architects Daughter'", "cursive"],
-        hand2: ["'Caveat'", "cursive"],
-        body:  ["'Architects Daughter'", "'Kalam'", "cursive"],
+        hand:  ["'Intelo'", "system-ui", "sans-serif"],
+        hand2: ["'Intelo'", "system-ui", "sans-serif"],
+        body:  ["'Intelo'", "system-ui", "sans-serif"],
       },
       borderWidth: { '1.5': '1.5px' },
     },

@@ -23,7 +23,7 @@ function normalizeMode(job) {
 
 function postedLabel(job) {
   const generatedAt = new Date(jobsPayload.generated_at)
-  const createdAt = new Date(job.created_at)
+  const createdAt = new Date(job.posted_at || job.created_at)
   const days = Math.max(1, Math.round((generatedAt - createdAt) / 86400000))
   return days === 1 ? '1d' : `${days}d`
 }
@@ -48,6 +48,7 @@ export const JOBS = jobsPayload.jobs
     company: job.company_slug,
     title: { pt: job.title, en: job.title },
     area: job.department,
+    rawArea: job.raw_department || job.department,
     level: inferLevel(job.title),
     loc: job.location,
     mode: normalizeMode(job),
@@ -55,6 +56,7 @@ export const JOBS = jobsPayload.jobs
     posted: postedLabel(job),
     url: job.url,
     createdAt: job.created_at,
+    postedAt: job.posted_at,
     lastSeenAt: job.last_seen_at,
   }))
 

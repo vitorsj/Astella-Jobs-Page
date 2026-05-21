@@ -7,7 +7,9 @@ import html
 import json
 import logging
 import os
+import re
 import time
+import unicodedata
 from copy import deepcopy
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
@@ -28,6 +30,7 @@ COMPANY_PAGES_DIR = ROOT / "public" / "empresas"
 JSONLD_PATH = ROOT / "public" / "job-postings.jsonld"
 UTM_PARAMS = {"utm_source": "astella", "utm_medium": "jobs_board"}
 SOFT_DELETE_DAYS = 7
+STALE_POSTED_DAYS = 100
 APIFY_BASE_URL = "https://api.apify.com/v2"
 APIFY_ACTOR_ID = "hKByXkMQaC5Qt9UMN"
 APIFY_POLL_INTERVAL_S = 5
@@ -76,9 +79,99 @@ def stable_json(payload: Any) -> str:
     return json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 
 
-def job_id(source: str, company_slug: str, external_id: str) -> str:
-    raw = f"{source}:{company_slug}:{external_id}".encode("utf-8")
+def normalize_text(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value or "")
+    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
+    return re.sub(r"[^a-z0-9]+", " ", ascii_text.lower()).strip()
+
+
+def normalize_title_key(title: str) -> str:
+    return normalize_text(title)
+
+
+def normalize_location_key(location: str) -> str:
+    text = normalize_text(location)
+    if not text or "remot" in text:
+        return "remote"
+    first_part = normalize_text((location or "").split(",")[0])
+    return first_part or text
+
+
+def job_unique_key(title: str, location: str) -> str:
+    return f"{normalize_title_key(title)}|{normalize_location_key(location)}"
+
+
+def canonical_job_key(job: dict[str, Any]) -> str:
+    return ":".join(
+        [
+            job.get("source", "linkedin"),
+            job["company_slug"],
+            job_unique_key(job["title"], job["location"]),
+        ]
+    )
+
+
+def job_id(source: str, company_slug: str, unique_key: str) -> str:
+    raw = f"{source}:{company_slug}:{unique_key}".encode("utf-8")
     return hashlib.sha256(raw).hexdigest()[:16]
+
+
+AREA_RULES = [
+    ("Design", [r"\bdesign", r"\bdesigner", r"\bux\b", r"\bui\b", r"creative", r"art/creative"]),
+    ("Marketing", [r"marketing", r"brand", r"growth", r"eventos?", r"events?", r"performance"]),
+    ("Product", [r"product", r"produto", r"\bpm\b"]),
+    ("Data", [r"\bdata\b", r"dados", r"analytics?", r"analyst", r"research", r"bi\b"]),
+    ("Engineering", [r"engineering", r"engenharia", r"software", r"developer", r"frontend", r"backend", r"technology", r"\bit\b"]),
+    ("Customer Success", [r"customer success", r"\bcs\b", r"customer", r"support", r"suporte"]),
+    ("Sales", [r"sales", r"vendas", r"comercial", r"business development", r"account executive"]),
+    ("People", [r"people", r"talent", r"recruit", r"rh\b", r"human resources"]),
+    ("Finance", [r"finance", r"financial", r"financ", r"accounting", r"contabil"]),
+    ("Legal", [r"legal", r"juridic"]),
+    ("Operations", [r"operations", r"operacoes", r"operações", r"logistic", r"quality", r"controle de qualidade"]),
+]
+
+
+def canonical_area(title: str, department: str | None) -> str:
+    haystack = normalize_text(f"{title} {department or ''}")
+    for area, patterns in AREA_RULES:
+        if any(re.search(pattern, haystack) for pattern in patterns):
+            return area
+    return "Other"
+
+
+def parse_source_posted_at(value: Any, now: datetime) -> str | None:
+    if not value:
+        return None
+    if isinstance(value, datetime):
+        return isoformat_z(value)
+    text = str(value).strip()
+    if not text:
+        return None
+
+    try:
+        return isoformat_z(parse_iso(text))
+    except ValueError:
+        pass
+
+    lower = text.lower()
+    if lower in {"today", "just now", "agora", "hoje"}:
+        return isoformat_z(now)
+
+    match = re.search(r"(\d+)\s*(day|days|dia|dias|week|weeks|semana|semanas|month|months|mes|meses|mês|year|years|ano|anos)", lower)
+    if not match:
+        return None
+
+    amount = int(match.group(1))
+    unit = match.group(2)
+    if unit.startswith(("day", "dia")):
+        days = amount
+    elif unit.startswith(("week", "semana")):
+        days = amount * 7
+    elif unit.startswith(("month", "mes", "mês")):
+        days = amount * 30
+    else:
+        days = amount * 365
+    return isoformat_z(now - timedelta(days=days))
 
 
 def add_utm(url: str) -> str:
@@ -90,22 +183,33 @@ def add_utm(url: str) -> str:
 
 def normalize_job(raw: dict[str, Any], company: dict[str, Any], now: datetime) -> dict[str, Any]:
     external_id = str(raw["external_id"])
-    created_at = raw.get("created_at") or isoformat_z(now)
+    first_seen_at = raw.get("first_seen_at") or isoformat_z(now)
+    posted_at = parse_source_posted_at(raw.get("posted_at") or raw.get("created_at"), now)
+    created_at = posted_at or first_seen_at
     updated_at = raw.get("updated_at") or isoformat_z(now)
+    raw_department = raw.get("department") or "Operations"
+    source = "linkedin"
+    unique_key = job_unique_key(raw["title"], raw.get("location") or "Remoto")
     return {
-        "id": job_id("linkedin", company["slug"], external_id),
+        "id": job_id(source, company["slug"], unique_key),
         "external_id": external_id,
-        "source": "linkedin",
+        "external_ids": [external_id],
+        "source": source,
         "company_slug": company["slug"],
         "title": raw["title"],
-        "department": raw.get("department") or "Operations",
+        "department": canonical_area(raw["title"], raw_department),
+        "raw_department": raw_department,
         "location": raw.get("location") or "Remoto",
         "remote": bool(raw.get("remote", False)),
         "url": add_utm(raw["url"]),
         "created_at": created_at,
+        "posted_at": posted_at,
+        "first_seen_at": first_seen_at,
         "updated_at": updated_at,
         "last_seen_at": isoformat_z(now),
         "is_active": True,
+        "inactive_reason": None,
+        "canonical_key": f"{source}:{company['slug']}:{unique_key}",
     }
 
 
@@ -119,7 +223,8 @@ def _map_apify_raw(item: dict[str, Any]) -> dict[str, Any]:
         "location": location,
         "remote": "remot" in location.lower(),
         "url": f"https://www.linkedin.com/jobs/view/{external_id}/",
-        "created_at": None,  # postedAt do Apify é texto relativo, não ISO
+        "created_at": None,
+        "posted_at": item.get("postedAt"),
     }
 
 
@@ -213,7 +318,7 @@ def fetch_all_company_jobs(
     fetch_fn_or_fixtures,  # callable (company) -> list[dict] OU dict de fixtures (legado)
     now: datetime,
     error_slugs: set[str] | None = None,
-) -> tuple[list[dict[str, Any]], list[str]]:
+) -> tuple[list[dict[str, Any]], list[str], set[str]]:
     if callable(fetch_fn_or_fixtures):
         fetch_fn = fetch_fn_or_fixtures
     else:
@@ -224,15 +329,73 @@ def fetch_all_company_jobs(
 
     fetched: list[dict[str, Any]] = []
     logs: list[str] = []
+    successful_company_slugs: set[str] = set()
     for company in companies:
         try:
             company_jobs = fetch_fn(company)
             fetched.extend(company_jobs)
+            successful_company_slugs.add(company["slug"])
             logs.append(f"ok {company['slug']}: {len(company_jobs)} jobs")
         except SyncError as exc:
             logs.append(f"skip {company['slug']}: {exc}")
             logging.warning("Skipping %s: %s", company["slug"], exc)
-    return fetched, logs
+    return fetched, logs, successful_company_slugs
+
+
+def _safe_min_iso(*values: str | None) -> str | None:
+    parsed = [parse_iso(value) for value in values if value]
+    return isoformat_z(min(parsed)) if parsed else None
+
+
+def _safe_max_iso(*values: str | None) -> str | None:
+    parsed = [parse_iso(value) for value in values if value]
+    return isoformat_z(max(parsed)) if parsed else None
+
+
+def prepare_job_record(job: dict[str, Any]) -> dict[str, Any]:
+    prepared = deepcopy(job)
+    source = prepared.get("source", "linkedin")
+    external_id = str(prepared.get("external_id", ""))
+    external_ids = prepared.get("external_ids") or ([external_id] if external_id else [])
+    raw_department = prepared.get("raw_department") or prepared.get("department") or "Operations"
+    first_seen_at = prepared.get("first_seen_at") or prepared.get("created_at") or prepared.get("last_seen_at")
+    posted_at = prepared.get("posted_at") or parse_source_posted_at(prepared.get("created_at"), parse_iso(first_seen_at))
+    unique_key = job_unique_key(prepared["title"], prepared.get("location") or "Remoto")
+
+    prepared["source"] = source
+    prepared["external_id"] = external_id
+    prepared["external_ids"] = sorted({str(value) for value in external_ids if value})
+    prepared["raw_department"] = raw_department
+    prepared["department"] = canonical_area(prepared["title"], raw_department)
+    prepared["location"] = prepared.get("location") or "Remoto"
+    prepared["remote"] = bool(prepared.get("remote", False))
+    prepared["first_seen_at"] = first_seen_at
+    prepared["posted_at"] = posted_at
+    prepared["created_at"] = posted_at or first_seen_at
+    prepared["inactive_reason"] = prepared.get("inactive_reason") if not prepared.get("is_active", True) else None
+    prepared["canonical_key"] = f"{source}:{prepared['company_slug']}:{unique_key}"
+    prepared["id"] = job_id(source, prepared["company_slug"], unique_key)
+    return prepared
+
+
+def merge_job_records(current: dict[str, Any], incoming: dict[str, Any]) -> dict[str, Any]:
+    current_seen = parse_iso(current.get("last_seen_at") or current.get("updated_at") or current["created_at"])
+    incoming_seen = parse_iso(incoming.get("last_seen_at") or incoming.get("updated_at") or incoming["created_at"])
+    base = deepcopy(incoming if incoming_seen >= current_seen else current)
+    external_ids = set(current.get("external_ids", [])) | set(incoming.get("external_ids", []))
+    if current.get("external_id"):
+        external_ids.add(str(current["external_id"]))
+    if incoming.get("external_id"):
+        external_ids.add(str(incoming["external_id"]))
+
+    base["external_ids"] = sorted(external_ids)
+    base["first_seen_at"] = _safe_min_iso(current.get("first_seen_at"), incoming.get("first_seen_at"))
+    base["posted_at"] = _safe_min_iso(current.get("posted_at"), incoming.get("posted_at"))
+    base["created_at"] = base.get("posted_at") or base.get("first_seen_at")
+    base["updated_at"] = _safe_max_iso(current.get("updated_at"), incoming.get("updated_at"))
+    base["last_seen_at"] = _safe_max_iso(current.get("last_seen_at"), incoming.get("last_seen_at"))
+    base["department"] = canonical_area(base["title"], base.get("raw_department") or base.get("department"))
+    return base
 
 
 def merge_jobs(
@@ -240,24 +403,41 @@ def merge_jobs(
     fetched_jobs: list[dict[str, Any]],
     now: datetime,
     total_fetched: int,
+    successful_company_slugs: set[str] | None = None,
 ) -> list[dict[str, Any]]:
-    by_id = {job["id"]: deepcopy(job) for job in existing_jobs}
+    by_key: dict[str, dict[str, Any]] = {}
+    for existing in existing_jobs:
+        prepared = prepare_job_record(existing)
+        current = by_key.get(prepared["canonical_key"])
+        by_key[prepared["canonical_key"]] = merge_job_records(current, prepared) if current else prepared
+
     for fetched in fetched_jobs:
-        current = by_id.get(fetched["id"], {})
-        merged = {**current, **fetched}
-        merged["created_at"] = current.get("created_at", fetched["created_at"])
+        prepared = prepare_job_record(fetched)
+        current = by_key.get(prepared["canonical_key"])
+        merged = merge_job_records(current, prepared) if current else prepared
         merged["updated_at"] = isoformat_z(now)
         merged["last_seen_at"] = isoformat_z(now)
         merged["is_active"] = True
-        by_id[fetched["id"]] = merged
+        merged["inactive_reason"] = None
+        by_key[prepared["canonical_key"]] = merged
 
-    if total_fetched > 0:
+    if successful_company_slugs is None and total_fetched > 0:
+        successful_company_slugs = {job["company_slug"] for job in by_key.values()}
+
+    if successful_company_slugs:
         expires_before = now - timedelta(days=SOFT_DELETE_DAYS)
-        for job in by_id.values():
-            if parse_iso(job["last_seen_at"]) < expires_before:
+        stale_before = now - timedelta(days=STALE_POSTED_DAYS)
+        for job in by_key.values():
+            if job["company_slug"] not in successful_company_slugs:
+                continue
+            if job.get("posted_at") and parse_iso(job["posted_at"]) < stale_before:
                 job["is_active"] = False
+                job["inactive_reason"] = "stale_posted_at"
+            elif parse_iso(job["last_seen_at"]) < expires_before:
+                job["is_active"] = False
+                job["inactive_reason"] = "missing_from_source"
 
-    return sorted(by_id.values(), key=lambda j: (not j["is_active"], j["company_slug"], j["title"]))
+    return sorted(by_key.values(), key=lambda j: (not j["is_active"], j["company_slug"], j["title"], j["location"]))
 
 
 def build_payload(companies: list[dict[str, Any]], jobs: list[dict[str, Any]], now: datetime) -> dict[str, Any]:
@@ -374,8 +554,14 @@ def run_sync(
         def fetch_fn(company: dict[str, Any]) -> list[dict[str, Any]]:
             return fetch_fake_jobs(company, fixtures, now, error_slugs)
 
-    fetched_jobs, logs = fetch_all_company_jobs(companies, fetch_fn, now)
-    merged_jobs = merge_jobs(existing_payload.get("jobs", []), fetched_jobs, now, len(fetched_jobs))
+    fetched_jobs, logs, successful_company_slugs = fetch_all_company_jobs(companies, fetch_fn, now)
+    merged_jobs = merge_jobs(
+        existing_payload.get("jobs", []),
+        fetched_jobs,
+        now,
+        len(fetched_jobs),
+        successful_company_slugs=successful_company_slugs,
+    )
     next_payload = build_payload(companies, merged_jobs, now)
     changed = stable_json(comparable_payload(existing_payload)) != stable_json(comparable_payload(next_payload))
 

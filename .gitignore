@@ -11,6 +11,7 @@ dist/
 # Local/editor files
 .DS_Store
 .claude/
+_INTELLO/
 
 # Logs
 *.log
