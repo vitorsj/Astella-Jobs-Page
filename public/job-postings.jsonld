@@ -3,8 +3,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Analista Fiscal Sênior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-06",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -26,33 +26,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Analista de Crédito Júnior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-18",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/"
-    },
-    "industry": "Sales",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4402166703/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Analista de Dados Pleno - Crédito Massificado",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-31",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -74,57 +50,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Analista de Operações Júnior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/"
-    },
-    "industry": "Operations",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4324648359/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Banco de Talentos",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/"
-    },
-    "industry": "People",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4323388541/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Business Development Representative",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-02-23",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -134,30 +62,6 @@
     "industry": "Sales",
     "directApply": false,
     "url": "https://www.linkedin.com/jobs/view/4388549338/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Closer Full Cycle",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/"
-    },
-    "industry": "Sales",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4323771433/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
@@ -195,8 +99,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Engineer Manager",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-27",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -218,9 +122,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Executivo(a) de Crescimento de Parcerias - Hunter",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "title": "Executivo(a) de Crescimento de Parcerias - Farmer",
+    "datePosted": "2026-05-19",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -229,7 +133,7 @@
     },
     "industry": "Sales",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4343924829/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4415980829/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
@@ -291,8 +195,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Group Product Manager",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-27",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -315,8 +219,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Key Account Executive",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-09",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -339,8 +243,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Product Designer Sênior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-05-05",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -363,8 +267,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Programa Trainee Cayena - 2026",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-05-07",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -387,8 +291,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Recrutador (a) Comercial - Closer",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-11",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -411,8 +315,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Senior QA",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-27",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -435,8 +339,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Senior Software Engineer",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-27",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -459,8 +363,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Software Engineer Junior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-27",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -483,8 +387,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Software Engineer Pleno",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-27",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -507,8 +411,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Supervisor de Vendas",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-02-26",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -530,57 +434,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Supervisor(a) de Operações e Melhoria Contínua",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-18",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/"
-    },
-    "industry": "Operations",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4402767689/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Supervisor(a) de Vendas",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/"
-    },
-    "industry": "Sales",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4377978814/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Advogada(o) Júnior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-05-01",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -603,8 +459,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Analista de Marketing de Performance Sr.",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-02-24",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -627,8 +483,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Engineering Manager",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-17",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -651,8 +507,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas Sr.",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-02-13",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -675,8 +531,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Gerente de CS",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-05-08",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -686,30 +542,6 @@
     "industry": "Customer Success",
     "directApply": false,
     "url": "https://www.linkedin.com/jobs/view/4410867796/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Product Manager Staff",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Estoca",
-      "sameAs": "https://www.linkedin.com/company/estoca/"
-    },
-    "industry": "Marketing",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4360827230/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
@@ -1107,8 +939,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Analista Sênior de Eventos & Brand Experience",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-30",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1155,8 +987,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Revenue Operations Specialist",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-23",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1179,8 +1011,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Analista de Inteligência Comercial Sênior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-03",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1202,18 +1034,42 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Analista de Treinamento Sênior",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-18",
+    "title": "Analista de Logística Junior",
+    "datePosted": "2026-05-18",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
       "name": "Sallve",
       "sameAs": "https://www.linkedin.com/company/sallve/"
     },
-    "industry": "People",
+    "industry": "Operations",
     "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4376444396/?utm_source=astella&utm_medium=jobs_board",
+    "url": "https://www.linkedin.com/jobs/view/4415691476/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de Marketing de Produto e Inovação Sênior",
+    "datePosted": "2026-05-18",
+    "validThrough": "2026-05-28",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Sallve",
+      "sameAs": "https://www.linkedin.com/company/sallve/"
+    },
+    "industry": "Marketing",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4415701242/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
@@ -1227,8 +1083,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Especialista em BizOps",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-22",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1250,33 +1106,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Especialista em Pesquisa Clínica",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-18",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Sallve",
-      "sameAs": "https://www.linkedin.com/company/sallve/"
-    },
-    "industry": "Marketing",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4384267502/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Executivo Key Accounts - Perfumaria e Novos Canais",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-29",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1299,8 +1131,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Executivo de Contas [Farma Indireto]",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-09",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1323,8 +1155,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Executivo de Contas [Farma Indireto]",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-03-17",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1347,8 +1179,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Executivo de Contas [Farma Indireto]",
-    "datePosted": "2026-05-11",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-04-29",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1395,8 +1227,8 @@
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "title": "Gerente de Marketplaces",
-    "datePosted": "2026-05-18",
-    "validThrough": "2026-05-25",
+    "datePosted": "2026-05-14",
+    "validThrough": "2026-05-28",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
