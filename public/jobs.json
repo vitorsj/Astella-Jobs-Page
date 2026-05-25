@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-05-21T17:51:56Z",
-  "total_active": 31,
+  "generated_at": "2026-05-25T00:01:52Z",
+  "total_active": 28,
   "jobs": [
     {
       "id": "993fafc136bc1a12",
@@ -19,34 +19,11 @@
       "created_at": "2026-03-06T18:00:13Z",
       "posted_at": "2026-03-06T18:00:13Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:analista fiscal senior|sao paulo"
-    },
-    {
-      "id": "bbc63b6cc3460b29",
-      "external_id": "4392492586",
-      "external_ids": [
-        "4392492586"
-      ],
-      "source": "linkedin",
-      "company_slug": "cayena",
-      "title": "Analista de Dados Pleno - Crédito Massificado",
-      "department": "Data",
-      "raw_department": "Information Technology",
-      "location": "São Paulo, São Paulo, Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4392492586/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-03-31T00:00:00Z",
-      "posted_at": "2026-03-31T00:00:00Z",
-      "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
-      "is_active": true,
-      "inactive_reason": null,
-      "canonical_key": "linkedin:cayena:analista de dados pleno credito massificado|sao paulo"
     },
     {
       "id": "3782a9802eb9a56e",
@@ -65,34 +42,34 @@
       "created_at": "2026-02-23T19:10:45Z",
       "posted_at": "2026-02-23T19:10:45Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:business development representative|sao paulo"
     },
     {
-      "id": "9aa30a48fc4a5515",
-      "external_id": "4406226538",
+      "id": "a2db4354bf6319a9",
+      "external_id": "4414024551",
       "external_ids": [
-        "4406226538"
+        "4414024551"
       ],
       "source": "linkedin",
       "company_slug": "cayena",
-      "title": "Engineer Manager",
-      "department": "Engineering",
-      "raw_department": "Engineering and Information Technology",
-      "location": "São Paulo, São Paulo, Brazil",
+      "title": "Consultor de vendas",
+      "department": "Sales",
+      "raw_department": "Sales and Business Development",
+      "location": "Greater São Paulo Area",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4406226538/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-04-27T00:00:00Z",
-      "posted_at": "2026-04-27T00:00:00Z",
-      "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "url": "https://www.linkedin.com/jobs/view/4414024551/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-05-21T18:57:24Z",
+      "posted_at": "2026-05-21T18:57:24Z",
+      "first_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
-      "canonical_key": "linkedin:cayena:engineer manager|sao paulo"
+      "canonical_key": "linkedin:cayena:consultor de vendas|greater sao paulo area"
     },
     {
       "id": "5cbaf2d1df6d5e39",
@@ -111,8 +88,8 @@
       "created_at": "2026-05-19T00:00:00Z",
       "posted_at": "2026-05-19T00:00:00Z",
       "first_seen_at": "2026-05-21T17:41:14Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:executivo a de crescimento de parcerias farmer|sao paulo"
@@ -134,8 +111,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:group product manager|sao paulo"
@@ -157,8 +134,8 @@
       "created_at": "2026-03-09T00:00:00Z",
       "posted_at": "2026-03-09T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:key account executive|sao paulo"
@@ -181,8 +158,8 @@
       "created_at": "2026-05-05T00:00:00Z",
       "posted_at": "2026-05-05T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:product designer senior|sao paulo"
@@ -204,8 +181,8 @@
       "created_at": "2026-05-07T00:00:00Z",
       "posted_at": "2026-05-07T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:programa trainee cayena 2026|sao paulo"
@@ -227,8 +204,8 @@
       "created_at": "2026-04-11T18:00:13Z",
       "posted_at": "2026-04-11T18:00:13Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:recrutador a comercial closer|sao paulo"
@@ -250,8 +227,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:senior qa|brazil"
@@ -273,34 +250,11 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:senior software engineer|brazil"
-    },
-    {
-      "id": "f02e397ad6b1cc05",
-      "external_id": "4406233400",
-      "external_ids": [
-        "4406233400"
-      ],
-      "source": "linkedin",
-      "company_slug": "cayena",
-      "title": "Software Engineer Junior",
-      "department": "Engineering",
-      "raw_department": "Engineering and Information Technology",
-      "location": "Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4406233400/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-04-27T00:00:00Z",
-      "posted_at": "2026-04-27T00:00:00Z",
-      "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
-      "is_active": true,
-      "inactive_reason": null,
-      "canonical_key": "linkedin:cayena:software engineer junior|brazil"
     },
     {
       "id": "473808b16a5eb2ad",
@@ -319,8 +273,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:software engineer pleno|brazil"
@@ -342,8 +296,8 @@
       "created_at": "2026-02-26T23:59:58Z",
       "posted_at": "2026-02-26T23:59:58Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:supervisor de vendas|sao paulo"
@@ -365,8 +319,8 @@
       "created_at": "2026-05-01T00:54:18Z",
       "posted_at": "2026-05-01T00:54:18Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:advogada o junior|sao paulo"
@@ -388,8 +342,8 @@
       "created_at": "2026-02-24T00:54:30Z",
       "posted_at": "2026-02-24T00:54:30Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:analista de marketing de performance sr|sao paulo"
@@ -411,34 +365,11 @@
       "created_at": "2026-04-17T00:58:49Z",
       "posted_at": "2026-04-17T00:58:49Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:engineering manager|sao paulo"
-    },
-    {
-      "id": "6353a1102a40a437",
-      "external_id": "4371579717",
-      "external_ids": [
-        "4371579717"
-      ],
-      "source": "linkedin",
-      "company_slug": "estoca",
-      "title": "Executivo(a) de Vendas Sr.",
-      "department": "Sales",
-      "raw_department": "Sales and Business Development",
-      "location": "São Paulo, São Paulo, Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4371579717/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-02-13T00:55:19Z",
-      "posted_at": "2026-02-13T00:55:19Z",
-      "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
-      "is_active": true,
-      "inactive_reason": null,
-      "canonical_key": "linkedin:estoca:executivo a de vendas sr|sao paulo"
     },
     {
       "id": "85506e9a26f93810",
@@ -457,8 +388,8 @@
       "created_at": "2026-05-08T00:54:16Z",
       "posted_at": "2026-05-08T00:54:16Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:gerente de cs|sao paulo"
@@ -481,34 +412,11 @@
       "created_at": "2026-03-30T00:00:00Z",
       "posted_at": "2026-03-30T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:lastlink:analista senior de eventos brand experience|sao paulo"
-    },
-    {
-      "id": "d92e2bb2b25af6cc",
-      "external_id": "4389579459",
-      "external_ids": [
-        "4389579459"
-      ],
-      "source": "linkedin",
-      "company_slug": "lastlink",
-      "title": "Revenue Operations Specialist",
-      "department": "Operations",
-      "raw_department": "Management and Manufacturing",
-      "location": "Brazil",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/4389579459/?utm_source=astella&utm_medium=jobs_board",
-      "created_at": "2026-03-23T00:00:00Z",
-      "posted_at": "2026-03-23T00:00:00Z",
-      "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
-      "is_active": true,
-      "inactive_reason": null,
-      "canonical_key": "linkedin:lastlink:revenue operations specialist|brazil"
     },
     {
       "id": "ed39d3f8bc0b4027",
@@ -527,8 +435,8 @@
       "created_at": "2026-03-03T00:00:00Z",
       "posted_at": "2026-03-03T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de inteligencia comercial senior|sao paulo"
@@ -550,8 +458,8 @@
       "created_at": "2026-05-18T00:00:00Z",
       "posted_at": "2026-05-18T00:00:00Z",
       "first_seen_at": "2026-05-21T17:41:14Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de logistica junior|sao paulo"
@@ -573,11 +481,34 @@
       "created_at": "2026-05-18T00:00:00Z",
       "posted_at": "2026-05-18T00:00:00Z",
       "first_seen_at": "2026-05-21T17:41:14Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de marketing de produto e inovacao senior|sao paulo"
+    },
+    {
+      "id": "d88989ce6152d3c3",
+      "external_id": "4417508880",
+      "external_ids": [
+        "4417508880"
+      ],
+      "source": "linkedin",
+      "company_slug": "sallve",
+      "title": "Analista de TI Sênior",
+      "department": "Engineering",
+      "raw_department": "Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4417508880/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-05-22T00:00:00Z",
+      "posted_at": "2026-05-22T00:00:00Z",
+      "first_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
+      "is_active": true,
+      "inactive_reason": null,
+      "canonical_key": "linkedin:sallve:analista de ti senior|sao paulo"
     },
     {
       "id": "8ba2c1839d12e454",
@@ -596,8 +527,8 @@
       "created_at": "2026-04-22T00:00:00Z",
       "posted_at": "2026-04-22T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:especialista em bizops|sao paulo"
@@ -619,8 +550,8 @@
       "created_at": "2026-04-29T00:00:00Z",
       "posted_at": "2026-04-29T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo key accounts perfumaria e novos canais|greater porto alegre"
@@ -642,8 +573,8 @@
       "created_at": "2026-04-09T00:00:00Z",
       "posted_at": "2026-04-09T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo de contas farma indireto|belo horizonte"
@@ -665,8 +596,8 @@
       "created_at": "2026-03-17T00:00:00Z",
       "posted_at": "2026-03-17T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo de contas farma indireto|rio de janeiro"
@@ -688,8 +619,8 @@
       "created_at": "2026-04-29T00:00:00Z",
       "posted_at": "2026-04-29T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo de contas farma indireto|sao paulo"
@@ -711,8 +642,8 @@
       "created_at": "2026-05-14T00:00:00Z",
       "posted_at": "2026-05-14T00:00:00Z",
       "first_seen_at": "2026-05-18T00:02:59Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:gerente de marketplaces|sao paulo"
@@ -741,6 +672,29 @@
       "canonical_key": "linkedin:cayena:analista de credito junior|sao paulo"
     },
     {
+      "id": "bbc63b6cc3460b29",
+      "external_id": "4392492586",
+      "external_ids": [
+        "4392492586"
+      ],
+      "source": "linkedin",
+      "company_slug": "cayena",
+      "title": "Analista de Dados Pleno - Crédito Massificado",
+      "department": "Data",
+      "raw_department": "Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4392492586/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-03-31T00:00:00Z",
+      "posted_at": "2026-03-31T00:00:00Z",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "updated_at": "2026-05-21T17:51:56Z",
+      "last_seen_at": "2026-05-21T17:51:56Z",
+      "is_active": false,
+      "inactive_reason": "missing_from_source",
+      "canonical_key": "linkedin:cayena:analista de dados pleno credito massificado|sao paulo"
+    },
+    {
       "id": "d188c7105a6da1b4",
       "external_id": "4324648359",
       "external_ids": [
@@ -757,8 +711,8 @@
       "created_at": "2025-11-28T00:00:00Z",
       "posted_at": "2025-11-28T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": false,
       "inactive_reason": "stale_posted_at",
       "canonical_key": "linkedin:cayena:analista de operacoes junior|sao paulo"
@@ -780,8 +734,8 @@
       "created_at": "2025-11-19T00:00:00Z",
       "posted_at": "2025-11-19T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": false,
       "inactive_reason": "stale_posted_at",
       "canonical_key": "linkedin:cayena:banco de talentos|sao paulo"
@@ -803,8 +757,8 @@
       "created_at": "2025-11-21T00:00:00Z",
       "posted_at": "2025-11-21T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": false,
       "inactive_reason": "stale_posted_at",
       "canonical_key": "linkedin:cayena:closer full cycle|sao paulo"
@@ -833,6 +787,29 @@
       "canonical_key": "linkedin:cayena:design manager|brazil"
     },
     {
+      "id": "9aa30a48fc4a5515",
+      "external_id": "4406226538",
+      "external_ids": [
+        "4406226538"
+      ],
+      "source": "linkedin",
+      "company_slug": "cayena",
+      "title": "Engineer Manager",
+      "department": "Engineering",
+      "raw_department": "Engineering and Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4406226538/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-04-27T00:00:00Z",
+      "posted_at": "2026-04-27T00:00:00Z",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "updated_at": "2026-05-21T17:51:56Z",
+      "last_seen_at": "2026-05-21T17:51:56Z",
+      "is_active": false,
+      "inactive_reason": "missing_from_source",
+      "canonical_key": "linkedin:cayena:engineer manager|sao paulo"
+    },
+    {
       "id": "0ffc5ea0e05c9c51",
       "external_id": "4343924829",
       "external_ids": [
@@ -849,8 +826,8 @@
       "created_at": "2025-12-12T00:00:00Z",
       "posted_at": "2025-12-12T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": false,
       "inactive_reason": "stale_posted_at",
       "canonical_key": "linkedin:cayena:executivo a de crescimento de parcerias hunter|sao paulo"
@@ -902,6 +879,29 @@
       "canonical_key": "linkedin:cayena:gerente de vendas porta a porta|sao paulo"
     },
     {
+      "id": "f02e397ad6b1cc05",
+      "external_id": "4406233400",
+      "external_ids": [
+        "4406233400"
+      ],
+      "source": "linkedin",
+      "company_slug": "cayena",
+      "title": "Software Engineer Junior",
+      "department": "Engineering",
+      "raw_department": "Engineering and Information Technology",
+      "location": "Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4406233400/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-04-27T00:00:00Z",
+      "posted_at": "2026-04-27T00:00:00Z",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "updated_at": "2026-05-21T17:51:56Z",
+      "last_seen_at": "2026-05-21T17:51:56Z",
+      "is_active": false,
+      "inactive_reason": "missing_from_source",
+      "canonical_key": "linkedin:cayena:software engineer junior|brazil"
+    },
+    {
       "id": "27b178836cc6f58d",
       "external_id": "4402767689",
       "source": "linkedin",
@@ -941,11 +941,34 @@
       "created_at": "2026-02-02T23:49:14Z",
       "posted_at": "2026-02-02T23:49:14Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": false,
       "inactive_reason": "stale_posted_at",
       "canonical_key": "linkedin:cayena:supervisor a de vendas|sao paulo"
+    },
+    {
+      "id": "6353a1102a40a437",
+      "external_id": "4371579717",
+      "external_ids": [
+        "4371579717"
+      ],
+      "source": "linkedin",
+      "company_slug": "estoca",
+      "title": "Executivo(a) de Vendas Sr.",
+      "department": "Sales",
+      "raw_department": "Sales and Business Development",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4371579717/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-02-13T00:55:19Z",
+      "posted_at": "2026-02-13T00:55:19Z",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
+      "is_active": false,
+      "inactive_reason": "stale_posted_at",
+      "canonical_key": "linkedin:estoca:executivo a de vendas sr|sao paulo"
     },
     {
       "id": "a153169b62f24bcf",
@@ -964,8 +987,8 @@
       "created_at": "2026-01-20T00:54:56Z",
       "posted_at": "2026-01-20T00:54:56Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-21T17:51:56Z",
-      "last_seen_at": "2026-05-21T17:51:56Z",
+      "updated_at": "2026-05-25T00:01:52Z",
+      "last_seen_at": "2026-05-25T00:01:52Z",
       "is_active": false,
       "inactive_reason": "stale_posted_at",
       "canonical_key": "linkedin:estoca:product manager staff|sao paulo"
@@ -1360,6 +1383,29 @@
       "posted_at": "2026-05-11T15:37:13Z",
       "inactive_reason": "missing_from_source",
       "canonical_key": "linkedin:lastlink:analista de suporte ao cliente pleno n2|brazil"
+    },
+    {
+      "id": "d92e2bb2b25af6cc",
+      "external_id": "4389579459",
+      "external_ids": [
+        "4389579459"
+      ],
+      "source": "linkedin",
+      "company_slug": "lastlink",
+      "title": "Revenue Operations Specialist",
+      "department": "Operations",
+      "raw_department": "Management and Manufacturing",
+      "location": "Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4389579459/?utm_source=astella&utm_medium=jobs_board",
+      "created_at": "2026-03-23T00:00:00Z",
+      "posted_at": "2026-03-23T00:00:00Z",
+      "first_seen_at": "2026-05-11T15:37:13Z",
+      "updated_at": "2026-05-21T17:51:56Z",
+      "last_seen_at": "2026-05-21T17:51:56Z",
+      "is_active": false,
+      "inactive_reason": "missing_from_source",
+      "canonical_key": "linkedin:lastlink:revenue operations specialist|brazil"
     },
     {
       "id": "13eec719f2609b98",
