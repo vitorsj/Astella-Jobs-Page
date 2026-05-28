@@ -1,122 +1,262 @@
 {
-  "rd-station": [
+  "cayena": [
     {
-      "external_id": "rd-001",
-      "title": "Engenheiro(a) de Software Pleno",
-      "department": "Engineering",
-      "location": "Sao Paulo, SP",
+      "external_id": "4392443900",
+      "title": "Analista Fiscal Sênior",
+      "department": "Accounting/Auditing and Finance",
+      "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/rd-001/",
-      "created_at": "2026-05-06T12:00:00Z"
+      "url": "https://www.linkedin.com/jobs/view/4392443900/",
+      "created_at": "2026-03-06T18:00:13Z"
     },
     {
-      "external_id": "rd-002",
-      "title": "Product Manager - Marketing Hub",
-      "department": "Product",
-      "location": "Florianopolis, SC",
+      "external_id": "4388549338",
+      "title": "Business Development Representative",
+      "department": "Sales and Business Development",
+      "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/rd-002/",
-      "created_at": "2026-05-04T12:00:00Z"
+      "url": "https://www.linkedin.com/jobs/view/4388549338/",
+      "created_at": "2026-02-23T19:10:45Z"
     },
     {
-      "external_id": "rd-003",
-      "title": "Data Engineer",
-      "department": "Data",
-      "location": "Remoto",
-      "remote": true,
-      "url": "https://www.linkedin.com/jobs/view/rd-003/",
-      "created_at": "2026-05-07T12:00:00Z"
+      "external_id": "4414024551",
+      "title": "Consultor de vendas",
+      "department": "Sales and Business Development",
+      "location": "Greater São Paulo Area",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4414024551/",
+      "created_at": "2026-05-21T18:57:24Z"
+    },
+    {
+      "external_id": "4415980829",
+      "title": "Executivo(a) de Crescimento de Parcerias - Farmer",
+      "department": "Business Development and Sales",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4415980829/",
+      "created_at": "2026-05-19T00:00:00Z"
+    },
+    {
+      "external_id": "4406220318",
+      "title": "Group Product Manager",
+      "department": "Product Management and Marketing",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4406220318/",
+      "created_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "external_id": "4389325194",
+      "title": "Key Account Executive",
+      "department": "Sales and Business Development",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4389325194/",
+      "created_at": "2026-03-09T00:00:00Z"
+    },
+    {
+      "external_id": "4409379875",
+      "title": "Product Designer Sênior",
+      "department": "Design, Art/Creative, and Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4409379875/",
+      "created_at": "2026-05-05T00:00:00Z"
+    },
+    {
+      "external_id": "4410876500",
+      "title": "Programa Trainee Cayena - 2026",
+      "department": "Other",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4410876500/",
+      "created_at": "2026-05-07T00:00:00Z"
+    },
+    {
+      "external_id": "4409967467",
+      "title": "Recrutador (a) Comercial - Closer",
+      "department": "Human Resources",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4409967467/",
+      "created_at": "2026-04-11T18:00:13Z"
+    },
+    {
+      "external_id": "4406213510",
+      "title": "Senior QA",
+      "department": "Quality Assurance",
+      "location": "Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4406213510/",
+      "created_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "external_id": "4406226519",
+      "title": "Senior Software Engineer",
+      "department": "Engineering and Information Technology",
+      "location": "Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4406226519/",
+      "created_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "external_id": "4406228489",
+      "title": "Software Engineer Pleno",
+      "department": "Engineering and Information Technology",
+      "location": "Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4406228489/",
+      "created_at": "2026-04-27T00:00:00Z"
+    },
+    {
+      "external_id": "4389306794",
+      "title": "Supervisor de Vendas",
+      "department": "Sales and Business Development",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4389306794/",
+      "created_at": "2026-02-26T23:59:58Z"
     }
   ],
-  "olist": [
+  "estoca": [
     {
-      "external_id": "olist-001",
-      "title": "Senior Product Designer",
-      "department": "Design",
-      "location": "Curitiba, PR",
+      "external_id": "4407650566",
+      "title": "Advogada(o) Júnior",
+      "department": "Legal",
+      "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/olist-001/",
-      "created_at": "2026-05-05T12:00:00Z"
+      "url": "https://www.linkedin.com/jobs/view/4407650566/",
+      "created_at": "2026-05-01T00:54:18Z"
     },
     {
-      "external_id": "olist-002",
-      "title": "Backend Engineer",
-      "department": "Engineering",
-      "location": "Remoto",
-      "remote": true,
-      "url": "https://www.linkedin.com/jobs/view/olist-002/",
-      "created_at": "2026-05-07T12:00:00Z"
+      "external_id": "4376000417",
+      "title": "Analista de Marketing de Performance Sr.",
+      "department": "Marketing and Sales",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4376000417/",
+      "created_at": "2026-02-24T00:54:30Z"
     },
     {
-      "external_id": "olist-003",
-      "title": "Tech Lead - Payments",
-      "department": "Engineering",
-      "location": "Sao Paulo, SP",
+      "external_id": "4402329871",
+      "title": "Engineering Manager",
+      "department": "Engineering and Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/olist-003/",
-      "created_at": "2026-05-02T12:00:00Z"
-    }
-  ],
-  "conta-simples": [
-    {
-      "external_id": "cs-001",
-      "title": "Account Executive",
-      "department": "Sales",
-      "location": "Sao Paulo, SP",
-      "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/cs-001/",
-      "created_at": "2026-05-05T12:00:00Z"
+      "url": "https://www.linkedin.com/jobs/view/4402329871/",
+      "created_at": "2026-04-17T00:58:49Z"
     },
     {
-      "external_id": "cs-002",
-      "title": "Customer Success Manager",
-      "department": "CS",
-      "location": "Remoto",
-      "remote": true,
-      "url": "https://www.linkedin.com/jobs/view/cs-002/",
-      "created_at": "2026-05-06T12:00:00Z"
+      "external_id": "4410867796",
+      "title": "Gerente de CS",
+      "department": "Other",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4410867796/",
+      "created_at": "2026-05-08T00:54:16Z"
     }
   ],
-  "dr-consulta": [
+  "lastlink": [
     {
-      "external_id": "dr-001",
-      "title": "Coordenador(a) de Operacoes",
-      "department": "Operations",
-      "location": "Sao Paulo, SP",
+      "external_id": "4393035167",
+      "title": "Analista Sênior de Eventos & Brand Experience",
+      "department": "Business Development and Sales",
+      "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/dr-001/",
-      "created_at": "2026-05-01T12:00:00Z"
+      "url": "https://www.linkedin.com/jobs/view/4393035167/",
+      "created_at": "2026-03-30T00:00:00Z"
     }
   ],
-  "asaas": [
+  "sallve": [
     {
-      "external_id": "asaas-001",
-      "title": "Senior Platform Engineer",
-      "department": "Engineering",
-      "location": "Joinville, SC",
+      "external_id": "4379477400",
+      "title": "Analista de Inteligência Comercial Sênior",
+      "department": "Research, Analyst, and Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
       "remote": false,
-      "url": "https://www.linkedin.com/jobs/view/asaas-001/",
-      "created_at": "2026-05-05T12:00:00Z"
+      "url": "https://www.linkedin.com/jobs/view/4379477400/",
+      "created_at": "2026-03-03T00:00:00Z"
     },
     {
-      "external_id": "asaas-002",
-      "title": "Product Manager - Banking",
-      "department": "Product",
-      "location": "Remoto",
-      "remote": true,
-      "url": "https://www.linkedin.com/jobs/view/asaas-002/",
-      "created_at": "2026-05-03T12:00:00Z"
-    }
-  ],
-  "trinks": [
+      "external_id": "4415691476",
+      "title": "Analista de Logística Junior",
+      "department": "Management and Manufacturing",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4415691476/",
+      "created_at": "2026-05-18T00:00:00Z"
+    },
     {
-      "external_id": "trinks-001",
-      "title": "Frontend Engineer",
-      "department": "Engineering",
-      "location": "Rio de Janeiro, RJ",
-      "remote": true,
-      "url": "https://www.linkedin.com/jobs/view/trinks-001/",
-      "created_at": "2026-05-07T12:00:00Z"
+      "external_id": "4415701242",
+      "title": "Analista de Marketing de Produto e Inovação Sênior",
+      "department": "Product Management and Marketing",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4415701242/",
+      "created_at": "2026-05-18T00:00:00Z"
+    },
+    {
+      "external_id": "4417508880",
+      "title": "Analista de TI Sênior",
+      "department": "Information Technology",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4417508880/",
+      "created_at": "2026-05-22T00:00:00Z"
+    },
+    {
+      "external_id": "4404453209",
+      "title": "Especialista em BizOps",
+      "department": "Other",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4404453209/",
+      "created_at": "2026-04-22T00:00:00Z"
+    },
+    {
+      "external_id": "4407083532",
+      "title": "Executivo Key Accounts - Perfumaria e Novos Canais",
+      "department": "Sales and Business Development",
+      "location": "Greater Porto Alegre",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4407083532/",
+      "created_at": "2026-04-29T00:00:00Z"
+    },
+    {
+      "external_id": "4397298773",
+      "title": "Executivo de Contas [Farma Indireto]",
+      "department": "Sales and Business Development",
+      "location": "Belo Horizonte, Minas Gerais, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4397298773/",
+      "created_at": "2026-04-09T00:00:00Z"
+    },
+    {
+      "external_id": "4385968309",
+      "title": "Executivo de Contas [Farma Indireto]",
+      "department": "Sales and Business Development",
+      "location": "Rio de Janeiro, Rio de Janeiro, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4385968309/",
+      "created_at": "2026-03-17T00:00:00Z"
+    },
+    {
+      "external_id": "4407090528",
+      "title": "Executivo de Contas [Farma Indireto]",
+      "department": "Sales and Business Development",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4407090528/",
+      "created_at": "2026-04-29T00:00:00Z"
+    },
+    {
+      "external_id": "4414734891",
+      "title": "Gerente de Marketplaces",
+      "department": "Other",
+      "location": "São Paulo, São Paulo, Brazil",
+      "remote": false,
+      "url": "https://www.linkedin.com/jobs/view/4414734891/",
+      "created_at": "2026-05-14T00:00:00Z"
     }
   ]
 }

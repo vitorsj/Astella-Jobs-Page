@@ -69,7 +69,7 @@
     "slug": "taon",
     "logo_url": "",
     "linkedin_url": "https://www.linkedin.com/company/taon/",
-    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=TaOn&location=Brasil&geoId=106057199&trk=public_jobs_jobs-search-bar_search-submit"
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Vagas&location=Brasil&geoId=106057199&f_C=87461241"
   },
   {
     "id": "lastlink-001",
@@ -77,6 +77,118 @@
     "slug": "lastlink",
     "logo_url": "",
     "linkedin_url": "https://www.linkedin.com/company/lastlink/",
-    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Lastlink&location=Brasil&geoId=106057199&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0"
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Vagas&location=Brasil&geoId=106057199&f_C=69402219&position=1&pageNum=0"
+  },
+  {
+    "id": "silverguard-001",
+    "name": "Silverguard",
+    "slug": "silverguard",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/91049535/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=91049535"
+  },
+  {
+    "id": "omie-001",
+    "name": "Omie",
+    "slug": "omie",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/2709760/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=2709760&position=1&pageNum=0"
+  },
+  {
+    "id": "movens-001",
+    "name": "Movens",
+    "slug": "movens",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/93375342/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=93375342"
+  },
+  {
+    "id": "livance-001",
+    "name": "Livance",
+    "slug": "livance",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/9223884/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=9223884&position=1&pageNum=0"
+  },
+  {
+    "id": "leapy-001",
+    "name": "Leapy",
+    "slug": "leapy",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/82977843/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=82977843&position=1&pageNum=0"
+  },
+  {
+    "id": "jota-001",
+    "name": "Jota",
+    "slug": "jota",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/9467516/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=9467516&position=1&pageNum=0"
+  },
+  {
+    "id": "gove-001",
+    "name": "Gove",
+    "slug": "gove",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/15218166/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=15218166&position=1&pageNum=0"
+  },
+  {
+    "id": "croct-001",
+    "name": "Croct",
+    "slug": "croct",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/9393736/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=9393736"
+  },
+  {
+    "id": "botcity-001",
+    "name": "BotCity",
+    "slug": "botcity",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/35557341/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=35557341&position=1&pageNum=0"
+  },
+  {
+    "id": "bossabox-001",
+    "name": "Bossabox",
+    "slug": "bossabox",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/15245754/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=15245754"
+  },
+  {
+    "id": "bornlogic-001",
+    "name": "Bornlogic",
+    "slug": "bornlogic",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/3063507/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=3063507"
+  },
+  {
+    "id": "birdie-001",
+    "name": "Birdie",
+    "slug": "birdie",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/16165798/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=16165798"
+  },
+  {
+    "id": "aprova-001",
+    "name": "Aprova",
+    "slug": "aprova",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/11395983/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=11395983&position=1&pageNum=0"
+  },
+  {
+    "id": "amicci-001",
+    "name": "Amicci",
+    "slug": "amicci",
+    "logo_url": "",
+    "linkedin_url": "https://www.linkedin.com/company/10043419/",
+    "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=10043419&position=1&pageNum=0"
   }
 ]

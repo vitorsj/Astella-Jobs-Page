@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-25T00:01:52Z",
+  "generated_at": "2026-05-28T18:33:21Z",
   "total_active": 28,
   "jobs": [
     {
@@ -19,8 +19,8 @@
       "created_at": "2026-03-06T18:00:13Z",
       "posted_at": "2026-03-06T18:00:13Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:analista fiscal senior|sao paulo"
@@ -42,8 +42,8 @@
       "created_at": "2026-02-23T19:10:45Z",
       "posted_at": "2026-02-23T19:10:45Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:business development representative|sao paulo"
@@ -65,8 +65,8 @@
       "created_at": "2026-05-21T18:57:24Z",
       "posted_at": "2026-05-21T18:57:24Z",
       "first_seen_at": "2026-05-25T00:01:52Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:consultor de vendas|greater sao paulo area"
@@ -88,8 +88,8 @@
       "created_at": "2026-05-19T00:00:00Z",
       "posted_at": "2026-05-19T00:00:00Z",
       "first_seen_at": "2026-05-21T17:41:14Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:executivo a de crescimento de parcerias farmer|sao paulo"
@@ -111,8 +111,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:group product manager|sao paulo"
@@ -134,8 +134,8 @@
       "created_at": "2026-03-09T00:00:00Z",
       "posted_at": "2026-03-09T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:key account executive|sao paulo"
@@ -158,8 +158,8 @@
       "created_at": "2026-05-05T00:00:00Z",
       "posted_at": "2026-05-05T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:product designer senior|sao paulo"
@@ -181,8 +181,8 @@
       "created_at": "2026-05-07T00:00:00Z",
       "posted_at": "2026-05-07T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:programa trainee cayena 2026|sao paulo"
@@ -204,8 +204,8 @@
       "created_at": "2026-04-11T18:00:13Z",
       "posted_at": "2026-04-11T18:00:13Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:recrutador a comercial closer|sao paulo"
@@ -227,8 +227,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:senior qa|brazil"
@@ -250,8 +250,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:senior software engineer|brazil"
@@ -273,8 +273,8 @@
       "created_at": "2026-04-27T00:00:00Z",
       "posted_at": "2026-04-27T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:software engineer pleno|brazil"
@@ -296,8 +296,8 @@
       "created_at": "2026-02-26T23:59:58Z",
       "posted_at": "2026-02-26T23:59:58Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:cayena:supervisor de vendas|sao paulo"
@@ -319,8 +319,8 @@
       "created_at": "2026-05-01T00:54:18Z",
       "posted_at": "2026-05-01T00:54:18Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:advogada o junior|sao paulo"
@@ -342,8 +342,8 @@
       "created_at": "2026-02-24T00:54:30Z",
       "posted_at": "2026-02-24T00:54:30Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:analista de marketing de performance sr|sao paulo"
@@ -365,8 +365,8 @@
       "created_at": "2026-04-17T00:58:49Z",
       "posted_at": "2026-04-17T00:58:49Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:engineering manager|sao paulo"
@@ -388,8 +388,8 @@
       "created_at": "2026-05-08T00:54:16Z",
       "posted_at": "2026-05-08T00:54:16Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:estoca:gerente de cs|sao paulo"
@@ -412,8 +412,8 @@
       "created_at": "2026-03-30T00:00:00Z",
       "posted_at": "2026-03-30T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:lastlink:analista senior de eventos brand experience|sao paulo"
@@ -435,8 +435,8 @@
       "created_at": "2026-03-03T00:00:00Z",
       "posted_at": "2026-03-03T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de inteligencia comercial senior|sao paulo"
@@ -458,8 +458,8 @@
       "created_at": "2026-05-18T00:00:00Z",
       "posted_at": "2026-05-18T00:00:00Z",
       "first_seen_at": "2026-05-21T17:41:14Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de logistica junior|sao paulo"
@@ -481,8 +481,8 @@
       "created_at": "2026-05-18T00:00:00Z",
       "posted_at": "2026-05-18T00:00:00Z",
       "first_seen_at": "2026-05-21T17:41:14Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de marketing de produto e inovacao senior|sao paulo"
@@ -504,8 +504,8 @@
       "created_at": "2026-05-22T00:00:00Z",
       "posted_at": "2026-05-22T00:00:00Z",
       "first_seen_at": "2026-05-25T00:01:52Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:analista de ti senior|sao paulo"
@@ -527,8 +527,8 @@
       "created_at": "2026-04-22T00:00:00Z",
       "posted_at": "2026-04-22T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:especialista em bizops|sao paulo"
@@ -550,8 +550,8 @@
       "created_at": "2026-04-29T00:00:00Z",
       "posted_at": "2026-04-29T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo key accounts perfumaria e novos canais|greater porto alegre"
@@ -573,8 +573,8 @@
       "created_at": "2026-04-09T00:00:00Z",
       "posted_at": "2026-04-09T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo de contas farma indireto|belo horizonte"
@@ -596,8 +596,8 @@
       "created_at": "2026-03-17T00:00:00Z",
       "posted_at": "2026-03-17T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo de contas farma indireto|rio de janeiro"
@@ -619,8 +619,8 @@
       "created_at": "2026-04-29T00:00:00Z",
       "posted_at": "2026-04-29T00:00:00Z",
       "first_seen_at": "2026-05-11T15:37:13Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:executivo de contas farma indireto|sao paulo"
@@ -642,8 +642,8 @@
       "created_at": "2026-05-14T00:00:00Z",
       "posted_at": "2026-05-14T00:00:00Z",
       "first_seen_at": "2026-05-18T00:02:59Z",
-      "updated_at": "2026-05-25T00:01:52Z",
-      "last_seen_at": "2026-05-25T00:01:52Z",
+      "updated_at": "2026-05-28T18:33:21Z",
+      "last_seen_at": "2026-05-28T18:33:21Z",
       "is_active": true,
       "inactive_reason": null,
       "canonical_key": "linkedin:sallve:gerente de marketplaces|sao paulo"
@@ -1548,7 +1548,7 @@
       "slug": "taon",
       "logo_url": "",
       "linkedin_url": "https://www.linkedin.com/company/taon/",
-      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=TaOn&location=Brasil&geoId=106057199&trk=public_jobs_jobs-search-bar_search-submit"
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Vagas&location=Brasil&geoId=106057199&f_C=87461241"
     },
     {
       "id": "lastlink-001",
@@ -1556,7 +1556,119 @@
       "slug": "lastlink",
       "logo_url": "",
       "linkedin_url": "https://www.linkedin.com/company/lastlink/",
-      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Lastlink&location=Brasil&geoId=106057199&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0"
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=Vagas&location=Brasil&geoId=106057199&f_C=69402219&position=1&pageNum=0"
+    },
+    {
+      "id": "silverguard-001",
+      "name": "Silverguard",
+      "slug": "silverguard",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/91049535/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=91049535"
+    },
+    {
+      "id": "omie-001",
+      "name": "Omie",
+      "slug": "omie",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/2709760/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=2709760&position=1&pageNum=0"
+    },
+    {
+      "id": "movens-001",
+      "name": "Movens",
+      "slug": "movens",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/93375342/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=93375342"
+    },
+    {
+      "id": "livance-001",
+      "name": "Livance",
+      "slug": "livance",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/9223884/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=9223884&position=1&pageNum=0"
+    },
+    {
+      "id": "leapy-001",
+      "name": "Leapy",
+      "slug": "leapy",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/82977843/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=82977843&position=1&pageNum=0"
+    },
+    {
+      "id": "jota-001",
+      "name": "Jota",
+      "slug": "jota",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/9467516/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=9467516&position=1&pageNum=0"
+    },
+    {
+      "id": "gove-001",
+      "name": "Gove",
+      "slug": "gove",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/15218166/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=15218166&position=1&pageNum=0"
+    },
+    {
+      "id": "croct-001",
+      "name": "Croct",
+      "slug": "croct",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/9393736/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_C=9393736"
+    },
+    {
+      "id": "botcity-001",
+      "name": "BotCity",
+      "slug": "botcity",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/35557341/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=35557341&position=1&pageNum=0"
+    },
+    {
+      "id": "bossabox-001",
+      "name": "Bossabox",
+      "slug": "bossabox",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/15245754/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=15245754"
+    },
+    {
+      "id": "bornlogic-001",
+      "name": "Bornlogic",
+      "slug": "bornlogic",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/3063507/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=3063507"
+    },
+    {
+      "id": "birdie-001",
+      "name": "Birdie",
+      "slug": "birdie",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/16165798/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=16165798"
+    },
+    {
+      "id": "aprova-001",
+      "name": "Aprova",
+      "slug": "aprova",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/11395983/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=11395983&position=1&pageNum=0"
+    },
+    {
+      "id": "amicci-001",
+      "name": "Amicci",
+      "slug": "amicci",
+      "logo_url": "",
+      "linkedin_url": "https://www.linkedin.com/company/10043419/",
+      "linkedin_search_url": "https://www.linkedin.com/jobs/search?keywords=&location=Brasil&geoId=106057199&f_TPR=&f_C=10043419&position=1&pageNum=0"
     }
   ]
 }

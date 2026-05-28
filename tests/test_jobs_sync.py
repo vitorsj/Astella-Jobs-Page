@@ -115,18 +115,18 @@ def test_jsonld_remote_job():
 def test_error_handling_skip_and_log():
     companies = [
         COMPANY,
-        {**COMPANY, "id": "olist-001", "name": "Olist", "slug": "olist"},
+        {**COMPANY, "id": "estoca-001", "name": "Estoca", "slug": "estoca"},
     ]
     fixtures = {
         "nubank": [RAW_JOB],
-        "olist": [{**RAW_JOB, "external_id": "olist-1"}],
+        "estoca": [{**RAW_JOB, "external_id": "estoca-1"}],
     }
 
     fetched, logs, successful_slugs = fetch_all_company_jobs(companies, fixtures, NOW, error_slugs={"nubank"})
 
     assert len(fetched) == 1
-    assert fetched[0]["id"] == job_id("linkedin", "olist", "senior software engineer|sao paulo")
-    assert successful_slugs == {"olist"}
+    assert fetched[0]["id"] == job_id("linkedin", "estoca", "senior software engineer|sao paulo")
+    assert successful_slugs == {"estoca"}
     assert any("skip nubank" in line for line in logs)
 
 
@@ -227,7 +227,7 @@ def test_same_title_different_cities_are_not_deduped():
 def test_skipped_company_does_not_expire_old_jobs():
     existing = make_job(last_seen_at="2026-04-30T18:00:00Z", is_active=True)
 
-    merged = merge_jobs([existing], [], NOW, total_fetched=1, successful_company_slugs={"olist"})
+    merged = merge_jobs([existing], [], NOW, total_fetched=1, successful_company_slugs={"estoca"})
 
     assert merged[0]["is_active"] is True
     assert merged[0]["inactive_reason"] is None

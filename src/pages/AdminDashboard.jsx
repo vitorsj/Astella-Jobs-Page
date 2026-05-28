@@ -2,17 +2,11 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { COMPANIES, JOBS } from '../data/jobs.js'
 
-const SYNC_LOGS = [
-  { time: '12:04', src: 'LinkedIn · RD Station',      status: 'ok', msg: '3 vagas / 0 alterações' },
-  { time: '12:04', src: 'LinkedIn · Olist',           status: 'ok', msg: '3 vagas / 0 alterações' },
-  { time: '12:03', src: 'LinkedIn · Conta Simples',   status: 'ok', msg: '2 vagas / 0 alterações' },
-  { time: '12:02', src: 'LinkedIn · Asaas',           status: 'ok', msg: '2 vagas / 0 alterações' },
-  { time: '12:01', src: 'LinkedIn · Dr. Consulta',    status: 'ok', msg: '1 vaga / 0 alterações' },
-  { time: '12:00', src: 'LinkedIn · Trinks',          status: 'ok', msg: '1 vaga / 0 alterações' },
-]
+const activeJobCount = companyId => JOBS.filter(j => j.company === companyId).length
+const jobCountLabel = count => count === 1 ? '1 vaga' : `${count} vagas`
 
 const SCRAPERS = [
-  { name: 'LinkedIn', kind: 'fixture fake local', freq: '2x por dia no cron final', count: '6 empresas', status: 'ok' },
+  { name: 'LinkedIn', kind: 'Apify', freq: '2x por dia no cron final', count: `${COMPANIES.length} empresas`, status: 'ok' },
 ]
 
 const NAV_ITEMS = [
@@ -46,8 +40,17 @@ export default function AdminDashboard() {
   const showToast = msg => { setToast(msg); setTimeout(() => setToast(null), 3000) }
 
   const companyStatus = () => 'ok'
-  const jobCount = id => JOBS.filter(j => j.company === id).length
+  const jobCount = activeJobCount
   const sourceCount = [...new Set(JOBS.map(j => j.source))].length
+  const syncLogs = COMPANIES.map(company => {
+    const count = jobCount(company.id)
+    return {
+      time: 'sync',
+      src: `${company.source} · ${company.name}`,
+      status: 'ok',
+      msg: `${jobCountLabel(count)} ativas`,
+    }
+  })
 
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '220px 1fr', height: '100vh', background: 'var(--c-paper2)' }}>
@@ -159,7 +162,7 @@ export default function AdminDashboard() {
               <span className="wf-label">Logs de sincronização</span>
               <span className="mute hand" style={{ fontSize: 12 }}>últimas 24h</span>
             </div>
-            {SYNC_LOGS.map(({ time, src, status, msg }, i) => (
+            {syncLogs.map(({ time, src, status, msg }, i) => (
               <div key={i} style={{
                 padding: '9px 16px', borderBottom: '1px dashed var(--c-line3)',
                 fontFamily: 'var(--wf-hand)', fontSize: 12,
