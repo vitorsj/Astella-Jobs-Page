@@ -1,16 +1,6 @@
 import { useState } from 'react'
 import { COMPANY } from '../data/jobs.js'
 
-const LOGO_FILES = {
-  'gabriel': '/logos/gabriel.jpeg',
-  'purple-metrics': '/logos/purple-metrics.jpeg',
-  'cayena': '/logos/cayena.png',
-  'kompa': '/logos/kompa.jpeg',
-  'sallve': '/logos/sallve.jpeg',
-  'estoca': '/logos/estoca.jpeg',
-  'lastlink': '/logos/lastlink.jpeg',
-}
-
 const COLOR_BY_SLUG = {
   'gabriel': '#225379',
   'purple-metrics': '#5c3d8a',
@@ -35,7 +25,7 @@ export default function CompanyLogo({ id, size = 'md' }) {
   const [errored, setErrored] = useState(false)
   if (!c) return null
   const initials = c.name.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase()
-  const url = LOGO_FILES[id]
+  const url = c.logo_url
   const color = COLOR_BY_SLUG[id] || '#225379'
   const cls = `jlogo jlogo-${size}`
   const sizePx = SIZE_PX[size] || SIZE_PX.md
