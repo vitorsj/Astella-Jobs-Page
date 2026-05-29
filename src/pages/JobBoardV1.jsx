@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom'
 import TopNav from '../components/TopNav.jsx'
 import CompanyLogo from '../components/CompanyLogo.jsx'
 import ModeChip from '../components/ModeChip.jsx'
-import { JOBS, COMPANIES, COMPANY, AREAS, LEVELS, LOCS, MODES } from '../data/jobs.js'
+import { JOBS, COMPANIES, COMPANY, AREAS, LEVELS, MODES } from '../data/jobs.js'
 import { useLang } from '../context/LangContext.jsx'
 
 const ALL_AREAS  = AREAS
 const ALL_LEVELS = LEVELS
-const ALL_LOCS   = LOCS
 const ALL_MODES  = MODES
 
 function FilterSection({ title, items, selected, onToggle, renderLabel }) {
@@ -55,7 +54,6 @@ export default function JobBoardV1() {
   const [selCompanies, setSelCompanies] = useState([])
   const [selAreas,     setSelAreas]     = useState([])
   const [selLevels,    setSelLevels]    = useState([])
-  const [selLocs,      setSelLocs]      = useState([])
   const [selModes,     setSelModes]     = useState([])
   const [showing,      setShowing]      = useState(12)
 
@@ -69,10 +67,9 @@ export default function JobBoardV1() {
     if (selCompanies.length && !selCompanies.includes(j.company)) return false
     if (selAreas.length     && !selAreas.includes(j.area))        return false
     if (selLevels.length    && !selLevels.includes(j.level))      return false
-    if (selLocs.length      && !selLocs.includes(j.loc))          return false
     if (selModes.length     && !selModes.includes(j.mode))        return false
     return true
-  }), [search, selCompanies, selAreas, selLevels, selLocs, selModes, lang])
+  }), [search, selCompanies, selAreas, selLevels, selModes, lang])
 
   const visible = filtered.slice(0, showing)
 
@@ -81,14 +78,13 @@ export default function JobBoardV1() {
   )
   const clearAll = () => {
     setSelCompanies([]); setSelAreas([]); setSelLevels([])
-    setSelLocs([]);      setSelModes([]); setSearch('')
+    setSelModes([]);     setSearch('')
   }
 
   const activeChips = [
     ...selCompanies.map(v => ({ label: COMPANY[v].name, clear: () => toggle(setSelCompanies, v) })),
     ...selAreas.map(v     => ({ label: areaOf(v),        clear: () => toggle(setSelAreas, v) })),
     ...selLevels.map(v    => ({ label: levelOf(v),       clear: () => toggle(setSelLevels, v) })),
-    ...selLocs.map(v      => ({ label: v,                clear: () => toggle(setSelLocs, v) })),
     ...selModes.map(v     => ({ label: t.modes[v] || v,  clear: () => toggle(setSelModes, v) })),
   ]
 
@@ -185,7 +181,6 @@ export default function JobBoardV1() {
           <FilterSection title={t.company}  items={COMPANIES.map(c => c.id)} selected={selCompanies} onToggle={v => toggle(setSelCompanies, v)} renderLabel={id => COMPANY[id].name} />
           <FilterSection title={t.role}     items={ALL_AREAS}                 selected={selAreas}     onToggle={v => toggle(setSelAreas, v)}     renderLabel={a => t.areas[a] || a} />
           <FilterSection title={t.level}    items={ALL_LEVELS}                selected={selLevels}    onToggle={v => toggle(setSelLevels, v)}    renderLabel={l => t.levels[l] || l} />
-          <FilterSection title={t.location} items={ALL_LOCS}                  selected={selLocs}      onToggle={v => toggle(setSelLocs, v)} />
           <FilterSection title={t.mode}     items={ALL_MODES}                  selected={selModes}     onToggle={v => toggle(setSelModes, v)}     renderLabel={m => t.modes[m] || m} />
 
           {activeChips.length > 0 && (

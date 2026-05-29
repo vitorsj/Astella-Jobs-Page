@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import CompanyLogo from '../components/CompanyLogo.jsx'
-import { JOBS, COMPANIES, COMPANY, AREAS, LEVELS, LOCS, MODES } from '../data/jobs.js'
+import { JOBS, COMPANIES, COMPANY, AREAS, LEVELS, MODES } from '../data/jobs.js'
 import { useLang } from '../context/LangContext.jsx'
 
 const INITIAL_VISIBLE = 3
@@ -12,7 +12,6 @@ export default function JobBoardV2() {
   const [selArea,    setSelArea]    = useState('')
   const [selLevel,   setSelLevel]   = useState('')
   const [selMode,    setSelMode]    = useState('')
-  const [selLoc,     setSelLoc]     = useState('')
   const [expanded,   setExpanded]   = useState({})
 
   const titleOf = j => j.title[lang] || j.title.pt
@@ -31,9 +30,18 @@ export default function JobBoardV2() {
     if (selArea    && j.area    !== selArea)    return false
     if (selLevel   && j.level   !== selLevel)   return false
     if (selMode    && j.mode    !== selMode)    return false
-    if (selLoc     && j.loc     !== selLoc)     return false
     return true
-  }), [search, selCompany, selArea, selLevel, selMode, selLoc, lang])
+  }), [search, selCompany, selArea, selLevel, selMode, lang])
+
+  const hasActiveFilters = Boolean(search || selCompany || selArea || selLevel || selMode)
+  const resetFilters = () => {
+    setSearch('')
+    setSelCompany('')
+    setSelArea('')
+    setSelLevel('')
+    setSelMode('')
+    setExpanded({})
+  }
 
   const grouped = useMemo(() => {
     const g = {}
@@ -130,10 +138,20 @@ export default function JobBoardV2() {
             <PillSelect value={selMode} onChange={setSelMode} label={t.mode}>
               {MODES.map(m => <option key={m} value={m}>{modeOf(m)}</option>)}
             </PillSelect>
-            <PillSelect value={selLoc} onChange={setSelLoc} label={t.location}>
-              {LOCS.map(l => <option key={l} value={l}>{l}</option>)}
-            </PillSelect>
           </div>
+          <button
+            type="button"
+            className="jbv2-reset"
+            onClick={resetFilters}
+            disabled={!hasActiveFilters}
+            aria-label={t.clear_filters}
+          >
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13 5.5A5.5 5.5 0 1 0 14 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              <path d="M13.2 2.8v2.9H10.3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span>{t.clear_filters}</span>
+          </button>
           <div className="jbv2-fcount">
             <strong>{totalJobs}</strong> {t.jobs} · {totalCompanies} {t.companies}
           </div>
@@ -433,6 +451,20 @@ const CSS = `
   font-size: 12.5px; color: var(--muted); white-space: nowrap;
 }
 .jbv2-fcount strong { color: var(--navy); font-weight: 600; margin-right: 2px; }
+.jbv2-reset {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 100%; padding: 0 14px;
+  border: none; border-right: 1.5px solid var(--line);
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--font-intelo); font-size: 12.5px; font-weight: 500;
+  cursor: pointer;
+  transition: color .12s, background .12s, opacity .12s;
+  white-space: nowrap;
+}
+.jbv2-reset:hover:not(:disabled) { background: var(--paper); color: var(--teal-dark); }
+.jbv2-reset:disabled { color: var(--muted); cursor: default; opacity: 0.45; }
+.jbv2-reset svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 .jbv2-main {
   max-width: 1080px; margin: 0 auto;

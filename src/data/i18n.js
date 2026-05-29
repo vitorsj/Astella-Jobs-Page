@@ -5,7 +5,7 @@ export const I18N = {
     search: "Procure por título, empresa ou área",
     filters: "Filtros", all: "Todas", company: "Empresa", role: "Área",
     level: "Senioridade", location: "Localização", mode: "Modelo",
-    clear: "Limpar", apply: "Aplicar", open: "Abrir vaga", view_all: "Ver todas",
+    clear: "Limpar", clear_filters: "Limpar filtros", apply: "Aplicar", open: "Abrir vaga", view_all: "Ver todas",
     jobs: "vagas", posted: "publicada há", sort_recent: "Mais recentes",
     levels: { Junior: "Júnior", Mid: "Pleno", Senior: "Sênior", Lead: "Liderança" },
     areas: {
@@ -35,7 +35,7 @@ export const I18N = {
     search: "Search by title, company or area",
     filters: "Filters", all: "All", company: "Company", role: "Area",
     level: "Seniority", location: "Location", mode: "Work mode",
-    clear: "Clear", apply: "Apply", open: "Open job", view_all: "View all",
+    clear: "Clear", clear_filters: "Clear filters", apply: "Apply", open: "Open job", view_all: "View all",
     jobs: "jobs", posted: "posted", sort_recent: "Most recent",
     levels: { Junior: "Junior", Mid: "Mid", Senior: "Senior", Lead: "Lead" },
     areas: {
