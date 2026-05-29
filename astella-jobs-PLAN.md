@@ -190,20 +190,23 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 [ ] Plausible: criar site jobs.astella.vc, adicionar script no template HTML
 [x] companies.json: 10 empresas com linkedin_search_url (Gabriel, Purple Metrics,
     Cienty, Cayena, Bem-Te-Vi, Kompa, Estoca, Sallve, TaOn, Lastlink)
-[x] jobs_sync.py: implementação com Apify + 11 unit tests
+[x] jobs_sync.py: implementação com Apify + 17 unit tests (pytest)
 [x] /empresas/:slug.html gerado automaticamente pelo sync
 [x] First run manual no Railway validado — 60 vagas reais
 [x] Cron schedule no Railway: 0 12 * * 1 (segunda, 9h BRT)
 [ ] Spot-check 5–10 vagas no site antes de divulgar
+[x] Admin /admin: env vars na Vercel (ADMIN_PASSWORD, SESSION_SECRET, GITHUB_TOKEN
+    com Contents:write, GITHUB_REPO, GITHUB_BRANCH) — ver ADMIN.md
 ```
 
 ## Stack atual (maio/2026)
 
-- **Frontend**: React + Vite + Tailwind — 3 variações de layout (V1, V2, V3)
+- **Frontend**: React + Vite + Tailwind — board público `JobBoardV2` (layouts V1/V3 removidos)
+- **Admin**: painel `/admin` (login por senha + edição de vagas), funções serverless em `api/` — ver [ADMIN.md](ADMIN.md)
 - **Backend**: `scripts/jobs_sync.py` — Apify `hKByXkMQaC5Qt9UMN` (curious_coder/linkedin-jobs-scraper)
-- **Dados**: `jobs.json` + `src/data/jobs.generated.json` no repo (fonte de verdade)
+- **Dados**: `jobs.json` + `src/data/jobs.generated.json` (sync, fonte de verdade) + `src/data/overrides.json` (edições do admin) + `src/data/sync_log.json` (log do cron)
 - **Cron**: Railway, `bash scripts/run_cron.sh`, `0 12 * * 1`
-- **Deploy**: Vercel auto-deploy a cada push no `main`
+- **Deploy**: Vercel auto-deploy a cada push no `main`. Produção: https://astella-jobs-page.vercel.app (domínio custom `jobs.astella.vc` pendente de DNS)
 - **Repo**: vitorsj/Astella-Jobs-Page (privado)
 - **Apify token**: configurado como env var `APIFY_TOKEN` no Railway
 - **Input format**: `{"urls": ["<linkedin_search_url>"]}` (strings, não objetos)
