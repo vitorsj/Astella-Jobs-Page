@@ -26,6 +26,8 @@ FAKE_SOURCE_PATH = ROOT / "data" / "fake_linkedin_jobs.json"
 JOBS_PATH = ROOT / "jobs.json"
 PUBLIC_JOBS_PATH = ROOT / "public" / "jobs.json"
 GENERATED_JOBS_PATH = ROOT / "src" / "data" / "jobs.generated.json"
+SYNC_LOG_PATH = ROOT / "src" / "data" / "sync_log.json"
+SYNC_LOG_KEEP = 20
 COMPANY_PAGES_DIR = ROOT / "public" / "empresas"
 JSONLD_PATH = ROOT / "public" / "job-postings.jsonld"
 UTM_PARAMS = {"utm_source": "astella", "utm_medium": "jobs_board"}
@@ -579,6 +581,24 @@ def run_sync(
     )
 
 
+def write_sync_log(result: SyncResult, mode: str, now: datetime) -> None:
+    """Anexa um resumo do run em src/data/sync_log.json (mantém os últimos N).
+
+    Lido pelo dashboard de admin para mostrar logs reais de sincronização.
+    """
+    log = read_json(SYNC_LOG_PATH, {"runs": []})
+    runs = log.get("runs", []) if isinstance(log, dict) else []
+    runs.insert(0, {
+        "ts": isoformat_z(now),
+        "mode": mode,
+        "total_fetched": result.total_fetched,
+        "total_active": result.total_active,
+        "changed": result.changed,
+        "lines": result.logs,
+    })
+    write_json(SYNC_LOG_PATH, {"runs": runs[:SYNC_LOG_KEEP]})
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Sync Astella portfolio jobs from LinkedIn via Apify."
@@ -601,10 +621,13 @@ def main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     args = parse_args()
     apify_token = args.apify_token or os.environ.get("APIFY_TOKEN")
+    now = utc_now()
     result = run_sync(
+        now=now,
         error_slugs=set(args.simulate_error) if not apify_token else None,
         apify_token=apify_token,
     )
+    write_sync_log(result, mode="apify" if apify_token else "fake", now=now)
     for line in result.logs:
         logging.info(line)
     logging.info("fetched=%s active=%s changed=%s", result.total_fetched, result.total_active, result.changed)

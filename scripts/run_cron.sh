@@ -15,8 +15,8 @@ git config user.name "Astella Jobs Cron"
 python scripts/jobs_sync.py
 
 # Commit and push only if data files changed
-if ! git diff --quiet -- jobs.json public/jobs.json public/job-postings.jsonld src/data/jobs.generated.json public/empresas/; then
-  git add jobs.json public/jobs.json public/job-postings.jsonld src/data/jobs.generated.json public/empresas/
+if ! git diff --quiet -- jobs.json public/jobs.json public/job-postings.jsonld src/data/jobs.generated.json src/data/sync_log.json public/empresas/; then
+  git add jobs.json public/jobs.json public/job-postings.jsonld src/data/jobs.generated.json src/data/sync_log.json public/empresas/
   git commit -m "chore: sync jobs $(date -u +%Y-%m-%dT%H:%M:%SZ)"
   git push origin main
   echo "Pushed updated jobs to GitHub — Vercel rebuild triggered."
