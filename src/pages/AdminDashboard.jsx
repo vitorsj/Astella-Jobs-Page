@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { COMPANIES, JOBS, ALL_JOBS } from '../data/jobs.js'
 import syncLogData from '../data/sync_log.json'
-import { logout, triggerSync, addCompany } from '../lib/adminApi.js'
+import { logout } from '../lib/adminApi.js'
 
 function relativeTime(iso) {
   if (!iso) return '—'
@@ -50,20 +50,8 @@ export default function AdminDashboard() {
   const navigate = useNavigate()
   const [activeNav, setActiveNav] = useState('Visão geral')
   const [toast, setToast] = useState(null)
-  const [syncing, setSyncing] = useState(false)
-  const [showNewCompany, setShowNewCompany] = useState(false)
 
   const showToast = msg => { setToast(msg); setTimeout(() => setToast(null), 4000) }
-
-  async function onSync() {
-    if (syncing) return
-    setSyncing(true)
-    const { ok, status, error } = await triggerSync()
-    setSyncing(false)
-    if (ok) showToast('Sync disparado no GitHub Actions (~2-3 min até atualizar).')
-    else if (status === 0 || status >= 500) showToast('Indisponível (rode com `vercel dev` ou em produção).')
-    else showToast(`Erro ao disparar sync: ${error || status}`)
-  }
 
   const companyStatus = companyId => {
     const total = activeJobCount(companyId)
@@ -134,10 +122,6 @@ export default function AdminDashboard() {
           <div>
             <div className="wf-label mute" style={{ marginBottom: 6 }}>ADMIN · VISÃO GERAL</div>
             <h2 className="wf-h2">Job board <span className="mute" style={{ fontWeight: 400 }}>· Dashboard</span></h2>
-          </div>
-          <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-            <button onClick={onSync} disabled={syncing} className="wf-btn wf-btn-ghost wf-btn-sm">{syncing ? '↻ disparando…' : '↻ Sincronizar agora'}</button>
-            <button onClick={() => setShowNewCompany(true)} className="wf-btn wf-btn-primary">+ Nova empresa</button>
           </div>
         </div>
 
@@ -212,7 +196,7 @@ export default function AdminDashboard() {
             </div>
             {!latestRun && (
               <div className="mute hand" style={{ padding: 16, fontSize: 12 }}>
-                Nenhum sync registrado ainda. Rode "Sincronizar agora" ou aguarde o cron.
+                Nenhum sync registrado ainda. O cron roda toda segunda às 9h.
               </div>
             )}
             {syncLogs.map(({ src, status, msg }, i) => (
@@ -236,7 +220,6 @@ export default function AdminDashboard() {
           <div className="wf-box" style={{ padding: 16 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
               <span className="wf-label">Fontes & scrapers</span>
-              <button className="wf-btn wf-btn-ghost wf-btn-sm">+ adicionar fonte</button>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12 }}>
               {SCRAPERS.map(s => (
@@ -247,11 +230,7 @@ export default function AdminDashboard() {
                   </div>
                   <div className="mute hand" style={{ fontSize: 12, marginBottom: 8 }}>{s.kind}</div>
                   <div className="wf-divider-thin" />
-                  <div className="hand" style={{ fontSize: 12, marginBottom: 8 }}>{s.count} · {s.freq}</div>
-                  <div style={{ display: 'flex', gap: 6 }}>
-                    <button className="wf-btn wf-btn-ghost wf-btn-sm">configurar</button>
-                    <button className="wf-btn wf-btn-ghost wf-btn-sm">↻ rodar</button>
-                  </div>
+                  <div className="hand" style={{ fontSize: 12 }}>{s.count} · {s.freq}</div>
                 </div>
               ))}
             </div>
@@ -268,89 +247,9 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      {showNewCompany && (
-        <NewCompanyModal
-          onClose={() => setShowNewCompany(false)}
-          onCreated={company => {
-            setShowNewCompany(false)
-            showToast(`Empresa "${company.name}" adicionada. Entra no próximo sync.`)
-          }}
-        />
-      )}
-
       <style>{`
         .admin-company-row:hover { background: var(--c-shade) !important; }
       `}</style>
-    </div>
-  )
-}
-
-function NewCompanyModal({ onClose, onCreated }) {
-  const [form, setForm] = useState({ name: '', linkedin_url: '', linkedin_search_url: '', logo_url: '' })
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState(null)
-  const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
-
-  async function submit(e) {
-    e.preventDefault()
-    if (busy || !form.name.trim()) return
-    setBusy(true)
-    setError(null)
-    const { ok, status, company, error } = await addCompany(form)
-    setBusy(false)
-    if (ok) { onCreated(company); return }
-    if (error === 'company_exists') setError('Já existe uma empresa com esse slug.')
-    else if (status === 0 || status >= 500) setError('Indisponível (rode com `vercel dev` ou em produção).')
-    else setError(`Erro ao adicionar: ${error || status}`)
-  }
-
-  const field = (label, key, placeholder, hint) => (
-    <div style={{ marginBottom: 12 }}>
-      <div className="wf-label mute" style={{ marginBottom: 6 }}>{label}</div>
-      <input
-        type="text"
-        className="wf-input-el"
-        value={form[key]}
-        onChange={e => set(key, e.target.value)}
-        placeholder={placeholder}
-        style={{ width: '100%' }}
-      />
-      {hint && <div className="mute hand" style={{ fontSize: 11, marginTop: 4 }}>{hint}</div>}
-    </div>
-  )
-
-  return (
-    <div
-      onClick={onClose}
-      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.35)', zIndex: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}
-    >
-      <form onClick={e => e.stopPropagation()} onSubmit={submit} className="wf-box" style={{ padding: 28, width: 460, maxWidth: '100%', background: 'var(--c-paper2)' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
-          <h2 className="wf-h2">Nova empresa</h2>
-          <button type="button" onClick={onClose} className="hand mute" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 18 }}>✕</button>
-        </div>
-        <div className="mute hand" style={{ fontSize: 13, marginBottom: 18 }}>
-          Adiciona em <code>companies.json</code>. O sync passa a buscar vagas dela no próximo run.
-        </div>
-
-        {field('NOME', 'name', 'Ex: Acme Tech')}
-        {field('URL DA EMPRESA NO LINKEDIN', 'linkedin_url', 'https://www.linkedin.com/company/acme/')}
-        {field('URL DE BUSCA DE VAGAS (LINKEDIN)', 'linkedin_search_url', 'https://www.linkedin.com/jobs/search?f_C=...', 'Sem isso o sync não busca vagas dela.')}
-        {field('LOGO (URL OU /logos/…)', 'logo_url', '/logos/acme.jpeg')}
-
-        {error && (
-          <div className="hand" style={{ fontSize: 12, color: '#C0392B', background: '#FEE', border: '1px solid rgba(192,57,43,0.3)', borderRadius: 8, padding: '8px 10px', marginBottom: 14 }}>
-            {error}
-          </div>
-        )}
-
-        <div style={{ display: 'flex', gap: 8, justifyContent: 'flex-end', marginTop: 8 }}>
-          <button type="button" onClick={onClose} className="wf-btn wf-btn-ghost wf-btn-sm">cancelar</button>
-          <button type="submit" className="wf-btn wf-btn-primary wf-btn-sm" disabled={busy || !form.name.trim()} style={{ opacity: busy || !form.name.trim() ? 0.6 : 1 }}>
-            {busy ? 'Adicionando…' : 'Adicionar empresa'}
-          </button>
-        </div>
-      </form>
     </div>
   )
 }
