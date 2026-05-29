@@ -45,21 +45,3 @@ export async function putOverride(op) {
 }
 
 export const saveJob = (id, patch) => putOverride({ kind: 'job', id, patch })
-export const resetJob = id => putOverride({ kind: 'reset_job', id })
-export const saveCompany = (slug, patch) => putOverride({ kind: 'company', slug, patch })
-export const saveManualJob = job => putOverride({ kind: 'manual_job', job })
-
-// Dispara o workflow de sync no GitHub Actions.
-export async function triggerSync() {
-  const { ok, status, data } = await jsonFetch('/api/sync', { method: 'POST' })
-  return { ok, status, error: data?.error }
-}
-
-// companies.json (fonte do sync) — adicionar empresa entra no próximo sync.
-export async function addCompany(company) {
-  const { ok, status, data } = await jsonFetch('/api/companies', {
-    method: 'POST',
-    body: JSON.stringify(company),
-  })
-  return { ok, status, company: data?.company, error: data?.error }
-}
