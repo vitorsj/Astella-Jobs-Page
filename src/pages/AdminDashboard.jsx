@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { COMPANIES, JOBS, ALL_JOBS } from '../data/jobs.js'
+import { COMPANIES, COMPANY, JOBS, ALL_JOBS } from '../data/jobs.js'
 import syncLogData from '../data/sync_log.json'
-import { logout } from '../lib/adminApi.js'
+import { logout, getClicks } from '../lib/adminApi.js'
 
 function relativeTime(iso) {
   if (!iso) return '—'
@@ -52,6 +52,30 @@ export default function AdminDashboard() {
   const [toast, setToast] = useState(null)
 
   const showToast = msg => { setToast(msg); setTimeout(() => setToast(null), 4000) }
+
+  const [clicks, setClicks] = useState({})
+  useEffect(() => { getClicks().then(setClicks) }, [])
+
+  const totalClicks = useMemo(
+    () => Object.values(clicks).reduce((sum, n) => sum + n, 0),
+    [clicks],
+  )
+  const clicksByCompany = useMemo(() => {
+    const out = {}
+    for (const job of ALL_JOBS) {
+      const n = clicks[job.id] || 0
+      if (n) out[job.company] = (out[job.company] || 0) + n
+    }
+    return out
+  }, [clicks])
+  const topJobs = useMemo(
+    () => ALL_JOBS
+      .map(job => ({ job, count: clicks[job.id] || 0 }))
+      .filter(entry => entry.count > 0)
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 10),
+    [clicks],
+  )
 
   const companyStatus = companyId => {
     const total = activeJobCount(companyId)
@@ -126,12 +150,13 @@ export default function AdminDashboard() {
         </div>
 
         {/* KPI tiles */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 14, marginBottom: 22 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 14, marginBottom: 22 }}>
           {[
             ['Vagas publicadas',  String(JOBS.length), `${ALL_JOBS.length} no total`],
             ['Empresas',          String(COMPANIES.length), `${sourceCount} fonte ativa`],
             ['Ocultas',           String(hiddenCount), 'fora do board público'],
             ['Editadas',          String(editedCount), 'com override do admin'],
+            ['Cliques',           String(totalClicks), 'em vagas · total'],
           ].map(([label, val, sub]) => (
             <div key={label} className="wf-box" style={{ padding: 16 }}>
               <div className="wf-label mute" style={{ fontSize: 10 }}>{label}</div>
@@ -150,12 +175,12 @@ export default function AdminDashboard() {
               <span className="mute hand" style={{ fontSize: 12 }}>{COMPANIES.length} · ver todas</span>
             </div>
             <div style={{
-              display: 'grid', gridTemplateColumns: '1.4fr 0.9fr 0.6fr 0.7fr 60px',
+              display: 'grid', gridTemplateColumns: '1.4fr 0.8fr 0.5fr 0.6fr 0.7fr 50px',
               fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase',
               fontFamily: 'var(--wf-hand)', fontWeight: 700, color: 'var(--c-mute)',
               padding: '8px 16px', borderBottom: '1px dashed var(--c-line3)',
             }}>
-              <span>Empresa</span><span>Fonte</span><span>Vagas</span><span>Status</span><span></span>
+              <span>Empresa</span><span>Fonte</span><span>Vagas</span><span>Cliques</span><span>Status</span><span></span>
             </div>
             {COMPANIES.map(c => (
               <button
@@ -167,7 +192,7 @@ export default function AdminDashboard() {
                 }}
                 className="admin-company-row"
                 style={{
-                  display: 'grid', gridTemplateColumns: '1.4fr 0.9fr 0.6fr 0.7fr 60px',
+                  display: 'grid', gridTemplateColumns: '1.4fr 0.8fr 0.5fr 0.6fr 0.7fr 50px',
                   alignItems: 'center', padding: '10px 16px',
                   fontSize: 13, fontFamily: 'var(--wf-hand)', width: '100%', textAlign: 'left',
                   background: 'transparent', border: 'none', borderBottom: '1px dashed var(--c-line3)',
@@ -180,6 +205,7 @@ export default function AdminDashboard() {
                 </span>
                 <span>{c.source}</span>
                 <span>{jobCount(c.id)}</span>
+                <span>{clicksByCompany[c.id] || 0}</span>
                 <span><StatusBadge status={companyStatus(c.id)} /></span>
                 <span className="mute">⋯</span>
               </button>
@@ -210,6 +236,42 @@ export default function AdminDashboard() {
                   <span style={{ fontWeight: 700 }}>{src}</span>
                   <div className="mute" style={{ marginTop: 2 }}>{msg}</div>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Vagas mais clicadas */}
+        <div style={{ marginTop: 18 }}>
+          <div className="wf-box" style={{ padding: 0, overflow: 'hidden' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', borderBottom: '1.5px solid var(--c-line)' }}>
+              <span className="wf-label">Vagas mais clicadas</span>
+              <span className="mute hand" style={{ fontSize: 12 }}>{totalClicks} cliques no total</span>
+            </div>
+            {topJobs.length === 0 && (
+              <div className="mute hand" style={{ padding: 16, fontSize: 12 }}>
+                Nenhum clique registrado ainda.
+              </div>
+            )}
+            {topJobs.length > 0 && (
+              <div style={{
+                display: 'grid', gridTemplateColumns: '2fr 1fr 70px',
+                fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase',
+                fontFamily: 'var(--wf-hand)', fontWeight: 700, color: 'var(--c-mute)',
+                padding: '8px 16px', borderBottom: '1px dashed var(--c-line3)',
+              }}>
+                <span>Vaga</span><span>Empresa</span><span style={{ textAlign: 'right' }}>Cliques</span>
+              </div>
+            )}
+            {topJobs.map(({ job, count }) => (
+              <div key={job.id} style={{
+                display: 'grid', gridTemplateColumns: '2fr 1fr 70px', alignItems: 'center',
+                padding: '10px 16px', fontSize: 13, fontFamily: 'var(--wf-hand)',
+                borderBottom: '1px dashed var(--c-line3)',
+              }}>
+                <span style={{ fontWeight: 700 }}>{job.title?.pt || job.rawTitle || '—'}</span>
+                <span className="mute">{COMPANY[job.company]?.name || job.company}</span>
+                <span className="hand" style={{ textAlign: 'right', fontWeight: 700 }}>{count}</span>
               </div>
             ))}
           </div>

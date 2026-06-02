@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react'
 import CompanyLogo from '../components/CompanyLogo.jsx'
 import { JOBS, COMPANIES, COMPANY, AREAS, LEVELS, MODES } from '../data/jobs.js'
 import { useLang } from '../context/LangContext.jsx'
+import { trackJobClick } from '../lib/track.js'
 
 const INITIAL_VISIBLE = 3
 
@@ -194,6 +195,7 @@ export default function JobBoardV2() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="jbv2-job-row"
+                  onClick={() => trackJobClick(job.id)}
                 >
                   <CompanyLogo id={job.company} />
                   <div className="jbv2-jleft">
