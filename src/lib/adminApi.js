@@ -45,3 +45,9 @@ export async function putOverride(op) {
 }
 
 export const saveJob = (id, patch) => putOverride({ kind: 'job', id, patch })
+
+// Contagem de clicks por vaga (mapa { jobId: count }). Requer sessão de admin.
+export async function getClicks() {
+  const { ok, data } = await jsonFetch('/api/clicks', { method: 'GET' })
+  return ok ? (data?.clicks || {}) : {}
+}
