@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { COMPANIES, COMPANY, JOBS, ALL_JOBS } from '../data/jobs.js'
+import { COMPANIES, COMPANY, JOBS, ALL_JOBS, RAW_JOBS_PAYLOAD } from '../data/jobs.js'
 import syncLogData from '../data/sync_log.json'
 import { logout, getClicks } from '../lib/adminApi.js'
 
@@ -61,21 +61,55 @@ export default function AdminDashboard() {
     () => Object.values(clicks).reduce((sum, n) => sum + n, 0),
     [clicks],
   )
+  // Metadata por id de TODAS as vagas que já existiram: ativas + manuais (ALL_JOBS)
+  // + inativas que o sync mantém no payload (is_active:false). Permite atribuir
+  // cliques históricos a uma vaga/empresa mesmo depois dela sair do board.
+  const jobMeta = useMemo(() => {
+    const map = {}
+    for (const j of ALL_JOBS) {
+      map[j.id] = {
+        title: j.title?.pt || j.rawTitle || '—',
+        companyId: j.company,
+        companyName: COMPANY[j.company]?.name || j.company,
+        active: true,
+      }
+    }
+    for (const j of RAW_JOBS_PAYLOAD.jobs) {
+      if (j.is_active || map[j.id]) continue
+      map[j.id] = {
+        title: j.title || '—',
+        companyId: j.company_slug,
+        companyName: COMPANY[j.company_slug]?.name || j.company_slug,
+        active: false,
+      }
+    }
+    return map
+  }, [])
   const clicksByCompany = useMemo(() => {
     const out = {}
-    for (const job of ALL_JOBS) {
-      const n = clicks[job.id] || 0
-      if (n) out[job.company] = (out[job.company] || 0) + n
+    for (const [id, n] of Object.entries(clicks)) {
+      const meta = jobMeta[id]
+      if (!n || !meta) continue // clique órfão (vaga sem metadata) não atribui a empresa
+      out[meta.companyId] = (out[meta.companyId] || 0) + n
     }
     return out
-  }, [clicks])
+  }, [clicks, jobMeta])
   const topJobs = useMemo(
-    () => ALL_JOBS
-      .map(job => ({ job, count: clicks[job.id] || 0 }))
-      .filter(entry => entry.count > 0)
+    () => Object.entries(clicks)
+      .filter(([, n]) => n > 0)
+      .map(([id, n]) => {
+        const meta = jobMeta[id]
+        return {
+          id,
+          count: n,
+          title: meta?.title || 'Vaga removida',
+          companyName: meta ? meta.companyName : '—',
+          active: meta ? meta.active : false,
+        }
+      })
       .sort((a, b) => b.count - a.count)
       .slice(0, 10),
-    [clicks],
+    [clicks, jobMeta],
   )
   const companyClicksRanked = useMemo(
     () => COMPANIES
@@ -233,14 +267,17 @@ export default function AdminDashboard() {
           <span>Vaga</span><span>Empresa</span><span style={{ textAlign: 'right' }}>Cliques</span>
         </div>
       )}
-      {topJobs.map(({ job, count }) => (
-        <div key={job.id} style={{
+      {topJobs.map(({ id, count, title, companyName, active }) => (
+        <div key={id} style={{
           display: 'grid', gridTemplateColumns: '2fr 1fr 70px', alignItems: 'center',
           padding: '10px 16px', fontSize: 13, fontFamily: 'var(--wf-hand)',
           borderBottom: '1px dashed var(--c-line3)',
         }}>
-          <span style={{ fontWeight: 700 }}>{job.title?.pt || job.rawTitle || '—'}</span>
-          <span className="mute">{COMPANY[job.company]?.name || job.company}</span>
+          <span style={{ fontWeight: 700 }}>
+            {title}
+            {!active && <span className="mute" style={{ fontWeight: 400, marginLeft: 6, fontSize: 11 }}>· encerrada</span>}
+          </span>
+          <span className="mute">{companyName}</span>
           <span className="hand" style={{ textAlign: 'right', fontWeight: 700 }}>{count}</span>
         </div>
       ))}
