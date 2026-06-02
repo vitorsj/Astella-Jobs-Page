@@ -28,6 +28,7 @@ export const I18N = {
     list: "Lista",
     cards: "Cards",
     table: "Tabela",
+    see_less: "ver menos",
   },
   en: {
     tagline: "Jobs in the Astella portfolio.",
@@ -58,5 +59,6 @@ export const I18N = {
     list: "List",
     cards: "Cards",
     table: "Table",
+    see_less: "see fewer",
   }
 };

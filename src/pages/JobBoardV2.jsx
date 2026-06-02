@@ -228,6 +228,16 @@ export default function JobBoardV2() {
                   </button>
                 </div>
               )}
+              {isExpanded && (
+                <div className="jbv2-expand-row">
+                  <button
+                    className="jbv2-expand-btn"
+                    onClick={() => setExpanded(e => ({ ...e, [cid]: false }))}
+                  >
+                    ← {t.see_less}
+                  </button>
+                </div>
+              )}
             </div>
           )
         })}
