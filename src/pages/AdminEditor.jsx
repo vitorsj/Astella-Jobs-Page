@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CompanyLogo from '../components/CompanyLogo.jsx'
 import { ALL_JOBS, COMPANY, SYNC_JOB } from '../data/jobs.js'
@@ -74,9 +74,16 @@ export default function AdminEditor() {
 
   const [form, setForm] = useState(() => (sel ? buildForm(sel, null) : null))
 
-  // Reconstrói o form quando muda a vaga selecionada ou chega o override vivo.
+  // Re-hidrata o form na troca de vaga; quando o override vivo chega (async) só
+  // reaplica se o form ainda não foi mexido. dirtyRef marca edição do usuário OU
+  // um reset programático — impede que uma mudança de liveOverrides (inclusive a
+  // que o próprio reset/save dispara) sobrescreva o que está na tela.
+  const dirtyRef = useRef(false)
+  const prevIdRef = useRef(selectedId)
   useEffect(() => {
-    if (sel) setForm(buildForm(sel, liveOv))
+    const idChanged = prevIdRef.current !== selectedId
+    if (idChanged) { prevIdRef.current = selectedId; dirtyRef.current = false }
+    if (sel && (idChanged || !dirtyRef.current)) setForm(buildForm(sel, liveOv))
   }, [selectedId, liveOverrides]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const queue = useMemo(() => {
@@ -97,7 +104,7 @@ export default function AdminEditor() {
   }
 
   const company = COMPANY[sel.company] || { name: sel.company, source: sel.source }
-  const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
+  const set = (k, v) => { dirtyRef.current = true; setForm(f => ({ ...f, [k]: v })) }
 
   // Patch enviado ao servidor (só campos administrados).
   function buildPatch(extra = {}) {
@@ -171,7 +178,9 @@ export default function AdminEditor() {
     setSaving(false)
     if (ok) {
       // Reconstrói do sync PURO (SYNC_JOB), não de `sel` — que já tem o override
-      // do build embutido e mostraria os valores editados após o reset.
+      // do build embutido e mostraria os valores editados após o reset. dirtyRef
+      // impede que o setLiveOverrides abaixo re-hidrate `sel` por cima do sync.
+      dirtyRef.current = true
       setForm(buildForm(SYNC_JOB[selectedId] || sel, null))
       setLiveOverrides(prev => {
         const jobs = { ...(prev?.jobs || {}) }
