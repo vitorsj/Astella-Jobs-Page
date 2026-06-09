@@ -2,18 +2,9 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { COMPANY } from '../data/jobs.js'
 import { getOverrides, saveCompany, logout } from '../lib/adminApi.js'
-
-// Aceita http(s) ou vazio (links LinkedIn). logo_url pode ser caminho local
-// (/logos/x.jpeg), então NÃO é validado aqui.
-function isHttpUrlOrEmpty(value) {
-  if (value == null || value === '') return true
-  try {
-    const u = new URL(value)
-    return u.protocol === 'http:' || u.protocol === 'https:'
-  } catch {
-    return false
-  }
-}
+// logo_url pode ser caminho local (/logos/x.jpeg), então NÃO é validado com
+// isHttpUrlOrEmpty — só o linkedin_url.
+import { isHttpUrlOrEmpty, saveErrorMessage } from '../lib/adminShared.js'
 
 function buildForm(base, ov) {
   base = base || {}
@@ -80,12 +71,8 @@ export default function AdminCompanyEditor() {
       setLastSaved(new Date())
       setLiveOverrides(prev => ({ ...(prev || {}), companies: { ...(prev?.companies || {}), [slug]: { ...(prev?.companies?.[slug] || {}), ...patch } } }))
       showToast('Salvo. O painel e o site atualizam em ~1 min.')
-    } else if (status === 401) {
-      showToast('Sessão expirada — recarregue e entre de novo.')
-    } else if (status === 0 || status >= 500) {
-      showToast('Indisponível (rode com `vercel dev` ou em produção).')
     } else {
-      showToast(`Erro ao salvar: ${error || status}`)
+      showToast(saveErrorMessage(status, error))
     }
   }
 

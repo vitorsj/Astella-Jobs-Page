@@ -3,18 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import CompanyLogo from '../components/CompanyLogo.jsx'
 import { ALL_JOBS, COMPANY, SYNC_JOB } from '../data/jobs.js'
 import { getOverrides, saveJob, saveManualJob, deleteManualJob, resetJob, logout } from '../lib/adminApi.js'
-
-// Aceita http(s) ou vazio (link de candidatura de vaga manual). Espelha a regra
-// do servidor (isHttpUrl em api/overrides.js) para dar feedback no campo.
-function isHttpUrlOrEmpty(value) {
-  if (value == null || value === '') return true
-  try {
-    const u = new URL(value)
-    return u.protocol === 'http:' || u.protocol === 'https:'
-  } catch {
-    return false
-  }
-}
+import { isHttpUrlOrEmpty, saveErrorMessage } from '../lib/adminShared.js'
 
 const LEVELS = ['Junior', 'Mid', 'Senior', 'Lead']
 const MODES = ['Remoto', 'Híbrido', 'Presencial']
@@ -125,12 +114,7 @@ export default function AdminEditor() {
     }
   }
 
-  function reportSaveError(status, error) {
-    if (status === 401) showToast('Sessão expirada — recarregue e entre de novo.')
-    else if (status === 0 || status >= 500) showToast('Indisponível (rode com `vercel dev` ou em produção).')
-    else if (error === 'invalid_url') showToast('Link inválido — use uma URL http(s).')
-    else showToast(`Erro ao salvar: ${error || status}`)
-  }
+  const reportSaveError = (status, error) => showToast(saveErrorMessage(status, error))
 
   async function persist(extra = {}) {
     if (saving) return

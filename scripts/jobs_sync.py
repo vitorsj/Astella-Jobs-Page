@@ -382,7 +382,11 @@ def prepare_job_record(job: dict[str, Any]) -> dict[str, Any]:
     external_ids = prepared.get("external_ids") or ([external_id] if external_id else [])
     raw_department = prepared.get("raw_department") or prepared.get("department") or "Operations"
     first_seen_at = prepared.get("first_seen_at") or prepared.get("created_at") or prepared.get("last_seen_at")
-    posted_at = prepared.get("posted_at") or parse_source_posted_at(prepared.get("created_at"), parse_iso(first_seen_at))
+    posted_at = prepared.get("posted_at")
+    if not posted_at and first_seen_at:
+        # Registro legado pode não ter nenhum timestamp — sem first_seen_at não
+        # há fallback seguro (parse_iso(None) quebraria o sync inteiro).
+        posted_at = parse_source_posted_at(prepared.get("created_at"), parse_iso(first_seen_at))
     unique_key = job_unique_key(prepared["title"], prepared.get("location") or "Remoto")
 
     prepared["source"] = source

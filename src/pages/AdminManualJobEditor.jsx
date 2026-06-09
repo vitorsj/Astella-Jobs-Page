@@ -2,20 +2,11 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { COMPANIES, ALL_JOBS } from '../data/jobs.js'
 import { getOverrides, saveManualJob, logout } from '../lib/adminApi.js'
+import { isHttpUrlOrEmpty, saveErrorMessage } from '../lib/adminShared.js'
 
 const LEVELS = ['Junior', 'Mid', 'Senior', 'Lead']
 const MODES = ['Remoto', 'Híbrido', 'Presencial']
 const STATUSES = ['rascunho', 'publicada', 'arquivada']
-
-function isHttpUrlOrEmpty(value) {
-  if (value == null || value === '') return true
-  try {
-    const u = new URL(value)
-    return u.protocol === 'http:' || u.protocol === 'https:'
-  } catch {
-    return false
-  }
-}
 
 // id casa com JOB_ID_RE (/^[A-Za-z0-9:_-]{1,80}$/) e é único contra ALL_JOBS +
 // manual_jobs vivos. charset 'manual:<slug>:<base36>' ⊂ RE, bem abaixo de 80.
@@ -89,14 +80,8 @@ export default function AdminManualJobEditor() {
       setCreatedNote(job.title_pt)
       setForm({ ...BLANK, company: form.company })
       showToast('Vaga manual criada.')
-    } else if (status === 401) {
-      showToast('Sessão expirada — recarregue e entre de novo.')
-    } else if (error === 'invalid_url') {
-      showToast('Link inválido — use uma URL http(s).')
-    } else if (status === 0 || status >= 500) {
-      showToast('Indisponível (rode com `vercel dev` ou em produção).')
     } else {
-      showToast(`Erro ao criar: ${error || status}`)
+      showToast(saveErrorMessage(status, error, 'criar'))
     }
   }
 

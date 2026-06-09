@@ -37,11 +37,22 @@ function normalize(data) {
   }
 }
 
+// Cache em memória do último read, validado por ETag. Sobrevive entre
+// invocações "warm" da função serverless; um 304 do GitHub não conta contra o
+// rate limit e evita re-baixar o arquivo a cada load do painel admin.
+let cache = null // { etag, data, sha }
+
 export async function readOverrides() {
   const { token, repo, branch, path } = config()
   const url = `${API}/repos/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`
-  const res = await fetch(url, { headers: ghHeaders(token) })
-  if (res.status === 404) return { data: { ...EMPTY }, sha: null }
+  const headers = ghHeaders(token)
+  if (cache?.etag) headers['If-None-Match'] = cache.etag
+  const res = await fetch(url, { headers })
+  if (res.status === 304 && cache) return { data: cache.data, sha: cache.sha }
+  if (res.status === 404) {
+    cache = null
+    return { data: { ...EMPTY }, sha: null }
+  }
   if (!res.ok) {
     const err = new Error(`github_read_failed`)
     err.status = res.status
@@ -55,7 +66,9 @@ export async function readOverrides() {
   } catch {
     parsed = { ...EMPTY }
   }
-  return { data: normalize(parsed), sha: json.sha }
+  const result = { data: normalize(parsed), sha: json.sha }
+  cache = { etag: res.headers.get('etag'), ...result }
+  return result
 }
 
 export async function writeOverrides(data, sha, message) {
@@ -75,5 +88,6 @@ export async function writeOverrides(data, sha, message) {
     err.detail = await res.text().catch(() => '')
     throw err
   }
+  cache = null // o conteúdo mudou; o próximo read revalida do zero
   return res.json()
 }
