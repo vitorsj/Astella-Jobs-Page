@@ -37,11 +37,27 @@ function normalize(data) {
   }
 }
 
+// Cache em memória do último read, validado por ETag. Sobrevive entre
+// invocações "warm" da função serverless; um 304 do GitHub não conta contra o
+// rate limit e evita re-baixar o arquivo a cada load do painel admin.
+let cache = null // { etag, data, sha }
+
 export async function readOverrides() {
   const { token, repo, branch, path } = config()
   const url = `${API}/repos/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`
-  const res = await fetch(url, { headers: ghHeaders(token) })
-  if (res.status === 404) return { data: { ...EMPTY }, sha: null }
+  // Snapshot local: um write concorrente pode anular `cache` enquanto o fetch
+  // está em voo — sem o snapshot, o 304 cairia no throw de !res.ok abaixo.
+  const snap = cache
+  const headers = ghHeaders(token)
+  if (snap?.etag) headers['If-None-Match'] = snap.etag
+  const res = await fetch(url, { headers })
+  // Clone: applyOp (api/overrides.js) muta o objeto retornado in place; sem
+  // clone, um write que falha deixaria o cache com edições nunca gravadas.
+  if (res.status === 304 && snap) return { data: structuredClone(snap.data), sha: snap.sha }
+  if (res.status === 404) {
+    cache = null
+    return { data: { ...EMPTY }, sha: null }
+  }
   if (!res.ok) {
     const err = new Error(`github_read_failed`)
     err.status = res.status
@@ -55,7 +71,9 @@ export async function readOverrides() {
   } catch {
     parsed = { ...EMPTY }
   }
-  return { data: normalize(parsed), sha: json.sha }
+  const data = normalize(parsed)
+  cache = { etag: res.headers.get('etag'), data: structuredClone(data), sha: json.sha }
+  return { data, sha: json.sha }
 }
 
 export async function writeOverrides(data, sha, message) {
@@ -75,5 +93,6 @@ export async function writeOverrides(data, sha, message) {
     err.detail = await res.text().catch(() => '')
     throw err
   }
+  cache = null // o conteúdo mudou; o próximo read revalida do zero
   return res.json()
 }

@@ -23,6 +23,8 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 COMPANIES_PATH = ROOT / "companies.json"
 FAKE_SOURCE_PATH = ROOT / "data" / "fake_linkedin_jobs.json"
+# ATENÇÃO: todo caminho de SAÍDA novo precisa entrar também em DATA_PATHS no
+# scripts/run_cron.sh — senão o cron nunca commita/pusha o arquivo.
 JOBS_PATH = ROOT / "jobs.json"
 PUBLIC_JOBS_PATH = ROOT / "public" / "jobs.json"
 GENERATED_JOBS_PATH = ROOT / "src" / "data" / "jobs.generated.json"
@@ -381,7 +383,15 @@ def prepare_job_record(job: dict[str, Any]) -> dict[str, Any]:
     external_id = str(prepared.get("external_id", ""))
     external_ids = prepared.get("external_ids") or ([external_id] if external_id else [])
     raw_department = prepared.get("raw_department") or prepared.get("department") or "Operations"
-    first_seen_at = prepared.get("first_seen_at") or prepared.get("created_at") or prepared.get("last_seen_at")
+    # Registro legado pode não ter timestamp nenhum — garantir first_seen_at
+    # (espelha normalize_job) deixa todos os consumidores downstream seguros:
+    # created_at, merge_job_records (parse_iso) e generate_jsonld ([:10]).
+    first_seen_at = (
+        prepared.get("first_seen_at")
+        or prepared.get("created_at")
+        or prepared.get("last_seen_at")
+        or isoformat_z(utc_now())
+    )
     posted_at = prepared.get("posted_at") or parse_source_posted_at(prepared.get("created_at"), parse_iso(first_seen_at))
     unique_key = job_unique_key(prepared["title"], prepared.get("location") or "Remoto")
 
@@ -393,6 +403,9 @@ def prepare_job_record(job: dict[str, Any]) -> dict[str, Any]:
     prepared["location"] = prepared.get("location") or "Remoto"
     prepared["remote"] = bool(prepared.get("remote", False))
     prepared["first_seen_at"] = first_seen_at
+    # last_seen_at também precisa existir: a deativação pula registro sem ele
+    # (ficaria ativo) e generate_jsonld faz parse_iso(last_seen_at) sem guarda.
+    prepared["last_seen_at"] = prepared.get("last_seen_at") or first_seen_at
     prepared["posted_at"] = posted_at
     prepared["created_at"] = posted_at or first_seen_at
     prepared["inactive_reason"] = prepared.get("inactive_reason") if not prepared.get("is_active", True) else None
