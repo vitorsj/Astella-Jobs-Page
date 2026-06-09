@@ -41,29 +41,33 @@ External Source
           ┌────────▼────────┐
           │  jobs_sync.py   │  (Railway cron, seg/qua/sex 9h UTC)
           │                 │
-          │  1. git pull    │  ← jobs.json atual do repo
+          │  1. git clone   │  ← estado atual do repo
           │  2. fetch API   │  ← skip-and-log por empresa
-          │  3. merge       │  ← dedup + soft-delete (com outage guard)
-          │  4. hash check  │  ← só prossegue se conteúdo mudou
+          │  3. merge       │  ← dedup + expiração por empresa
+          │  4. diff check  │  ← só commita se conteúdo mudou
           │  5. write JSON  │
-          │  6. gen HTML    │  ← index.html + /empresas/:slug.html + JSON-LD
+          │  6. gen SEO     │  ← /empresas/:slug.html + JSON-LD
           │  7. git push    │  ← GITHUB_TOKEN (Railway env var)
-          │  8. hc ping     │  ← Healthchecks.io (DEPOIS do push)
+          │  8. hc ping     │  ← Healthchecks.io (start/success/fail)
           └────────┬────────┘
                    │ git push
           ┌────────▼────────┐
           │   GitHub repo   │
           │   jobs.json     │  ← estado + display data
-          │   index.html    │  ← JSON-LD para Google Jobs
-          │   /empresas/    │  ← company pages
-          │   *.html        │
+          │   src/data/*.json│  ← dados usados pelo React
+          │   /empresas/    │  ← company pages com JSON-LD
+          │   job-postings  │  ← JSON-LD agregado
           └────────┬────────┘
                    │ auto-deploy on push
           ┌────────▼──────────┐
           │  Vercel (free)    │
           │  jobs.astella.vc  │
-          │                   │
-          │  Plausible script │  ← click tracking
+          │  React SPA + /api │
+          │  Vercel Analytics │
+          └───────────────────┘
+                   │
+          ┌────────▼──────────┐
+          │  Upstash Redis    │  ← contagem de cliques por vaga
           └───────────────────┘
 ```
 
@@ -71,7 +75,8 @@ External Source
 
 - **Cron**: Railway (~$5–10/mês), Python 3, roda segunda, quarta e sexta às 9h UTC — cron: `0 9 * * 1,3,5`.
 - **Frontend**: Vercel free tier, serve HTML/CSS/JS estático. Auto-deploy no git push.
-- **Analytics**: Plausible (client-side, sem backend).
+- **Analytics**: Vercel Analytics para tráfego geral + `/api/clicks` com Upstash Redis para cliques por vaga no admin.
+- **Admin**: Vercel Functions (`/api/login`, `/api/overrides`, `/api/clicks`) com cookie assinado e GitHub Contents API para salvar overrides.
 - **Monitoring**: Healthchecks.io (free).
 - **Data sources MVP**: LinkedIn-only (Gupy/Greenhouse/Lever deferidos).
 
@@ -79,13 +84,14 @@ External Source
 
 1. **Persistência: JSON-only**. `jobs.json` no repo é a fonte de verdade. Sem SQLite no Railway. Estado entre runs vive no git.
 
-2. **Click tracking: Plausible**. Sem endpoint de escrita próprio (elimina spam de métricas).
+2. **Click tracking atual: endpoint próprio + Upstash Redis**. O clique público dispara `/api/clicks` fire-and-forget; o admin lê agregados por vaga/empresa. Plausible fica deferido.
 
 3. **Soft-delete com guard**:
-   - Se `last_seen_at < now() - 7 days`, `is_active = false`.
-   - **Guard de outage**: se `total_fetched == 0` em um run, **não** aplicar soft-delete. Preserva vagas existentes durante outage da API.
+   - Se uma empresa foi buscada com sucesso e uma vaga anterior não veio no resultado, `is_active = false` com `inactive_reason = "missing_from_source"`.
+   - Se `posted_at` confiável for mais antigo que 100 dias, `is_active = false` com `inactive_reason = "stale_posted_at"`.
+   - **Guard de outage/skip**: se a API não retorna nada globalmente, ou uma empresa é pulada por erro, as vagas existentes daquela empresa são preservadas.
 
-4. **Frontend pattern**: HTML estático gerado pelo cron com JSON-LD embutido (Google Jobs SEO). Filtros em JS lendo `jobs.json` separado.
+4. **Frontend pattern**: React + Vite. A home é uma SPA que importa `src/data/jobs.generated.json` no build; o cron também gera `public/jobs.json`, `public/job-postings.jsonld` e `/empresas/:slug.html` com JSON-LD para SEO.
 
 5. **UTM tracking**: Todos os links "Ver vaga" levam `?utm_source=astella&utm_medium=jobs_board`.
 
@@ -95,7 +101,9 @@ External Source
 
 8. **Error handling**: Skip-and-log por empresa. API 4xx/5xx para empresa X → log + próxima empresa.
 
-9. **Healthchecks.io ping ocorre DEPOIS do git push**. Se o push falhar, o ping não acontece — alerta dispara. Detecta token expirado, repo offline, etc.
+9. **Healthchecks.io monitora início, sucesso e falha**. O cron pinga `/start` no começo, `/<exit_code>` em erro e a URL base só depois do sync + push opcional concluírem.
+
+10. **Admin overrides vivem fora do sync**. Edições manuais ficam em `src/data/overrides.json`, salvas via GitHub Contents API; o sync recorrente não sobrescreve overrides.
 
 ## jobs.json Schema (contrato Python ↔ JS)
 
@@ -134,7 +142,7 @@ External Source
 
 **Campos de estado** (cron escreve, frontend filtra):
 - `last_seen_at`: timestamp do último run que retornou esta vaga. Base do soft-delete.
-- `is_active`: false quando `last_seen_at < now() - 7 days`. Frontend mostra apenas `is_active = true`.
+- `is_active`: false quando a empresa foi buscada com sucesso e a vaga não apareceu mais na fonte, ou quando `posted_at` confiável está acima do limite de idade. Frontend mostra apenas `is_active = true`.
 - `generated_at`: timestamp do run. Útil para debug.
 
 ## companies.json (input do cron, mantido manualmente)
@@ -155,28 +163,30 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 
 ## Tests (pytest, `tests/test_jobs_sync.py`)
 
-| # | Test | O que verifica |
-|---|------|----------------|
-| 1 | `test_dedup_new_job` | Vaga nova → adicionada ao jobs list |
-| 2 | `test_dedup_existing_job` | Mesma vaga vista de novo → `last_seen_at` atualizado, sem duplicata |
-| 3 | `test_soft_delete_active` | `last_seen_at = hoje` → `is_active = True` |
-| 4 | `test_soft_delete_expired` | `last_seen_at = 8 dias atrás` → `is_active = False` |
-| 5 | `test_soft_delete_floor_on_outage` | `total_fetched = 0` → soft-delete **não** aplicado |
-| 6 | `test_jsonld_valid_posting` | `generate_jsonld(job)` → schema.org/JobPosting válido |
-| 7 | `test_jsonld_remote_job` | `remote=True` → `jobLocationType="TELECOMMUTE"` |
-| 8 | `test_error_handling_skip_and_log` | HTTP 500 para empresa X → X pulada, outras OK |
+17 testes cobrem:
+- dedup de vagas novas, existentes e repostadas;
+- preservação em outage total e em empresa pulada por erro;
+- expiração imediata quando uma empresa foi buscada com sucesso e a vaga sumiu da fonte;
+- expiração de vagas com `posted_at` confiável acima de 100 dias;
+- JSON-LD presencial/remoto;
+- mapeamento do payload Apify;
+- UTM sem derrubar query params existentes;
+- company sem `linkedin_search_url`;
+- classificação canônica de área por título.
 
 ## Failure Modes
 
 | Codepath | Failure | Test? | Error handling | User vê |
 |----------|---------|-------|----------------|---------|
-| LinkedIn API 429/500 | Rate limit ou server error | ✅ #8 | Skip + log | Empresa sem update — vaga some em 7 dias |
-| LinkedIn API down 8+ dias | Outage total | ✅ #5 | Guard: skip soft-delete | Nada — vagas preservadas |
-| `git push` falha (token expirado) | GITHUB_TOKEN expirou | ❌ | Healthchecks.io alerta (ping após push) | Site congela; alerta dispara |
+| LinkedIn API 429/500 | Rate limit ou server error | ✅ | Skip + log; empresa não expira nesse run | Vagas daquela empresa ficam preservadas |
+| LinkedIn API down | Outage total | ✅ | Guard: não expira vagas | Nada — vagas preservadas |
+| Empresa buscada com sucesso retorna 0 vagas | Fonte realmente vazia ou scraper mudou | ✅ | Vagas anteriores da empresa expiram como `missing_from_source` | Empresa some do board público |
+| `git push` falha (token expirado) | GITHUB_TOKEN expirou | ❌ | Healthchecks.io recebe falha / não recebe sucesso | Site congela; alerta dispara |
 | JSON-LD inválido | Campo obrigatório ausente | ✅ #6 | Validação no test | Google Jobs não indexa |
 | Logo 404 | URL inválida | ❌ | Fallback: inicial + cor | Visual fallback, não quebra |
+| Redis/track indisponível | Upstash ou `/api/clicks` falha | ❌ | Tracking engole erro e não bloqueia navegação | Clique abre a vaga; métrica pode não contar |
 
-**Critical mitigation**: Healthchecks.io ping **depois** do git push. Push falhar = ping não acontece = alerta.
+**Critical mitigation**: Healthchecks.io só marca sucesso depois do sync + push opcional. Push falhar = sem sucesso e/ou ping de falha.
 
 ## Setup Checklist
 
@@ -186,22 +196,26 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 [ ] Configurar subdomain jobs.astella.vc → Vercel (CNAME: cname.vercel-dns.com)
 [x] Railway: criar projeto, cron job, GITHUB_TOKEN + APIFY_TOKEN configurados
 [x] GitHub: Fine-grained PAT (1 ano, write neste repo)
-[ ] Healthchecks.io: criar check, adicionar HEALTHCHECKS_URL no Railway
-[ ] Plausible: criar site jobs.astella.vc, adicionar script no template HTML
-[x] companies.json: 10 empresas com linkedin_search_url (Gabriel, Purple Metrics,
-    Cienty, Cayena, Bem-Te-Vi, Kompa, Estoca, Sallve, TaOn, Lastlink)
-[x] jobs_sync.py: implementação com Apify + 11 unit tests
+[x] Healthchecks.io: check configurado com cron 0 9 * * 1,3,5 e HEALTHCHECKS_URL no Railway
+[x] Vercel env vars/admin: ADMIN_PASSWORD, SESSION_SECRET, GITHUB_TOKEN, GITHUB_REPO, GITHUB_BRANCH
+[x] Upstash Redis/Vercel KV: KV_REST_API_URL + KV_REST_API_TOKEN configurados
+[x] companies.json: 24 empresas com linkedin_search_url
+[x] jobs_sync.py: implementação com Apify + 17 unit tests
 [x] /empresas/:slug.html gerado automaticamente pelo sync
-[x] First run manual no Railway validado — 60 vagas reais
+[x] Sync real Apify validado — último payload local: 2026-06-09T00:05:00Z, 105 vagas ativas, 184 totais
 [x] Cron schedule no Railway: 0 9 * * 1,3,5 (segunda, quarta e sexta, 9h UTC)
 [ ] Spot-check 5–10 vagas no site antes de divulgar
 ```
 
-## Stack atual (maio/2026)
+## Stack atual (junho/2026)
 
-- **Frontend**: React + Vite + Tailwind — 3 variações de layout (V1, V2, V3)
+- **Frontend público**: React + Vite, rota `/` usando `JobBoardV2`.
+- **Admin**: `/admin` e `/admin/edit/:id`, com login por senha, cookie assinado e overrides via GitHub.
 - **Backend**: `scripts/jobs_sync.py` — Apify `hKByXkMQaC5Qt9UMN` (curious_coder/linkedin-jobs-scraper)
 - **Dados**: `jobs.json` + `src/data/jobs.generated.json` no repo (fonte de verdade)
+- **Overrides**: `src/data/overrides.json`
+- **Click tracking**: `/api/clicks` + Upstash Redis
+- **Tráfego geral**: Vercel Analytics
 - **Cron**: Railway, `bash scripts/run_cron.sh`, `0 9 * * 1,3,5`
 - **Deploy**: Vercel auto-deploy a cada push no `main`
 - **Repo**: vitorsj/Astella-Jobs-Page (privado)
@@ -213,6 +227,7 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 - **Gupy integration**: Gupy API gratuita por empresa (`https://{slug}.gupy.io/api/v1/jobs`). Adicionar após MVP LinkedIn validado. Dedup entre fontes: `hash(company_slug + title.lower().strip())`, manter ATS quando conflitar.
 - **Greenhouse / Lever**: depois do audit do portfólio (quem usa o quê).
 - **Email capture / candidate profiles**: após mês 1 com tráfego.
+- **Plausible**: alternativa futura se quisermos um dashboard externo de analytics mais completo; não é o tracking oficial do MVP atual.
 - **Sitemap.xml**: ~20 linhas Python, segunda iteração.
 - **Two-sided talent platform**: roadmap 12+ meses.
 - **astella.vc footer link**: alinhar com time do site após launch (não bloqueia).
