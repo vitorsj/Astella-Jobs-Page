@@ -46,6 +46,20 @@ export async function putOverride(op) {
 
 export const saveJob = (id, patch) => putOverride({ kind: 'job', id, patch })
 
+// kind:'company' — edita uma empresa do portfólio (chave = slug). Sem criação:
+// só empresas existentes são editadas (ver restrição de produto).
+export const saveCompany = (slug, patch) => putOverride({ kind: 'company', slug, patch })
+
+// kind:'manual_job' — cria/edita uma vaga manual. job.id obrigatório; job.url
+// precisa ser http(s) ou vazio (servidor rejeita com error:'invalid_url').
+export const saveManualJob = (job) => putOverride({ kind: 'manual_job', job })
+
+// kind:'delete_manual_job' — remove uma vaga manual.
+export const deleteManualJob = (id) => putOverride({ kind: 'delete_manual_job', id })
+
+// kind:'reset_job' — descarta o override de uma vaga sincronizada (volta ao sync).
+export const resetJob = (id) => putOverride({ kind: 'reset_job', id })
+
 // Contagem de clicks por vaga (mapa { jobId: count }). Requer sessão de admin.
 export async function getClicks() {
   const { ok, data } = await jsonFetch('/api/clicks', { method: 'GET' })
