@@ -1,8 +1,34 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -Eeuo pipefail
+
+healthcheck_ping() {
+  local suffix="${1:-}"
+  if [ -z "${HEALTHCHECKS_URL:-}" ]; then
+    return 0
+  fi
+
+  if curl -fsS --retry 3 --max-time 20 "${HEALTHCHECKS_URL%/}${suffix}" > /dev/null; then
+    return 0
+  fi
+
+  echo "Healthcheck ping failed (${suffix:-success})." >&2
+}
+
+on_error() {
+  local exit_code="$?"
+  echo "Cron failed with exit code ${exit_code}." >&2
+  healthcheck_ping "/${exit_code}"
+  exit "${exit_code}"
+}
+
+trap on_error ERR
+
+: "${GITHUB_TOKEN:?GITHUB_TOKEN is required}"
 
 REPO_URL="https://x-access-token:${GITHUB_TOKEN}@github.com/vitorsj/Astella-Jobs-Page.git"
-WORK_DIR="/tmp/astella-jobs"
+WORK_DIR="${WORK_DIR:-$(mktemp -d)}"
+
+healthcheck_ping "/start"
 
 # Clone fresh so we have a proper .git directory for commit + push
 git clone "$REPO_URL" "$WORK_DIR"
@@ -24,8 +50,10 @@ else
   echo "No changes detected, skipping push."
 fi
 
-# Healthchecks.io ping — runs AFTER push so a push failure = no ping = alert fires
+# Healthchecks.io success ping — runs only after sync + optional push complete.
+healthcheck_ping
 if [ -n "${HEALTHCHECKS_URL:-}" ]; then
-  curl -fsS --retry 3 "${HEALTHCHECKS_URL}" > /dev/null
-  echo "Healthcheck pinged."
+  echo "Healthcheck success pinged."
+else
+  echo "Healthcheck not configured; skipping ping."
 fi
