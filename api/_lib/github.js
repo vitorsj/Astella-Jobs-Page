@@ -45,10 +45,15 @@ let cache = null // { etag, data, sha }
 export async function readOverrides() {
   const { token, repo, branch, path } = config()
   const url = `${API}/repos/${repo}/contents/${path}?ref=${encodeURIComponent(branch)}`
+  // Snapshot local: um write concorrente pode anular `cache` enquanto o fetch
+  // está em voo — sem o snapshot, o 304 cairia no throw de !res.ok abaixo.
+  const snap = cache
   const headers = ghHeaders(token)
-  if (cache?.etag) headers['If-None-Match'] = cache.etag
+  if (snap?.etag) headers['If-None-Match'] = snap.etag
   const res = await fetch(url, { headers })
-  if (res.status === 304 && cache) return { data: cache.data, sha: cache.sha }
+  // Clone: applyOp (api/overrides.js) muta o objeto retornado in place; sem
+  // clone, um write que falha deixaria o cache com edições nunca gravadas.
+  if (res.status === 304 && snap) return { data: structuredClone(snap.data), sha: snap.sha }
   if (res.status === 404) {
     cache = null
     return { data: { ...EMPTY }, sha: null }
@@ -66,9 +71,9 @@ export async function readOverrides() {
   } catch {
     parsed = { ...EMPTY }
   }
-  const result = { data: normalize(parsed), sha: json.sha }
-  cache = { etag: res.headers.get('etag'), ...result }
-  return result
+  const data = normalize(parsed)
+  cache = { etag: res.headers.get('etag'), data: structuredClone(data), sha: json.sha }
+  return { data, sha: json.sha }
 }
 
 export async function writeOverrides(data, sha, message) {

@@ -46,6 +46,7 @@ python scripts/jobs_sync.py
 # Commit and push only if data files changed. `git status --porcelain` também
 # detecta arquivos NOVOS (untracked, ex.: public/empresas/<slug>.html de uma
 # empresa nova) — `git diff` só vê arquivos já rastreados.
+# Manter em sincronia com os caminhos de saída em scripts/jobs_sync.py.
 DATA_PATHS=(jobs.json public/jobs.json public/job-postings.jsonld src/data/jobs.generated.json src/data/sync_log.json public/empresas/)
 if [ -n "$(git status --porcelain -- "${DATA_PATHS[@]}")" ]; then
   git add "${DATA_PATHS[@]}"
