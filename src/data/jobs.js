@@ -59,8 +59,8 @@ function safeUrl(url) {
 function postedLabel(createdAt) {
   const generatedAt = new Date(jobsPayload.generated_at)
   const created = new Date(createdAt)
-  const days = Math.max(1, Math.round((generatedAt - created) / 86400000))
-  return days === 1 ? '1d' : `${days}d`
+  const days = Math.max(0, Math.round((generatedAt - created) / 86400000))
+  return `${days}d`
 }
 
 // Remove chaves null/undefined de um patch antes de aplicar (null = "não mexe").
