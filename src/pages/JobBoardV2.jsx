@@ -191,7 +191,11 @@ export default function JobBoardV2() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="jbv2-job-row"
-                  onClick={() => trackJobClick(job.id)}
+                  onClick={(e) => {
+                    // URL inválida virou '#': não abre aba morta nem conta clique.
+                    if (job.url === '#') { e.preventDefault(); return }
+                    trackJobClick(job.id)
+                  }}
                 >
                   <CompanyLogo id={job.company} />
                   <div className="jbv2-jleft">

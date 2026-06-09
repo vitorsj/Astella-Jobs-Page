@@ -44,12 +44,13 @@ function normalizeMode(remote, location) {
   return 'Presencial'
 }
 
-// Só aceita http(s). Bloqueia javascript:/data: vindos do sync ou de edições
-// manuais antes de virarem href (evita XSS via clique). null/vazio → '#'.
+// Só aceita URLs http(s) absolutas. Bloqueia javascript:/data: e também
+// protocolo-relativas (//evil.com) — links de vaga são sempre absolutos, então
+// sem base no parser: relativas/protocolo-relativas falham e viram '#'.
 function safeUrl(url) {
   if (typeof url !== 'string') return '#'
   try {
-    const u = new URL(url, 'https://astella.com.br')
+    const u = new URL(url)
     return u.protocol === 'http:' || u.protocol === 'https:' ? url : '#'
   } catch {
     return '#'
