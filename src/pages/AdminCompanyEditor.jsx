@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { COMPANY } from '../data/jobs.js'
 import { getOverrides, saveCompany, logout } from '../lib/adminApi.js'
@@ -48,9 +48,18 @@ export default function AdminCompanyEditor() {
 
   const liveOv = liveOverrides?.companies?.[slug]
   const [form, setForm] = useState(() => buildForm(base, null))
-  useEffect(() => { setForm(buildForm(base, liveOv)) }, [slug, liveOverrides]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
+  // Re-hidrata na troca de slug; quando os overrides vivos chegam (async), só
+  // reaplica se o usuário ainda NÃO editou — senão sobrescreveria o que ele digitou.
+  const dirtyRef = useRef(false)
+  const prevSlugRef = useRef(slug)
+  useEffect(() => {
+    const slugChanged = prevSlugRef.current !== slug
+    if (slugChanged) { prevSlugRef.current = slug; dirtyRef.current = false }
+    if (slugChanged || !dirtyRef.current) setForm(buildForm(base, liveOv))
+  }, [slug, liveOverrides]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  const set = (k, v) => { dirtyRef.current = true; setForm(f => ({ ...f, [k]: v })) }
   const linkedinValid = useMemo(() => isHttpUrlOrEmpty(form.linkedin_url), [form.linkedin_url])
 
   async function persist() {

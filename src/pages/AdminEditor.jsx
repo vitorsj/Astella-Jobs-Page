@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CompanyLogo from '../components/CompanyLogo.jsx'
-import { ALL_JOBS, COMPANY } from '../data/jobs.js'
+import { ALL_JOBS, COMPANY, SYNC_JOB } from '../data/jobs.js'
 import { getOverrides, saveJob, saveManualJob, deleteManualJob, resetJob, logout } from '../lib/adminApi.js'
 
 // Aceita http(s) ou vazio (link de candidatura de vaga manual). Espelha a regra
@@ -127,6 +127,11 @@ export default function AdminEditor() {
 
   async function persist(extra = {}) {
     if (saving) return
+    // Título (PT) é obrigatório — evita publicar vaga com título em branco.
+    if (!(form.title_pt || '').trim()) {
+      showToast('Título (PT) é obrigatório.')
+      return
+    }
     const patch = buildPatch(extra)
     // Vaga manual carrega url editável; validamos antes (servidor revalida).
     if (sel.manual && !isHttpUrlOrEmpty(form.url)) {
@@ -165,7 +170,9 @@ export default function AdminEditor() {
     const { ok, status, error } = await resetJob(selectedId)
     setSaving(false)
     if (ok) {
-      setForm(buildForm(sel, null))
+      // Reconstrói do sync PURO (SYNC_JOB), não de `sel` — que já tem o override
+      // do build embutido e mostraria os valores editados após o reset.
+      setForm(buildForm(SYNC_JOB[selectedId] || sel, null))
       setLiveOverrides(prev => {
         const jobs = { ...(prev?.jobs || {}) }
         delete jobs[selectedId]
