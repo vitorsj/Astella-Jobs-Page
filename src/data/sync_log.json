@@ -1,6 +1,39 @@
 {
   "runs": [
     {
+      "ts": "2026-06-09T14:57:08Z",
+      "mode": "apify",
+      "total_fetched": 115,
+      "total_active": 101,
+      "changed": true,
+      "lines": [
+        "ok gabriel: 0 jobs",
+        "ok purple-metrics: 0 jobs",
+        "ok cienty: 0 jobs",
+        "ok cayena: 14 jobs",
+        "ok bem-te-vi: 0 jobs",
+        "ok kompa: 0 jobs",
+        "ok estoca: 3 jobs",
+        "ok sallve: 12 jobs",
+        "ok taon: 0 jobs",
+        "ok lastlink: 0 jobs",
+        "ok silverguard: 0 jobs",
+        "ok omie: 59 jobs",
+        "ok movens: 0 jobs",
+        "ok livance: 1 jobs",
+        "ok leapy: 0 jobs",
+        "ok jota: 1 jobs",
+        "ok gove: 2 jobs",
+        "ok croct: 0 jobs",
+        "ok botcity: 14 jobs",
+        "ok bossabox: 0 jobs",
+        "ok bornlogic: 0 jobs",
+        "ok birdie: 0 jobs",
+        "ok aprova: 5 jobs",
+        "ok amicci: 4 jobs"
+      ]
+    },
+    {
       "ts": "2026-06-09T00:05:00Z",
       "mode": "apify",
       "total_fetched": 121,
