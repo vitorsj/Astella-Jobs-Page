@@ -64,16 +64,11 @@ export default function JobBoardV2() {
     <div className="jbv2-root">
       {/* NAV */}
       <nav className="jbv2-nav">
-        <a href="#" className="jbv2-brand" aria-label="Astella Careers">
+        <a href="/" className="jbv2-brand" aria-label="Astella Careers">
           <span className="jbv2-mark">
             <img src="/astella-logo.png" alt="Astella" />
           </span>
         </a>
-        <ul className="jbv2-nav-links">
-          <li><a href="#" className="active">{t.nav.jobs}</a></li>
-          <li><a href="#">{t.nav.companies}</a></li>
-          <li><a href="#">{t.nav.about}</a></li>
-        </ul>
         <div className="jbv2-nav-spacer" />
         <button className="jbv2-lang" onClick={() => setLang(lang === 'pt' ? 'en' : 'pt')}>
           {lang === 'pt' ? 'PT · EN' : 'EN · PT'}
@@ -340,14 +335,6 @@ const CSS = `
   font-size: 15.5px; color: var(--white); letter-spacing: 0.02em;
 }
 .jbv2-wordmark em { color: var(--teal); font-style: normal; }
-.jbv2-nav-links { display: flex; list-style: none; margin: 0 0 0 8px; padding: 0; }
-.jbv2-nav-links a {
-  font-size: 13px; font-weight: 400;
-  color: rgba(255,255,255,0.45);
-  text-decoration: none; padding: 4px 12px; transition: color .15s;
-}
-.jbv2-nav-links a:hover { color: rgba(255,255,255,0.80); }
-.jbv2-nav-links a.active { color: var(--teal); }
 .jbv2-nav-spacer { flex: 1; }
 .jbv2-lang {
   font-size: 11.5px; font-weight: 500;

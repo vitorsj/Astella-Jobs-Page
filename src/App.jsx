@@ -13,10 +13,6 @@ export default function App() {
           <Route path="/"            element={<JobBoardV2 />} />
           <Route path="/admin"       element={<RequireAuth><AdminDashboard /></RequireAuth>} />
           <Route path="/admin/edit/:id" element={<RequireAuth><AdminEditor /></RequireAuth>} />
-          {/* stub routes for nav links */}
-          <Route path="/companies"   element={<Navigate to="/" replace />} />
-          <Route path="/about"       element={<Navigate to="/" replace />} />
-          <Route path="/contact"     element={<Navigate to="/" replace />} />
           <Route path="*"            element={<Navigate to="/" replace />} />
         </Routes>
       </LangProvider>
