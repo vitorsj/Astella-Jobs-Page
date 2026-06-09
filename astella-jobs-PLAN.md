@@ -39,7 +39,7 @@ External Source
 └──────────────────┬───────────────────┘
                    │
           ┌────────▼────────┐
-          │  jobs_sync.py   │  (Railway cron, 1x/semana)
+          │  jobs_sync.py   │  (Railway cron, seg/ter/qua 9h UTC)
           │                 │
           │  1. git pull    │  ← jobs.json atual do repo
           │  2. fetch API   │  ← skip-and-log por empresa
@@ -69,7 +69,7 @@ External Source
 
 **Componentes:**
 
-- **Cron**: Railway (~$5–10/mês), Python 3, roda 1x/semana (segunda-feira, 9h BRT — cron: `0 12 * * 1`).
+- **Cron**: Railway (~$5–10/mês), Python 3, roda segunda, terça e quarta às 9h UTC — cron: `0 9 * * 1,2,3`.
 - **Frontend**: Vercel free tier, serve HTML/CSS/JS estático. Auto-deploy no git push.
 - **Analytics**: Plausible (client-side, sem backend).
 - **Monitoring**: Healthchecks.io (free).
@@ -193,7 +193,7 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 [x] jobs_sync.py: implementação com Apify + 11 unit tests
 [x] /empresas/:slug.html gerado automaticamente pelo sync
 [x] First run manual no Railway validado — 60 vagas reais
-[x] Cron schedule no Railway: 0 12 * * 1 (segunda, 9h BRT)
+[x] Cron schedule no Railway: 0 9 * * 1,2,3 (segunda, terça e quarta, 9h UTC)
 [ ] Spot-check 5–10 vagas no site antes de divulgar
 ```
 
@@ -202,7 +202,7 @@ Editado manualmente quando empresa nova entra no portfólio (~5–10x/ano).
 - **Frontend**: React + Vite + Tailwind — 3 variações de layout (V1, V2, V3)
 - **Backend**: `scripts/jobs_sync.py` — Apify `hKByXkMQaC5Qt9UMN` (curious_coder/linkedin-jobs-scraper)
 - **Dados**: `jobs.json` + `src/data/jobs.generated.json` no repo (fonte de verdade)
-- **Cron**: Railway, `bash scripts/run_cron.sh`, `0 12 * * 1`
+- **Cron**: Railway, `bash scripts/run_cron.sh`, `0 9 * * 1,2,3`
 - **Deploy**: Vercel auto-deploy a cada push no `main`
 - **Repo**: vitorsj/Astella-Jobs-Page (privado)
 - **Apify token**: configurado como env var `APIFY_TOKEN` no Railway
