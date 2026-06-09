@@ -32,7 +32,23 @@ COMPANY_PAGES_DIR = ROOT / "public" / "empresas"
 JSONLD_PATH = ROOT / "public" / "job-postings.jsonld"
 UTM_PARAMS = {"utm_source": "astella", "utm_medium": "jobs_board"}
 MISSING_SOURCE_GRACE_DAYS = 0
-JSONLD_VALID_THROUGH_DAYS = 7
+# Backstop p/ empresa que falha no scrape: se o scrape de uma empresa der erro
+# por vários runs seguidos, suas vagas nunca renovam last_seen_at NEM são
+# desativadas (a desativação normal só vale p/ empresas raspadas com sucesso).
+# Resultado: vagas fantasma ativas indefinidamente. Aqui, se a empresa não é
+# raspada com sucesso há mais de N dias, escondemos as vagas dela — preferimos
+# esconder vaga real a mostrar vaga que talvez não exista. 4 dias tolera UMA
+# falha isolada (cron roda seg/qua/sex; maior intervalo entre runs é 3 dias) e
+# age só quando a empresa falha ~2 runs seguidos.
+try:
+    COMPANY_UNREACHABLE_DAYS = int(os.environ.get("SYNC_COMPANY_UNREACHABLE_DAYS", "4"))
+except ValueError:
+    COMPANY_UNREACHABLE_DAYS = 4  # env malformado não deve derrubar o sync inteiro
+# validThrough do JSON-LD (Google for Jobs): mantido perto da cadência do cron.
+# Com 7 dias, o Google podia continuar exibindo um link morto por até uma semana
+# após a vaga sair do ar. 4 cobre o intervalo de fim de semana (Sex→Seg = 3d) com
+# 1 dia de folga, sem marcar como expirada uma vaga ainda ativa entre runs.
+JSONLD_VALID_THROUGH_DAYS = 4
 STALE_POSTED_DAYS = 100
 APIFY_BASE_URL = "https://api.apify.com/v2"
 APIFY_ACTOR_ID = "hKByXkMQaC5Qt9UMN"
@@ -434,15 +450,30 @@ def merge_jobs(
     if successful_company_slugs:
         expires_before = now - timedelta(days=MISSING_SOURCE_GRACE_DAYS)
         stale_before = now - timedelta(days=STALE_POSTED_DAYS)
+        unreachable_before = now - timedelta(days=COMPANY_UNREACHABLE_DAYS)
         for job in by_key.values():
-            if job["company_slug"] not in successful_company_slugs:
-                continue
+            scraped_ok = job["company_slug"] in successful_company_slugs
+            last_seen = job.get("last_seen_at")
+            # 1) Posting velho demais → provável vaga-fantasma perpétua (vale mesmo
+            #    se a empresa raspou ok neste run).
             if job.get("posted_at") and parse_iso(job["posted_at"]) < stale_before:
                 job["is_active"] = False
                 job["inactive_reason"] = "stale_posted_at"
-            elif parse_iso(job["last_seen_at"]) < expires_before:
+            # Sem last_seen_at (registro legado/corrompido) não dá p/ julgar
+            # obsolescência por tempo — não mexe, em vez de crashar o run inteiro.
+            elif not last_seen:
+                continue
+            # 2) Empresa raspada com sucesso, mas a vaga não voltou → saiu do ar.
+            elif scraped_ok and parse_iso(last_seen) < expires_before:
                 job["is_active"] = False
                 job["inactive_reason"] = "missing_from_source"
+            # 3) Backstop: empresa falhou no scrape e não é vista há > N dias. Não
+            #    dá mais p/ garantir que a vaga existe → esconder em vez de mostrar
+            #    fantasma. Só atua porque OUTRAS empresas rasparam ok (estamos no
+            #    bloco successful_company_slugs); numa pane total nada é desativado.
+            elif not scraped_ok and parse_iso(last_seen) < unreachable_before:
+                job["is_active"] = False
+                job["inactive_reason"] = "company_unreachable"
 
     return sorted(by_key.values(), key=lambda j: (not j["is_active"], j["company_slug"], j["title"], j["location"]))
 
@@ -573,14 +604,28 @@ def run_sync(
     next_payload = build_payload(companies, merged_jobs, now)
     changed = stable_json(comparable_payload(existing_payload)) != stable_json(comparable_payload(next_payload))
 
+    # Vagas escondidas pelo backstop de empresa inalcançável — registrar sempre,
+    # para a falha silenciosa de scrape de uma empresa virar sinal observável.
+    unreachable = sum(1 for j in merged_jobs if j.get("inactive_reason") == "company_unreachable")
+    if unreachable:
+        offline = sorted({j["company_slug"] for j in merged_jobs if j.get("inactive_reason") == "company_unreachable"})
+        logging.warning(
+            "backstop: %d vaga(s) escondida(s) por empresa inalcançável há >%dd: %s",
+            unreachable, COMPANY_UNREACHABLE_DAYS, ", ".join(offline),
+        )
+
     # Trava de sanidade: aborta ANTES de escrever se as vagas ativas colapsarem.
+    # As vagas escondidas pelo backstop são intencionais (a empresa ficou
+    # inalcançável) — somá-las de volta evita que a trava bloqueie o write e, com
+    # isso, MANTENHA as vagas-fantasma no ar, o oposto do objetivo do backstop.
     if min_active_ratio:
         prior_active = sum(1 for j in existing_payload.get("jobs", []) if j.get("is_active"))
         new_active = next_payload["total_active"]
-        if prior_active > 0 and new_active < prior_active * min_active_ratio:
+        if prior_active > 0 and (new_active + unreachable) < prior_active * min_active_ratio:
             raise SyncError(
                 f"sanity gate: active jobs collapsed {prior_active} -> {new_active} "
-                f"(< {min_active_ratio:.0%} of prior); refusing to write/publish"
+                f"(+{unreachable} ocultas como inalcançáveis; "
+                f"< {min_active_ratio:.0%} of prior); refusing to write/publish"
             )
 
     write_json(JOBS_PATH, next_payload)

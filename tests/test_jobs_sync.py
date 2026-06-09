@@ -104,6 +104,16 @@ def test_jsonld_valid_posting():
     assert jsonld["jobLocation"]["@type"] == "Place"
 
 
+def test_jsonld_valid_through_tracks_last_seen():
+    # validThrough = last_seen_at + JSONLD_VALID_THROUGH_DAYS (4): perto da cadência
+    # do cron p/ o Google expirar links mortos rápido, sem expirar vaga ainda ativa.
+    job = make_job(last_seen_at="2026-05-08T18:00:00Z")
+
+    jsonld = generate_jsonld(job, COMPANY)
+
+    assert jsonld["validThrough"] == "2026-05-12"
+
+
 def test_jsonld_remote_job():
     job = make_job(raw={"location": "Remoto", "remote": True})
 
@@ -226,13 +236,47 @@ def test_same_title_different_cities_are_not_deduped():
     assert len(merged) == 2
 
 
-def test_skipped_company_does_not_expire_old_jobs():
-    existing = make_job(last_seen_at="2026-04-30T18:00:00Z", is_active=True)
+def test_transient_skip_keeps_recent_jobs_active():
+    # Empresa pulada neste run, mas vista há 2 dias (< COMPANY_UNREACHABLE_DAYS):
+    # uma falha isolada de scrape NÃO deve esconder as vagas.
+    existing = make_job(last_seen_at="2026-05-06T18:00:00Z", is_active=True)
 
     merged = merge_jobs([existing], [], NOW, total_fetched=1, successful_company_slugs={"estoca"})
 
     assert merged[0]["is_active"] is True
     assert merged[0]["inactive_reason"] is None
+
+
+def test_unreachable_company_jobs_expire_after_backstop():
+    # Empresa falha no scrape e não é vista há 8 dias (> COMPANY_UNREACHABLE_DAYS),
+    # enquanto OUTRA empresa raspou ok → não dá mais p/ garantir que a vaga existe.
+    existing = make_job(last_seen_at="2026-04-30T18:00:00Z", is_active=True)
+
+    merged = merge_jobs([existing], [], NOW, total_fetched=1, successful_company_slugs={"estoca"})
+
+    assert merged[0]["is_active"] is False
+    assert merged[0]["inactive_reason"] == "company_unreachable"
+
+
+def test_unreachable_backstop_inert_on_total_outage():
+    # Pane total (nenhuma empresa raspou): mesmo com vaga antiga, nada é desativado.
+    existing = make_job(last_seen_at="2026-04-30T18:00:00Z", is_active=True)
+
+    merged = merge_jobs([existing], [], NOW, total_fetched=0)
+
+    assert merged[0]["is_active"] is True
+    assert merged[0]["inactive_reason"] is None
+
+
+def test_missing_last_seen_at_does_not_crash():
+    # Registro legado/corrompido sem last_seen_at, de empresa não-raspada: o loop
+    # antes pulava com `continue`; agora desreferencia last_seen. Não deve crashar.
+    existing = make_job(is_active=True)
+    existing.pop("last_seen_at", None)
+
+    merged = merge_jobs([existing], [], NOW, total_fetched=1, successful_company_slugs={"estoca"})
+
+    assert merged[0]["is_active"] is True  # sem como julgar obsolescência → mantém
 
 
 def test_reliable_old_posted_at_expires_job():
@@ -292,3 +336,61 @@ def test_sanity_gate_blocks_active_jobs_collapse(monkeypatch, tmp_path):
 
     # Nada foi escrito: o arquivo de saída segue com as 10 vagas originais.
     assert len(_json.loads(jobs_path.read_text())["jobs"]) == 10
+
+
+def test_sanity_gate_ignores_intentional_unreachable_hides(monkeypatch, tmp_path):
+    """Vagas escondidas pelo backstop (company_unreachable) NÃO contam como
+    colapso: a trava não deve bloquear o write só porque uma empresa ficou
+    inalcançável — senão manteria as vagas-fantasma no ar (oposto do objetivo)."""
+    import json as _json
+    import jobs_sync
+
+    estoca = {**COMPANY, "id": "estoca-001", "name": "Estoca", "slug": "estoca"}
+    companies = [COMPANY, estoca]
+
+    companies_path = tmp_path / "companies.json"
+    jobs_path = tmp_path / "jobs.json"
+    companies_path.write_text(_json.dumps(companies))
+
+    # 8 vagas antigas da estoca (vistas há 8 dias > backstop), todas ativas.
+    existing = [
+        {
+            **normalize_job(
+                {**RAW_JOB, "external_id": f"est-{i}", "title": f"Estoca Role {i}"},
+                estoca,
+                NOW,
+            ),
+            "last_seen_at": "2026-04-30T18:00:00Z",
+            "is_active": True,
+        }
+        for i in range(8)
+    ]
+    jobs_path.write_text(_json.dumps({"jobs": existing, "companies": companies}))
+
+    monkeypatch.setattr(jobs_sync, "COMPANIES_PATH", companies_path)
+    monkeypatch.setattr(jobs_sync, "JOBS_PATH", jobs_path)
+    # Saídas → tmp_path, p/ não escrever no repo real ao passar pela trava.
+    monkeypatch.setattr(jobs_sync, "PUBLIC_JOBS_PATH", tmp_path / "public_jobs.json")
+    monkeypatch.setattr(jobs_sync, "GENERATED_JOBS_PATH", tmp_path / "generated.json")
+    monkeypatch.setattr(jobs_sync, "JSONLD_PATH", tmp_path / "jobs.jsonld")
+    monkeypatch.setattr(jobs_sync, "COMPANY_PAGES_DIR", tmp_path / "empresas")
+
+    # nubank raspa ok (2 vagas novas); estoca falha o scrape.
+    def fake_fetch(company, token, now):
+        if company["slug"] == "estoca":
+            raise jobs_sync.SyncError("boom")
+        return [
+            make_job(raw={"external_id": "nu-1", "title": "Engineer One"}),
+            make_job(raw={"external_id": "nu-2", "title": "Engineer Two"}),
+        ]
+
+    monkeypatch.setattr(jobs_sync, "fetch_apify_jobs", fake_fetch)
+
+    # Sem o fix: new_active=2 < 0.5*8=4 → trava dispararia. Com o fix:
+    # (2 + 8 inalcançáveis) = 10 ≥ 4 → escreve normalmente.
+    result = jobs_sync.run_sync(now=NOW, apify_token="fake-token", min_active_ratio=0.5)
+
+    written = _json.loads(jobs_path.read_text())["jobs"]
+    unreachable = [j for j in written if j.get("inactive_reason") == "company_unreachable"]
+    assert len(unreachable) == 8
+    assert result.total_active == 2  # só as 2 vagas novas da nubank
