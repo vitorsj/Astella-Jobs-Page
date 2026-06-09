@@ -1,7 +1,8 @@
 // POST /api/login  { password }  → seta cookie de sessão se a senha bater.
 import { safeEqual, sessionCookie, newSessionToken } from './_lib/auth.js'
+import { getClientIp, rateLimitOk } from './_lib/ratelimit.js'
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST')
     res.status(405).json({ error: 'method_not_allowed' })
@@ -12,6 +13,12 @@ export default function handler(req, res) {
   const secret = process.env.SESSION_SECRET
   if (!expected || !secret) {
     res.status(500).json({ error: 'auth_not_configured' })
+    return
+  }
+
+  // Anti-brute-force: no máx. 10 tentativas por IP a cada 10 min.
+  if (!(await rateLimitOk(`rl:login:${getClientIp(req)}`, 10, 600))) {
+    res.status(429).json({ error: 'too_many_attempts' })
     return
   }
 

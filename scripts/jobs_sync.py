@@ -38,6 +38,10 @@ APIFY_BASE_URL = "https://api.apify.com/v2"
 APIFY_ACTOR_ID = "hKByXkMQaC5Qt9UMN"
 APIFY_POLL_INTERVAL_S = 5
 APIFY_MAX_ATTEMPTS = 60  # ~5 min timeout
+# Trava de sanidade: aborta (sem escrever/commitar) se as vagas ativas caírem
+# abaixo desta fração do total anterior. Evita publicar um board vazio/quebrado
+# por causa de uma resposta vazia da Apify ou fallback de fixtures. 0 desliga.
+SYNC_MIN_ACTIVE_RATIO_DEFAULT = 0.5
 
 
 class SyncError(RuntimeError):
@@ -544,6 +548,7 @@ def run_sync(
     now: datetime | None = None,
     error_slugs: set[str] | None = None,
     apify_token: str | None = None,
+    min_active_ratio: float | None = None,
 ) -> SyncResult:
     now = now or utc_now()
     companies = read_json(COMPANIES_PATH, [])
@@ -567,6 +572,16 @@ def run_sync(
     )
     next_payload = build_payload(companies, merged_jobs, now)
     changed = stable_json(comparable_payload(existing_payload)) != stable_json(comparable_payload(next_payload))
+
+    # Trava de sanidade: aborta ANTES de escrever se as vagas ativas colapsarem.
+    if min_active_ratio:
+        prior_active = sum(1 for j in existing_payload.get("jobs", []) if j.get("is_active"))
+        new_active = next_payload["total_active"]
+        if prior_active > 0 and new_active < prior_active * min_active_ratio:
+            raise SyncError(
+                f"sanity gate: active jobs collapsed {prior_active} -> {new_active} "
+                f"(< {min_active_ratio:.0%} of prior); refusing to write/publish"
+            )
 
     write_json(JOBS_PATH, next_payload)
     write_json(PUBLIC_JOBS_PATH, next_payload)
@@ -612,7 +627,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--apify-token",
         default=None,
-        help="Apify API token. Falls back to APIFY_TOKEN env var. Sem nenhum: usa fixtures.",
+        help="Apify API token. Falls back to APIFY_TOKEN env var.",
+    )
+    parser.add_argument(
+        "--allow-fixtures",
+        action="store_true",
+        help="Permite rodar em modo fixtures (fake) quando não há APIFY_TOKEN. "
+        "Sem esta flag, a ausência de token é um erro fatal (evita publicar dados fake em produção).",
     )
     return parser.parse_args()
 
@@ -621,12 +642,35 @@ def main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     args = parse_args()
     apify_token = args.apify_token or os.environ.get("APIFY_TOKEN")
+
+    # Sem token e sem opt-in explícito: erro fatal. Em produção isso evita que o
+    # cron rode silenciosamente em modo fixtures e publique um board quase vazio.
+    if not apify_token and not args.allow_fixtures:
+        logging.error(
+            "APIFY_TOKEN ausente. Defina o token ou passe --allow-fixtures para "
+            "rodar em modo fake explicitamente. Abortando sem escrever."
+        )
+        return 2
+
+    try:
+        ratio = float(os.environ.get("SYNC_MIN_ACTIVE_RATIO", SYNC_MIN_ACTIVE_RATIO_DEFAULT))
+    except ValueError:
+        ratio = SYNC_MIN_ACTIVE_RATIO_DEFAULT
+    # No modo fixtures o dataset é pequeno de propósito — não aplica a trava.
+    min_active_ratio = ratio if apify_token else None
+
     now = utc_now()
-    result = run_sync(
-        now=now,
-        error_slugs=set(args.simulate_error) if not apify_token else None,
-        apify_token=apify_token,
-    )
+    try:
+        result = run_sync(
+            now=now,
+            error_slugs=set(args.simulate_error) if not apify_token else None,
+            apify_token=apify_token,
+            min_active_ratio=min_active_ratio,
+        )
+    except SyncError as e:
+        logging.error("%s", e)
+        return 3
+
     write_sync_log(result, mode="apify" if apify_token else "fake", now=now)
     for line in result.logs:
         logging.info(line)

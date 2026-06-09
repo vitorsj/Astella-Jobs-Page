@@ -24,7 +24,7 @@ export default function JobBoardV2() {
     if (
       q &&
       !titleOf(j).toLowerCase().includes(q) &&
-      !COMPANY[j.company].name.toLowerCase().includes(q) &&
+      !(COMPANY[j.company]?.name || '').toLowerCase().includes(q) &&
       !j.area.toLowerCase().includes(q)
     ) return false
     if (selCompany && j.company !== selCompany) return false
@@ -168,7 +168,7 @@ export default function JobBoardV2() {
             {lang === 'pt' ? 'Nenhuma vaga para os filtros selecionados.' : 'No jobs match the selected filters.'}
           </div>
         ) : companyIds.map(cid => {
-          const c = COMPANY[cid]
+          const c = COMPANY[cid] || { name: cid }
           const jobs = grouped[cid]
           const isExpanded = expanded[cid]
           const displayJobs = isExpanded ? jobs : jobs.slice(0, INITIAL_VISIBLE)

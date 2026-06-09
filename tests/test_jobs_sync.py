@@ -4,6 +4,8 @@ import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
+import pytest
+
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
@@ -251,3 +253,42 @@ def test_canonical_area_prefers_title_signal():
         "Analista Sênior de Eventos & Brand Experience",
         "Business Development and Sales",
     ) == "Marketing"
+
+
+def test_main_requires_token_without_allow_fixtures(monkeypatch):
+    """Sem APIFY_TOKEN e sem --allow-fixtures, main() aborta (não publica fake)."""
+    import jobs_sync
+
+    monkeypatch.delenv("APIFY_TOKEN", raising=False)
+    monkeypatch.setattr(sys, "argv", ["jobs_sync.py"])
+    # Se run_sync for chamado, falha o teste — não deve chegar lá.
+    monkeypatch.setattr(jobs_sync, "run_sync", lambda **kw: pytest.fail("run_sync should not run"))
+
+    assert jobs_sync.main() == 2
+
+
+def test_sanity_gate_blocks_active_jobs_collapse(monkeypatch, tmp_path):
+    """A trava de sanidade aborta (sem escrever) quando as vagas ativas colapsam."""
+    import json as _json
+    import jobs_sync
+
+    companies_path = tmp_path / "companies.json"
+    jobs_path = tmp_path / "jobs.json"
+    companies_path.write_text(_json.dumps([COMPANY]))
+
+    existing = [
+        make_job(raw={"external_id": f"old-{i}"}, last_seen_at="2026-04-30T18:00:00Z", is_active=True)
+        for i in range(10)
+    ]
+    jobs_path.write_text(_json.dumps({"jobs": existing, "companies": [COMPANY]}))
+
+    monkeypatch.setattr(jobs_sync, "COMPANIES_PATH", companies_path)
+    monkeypatch.setattr(jobs_sync, "JOBS_PATH", jobs_path)
+    # Apify retorna vazio (sucesso) p/ todas as empresas → tudo expira → 0 ativas.
+    monkeypatch.setattr(jobs_sync, "fetch_apify_jobs", lambda company, token, now: [])
+
+    with pytest.raises(jobs_sync.SyncError, match="sanity gate"):
+        jobs_sync.run_sync(now=NOW, apify_token="fake-token", min_active_ratio=0.5)
+
+    # Nada foi escrito: o arquivo de saída segue com as 10 vagas originais.
+    assert len(_json.loads(jobs_path.read_text())["jobs"]) == 10

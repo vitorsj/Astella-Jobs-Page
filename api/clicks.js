@@ -3,6 +3,7 @@
 // GET  /api/clicks  → { clicks: { jobId: count } } (somente admin, requer sessão)
 import { requireSession } from './_lib/auth.js'
 import { redis, CLICKS_KEY } from './_lib/redis.js'
+import { getClientIp, rateLimitOk } from './_lib/ratelimit.js'
 
 // Aceita ids sha-based do sync (ex.: "li:ab12...") e ids de vagas manuais.
 const JOB_ID_RE = /^[A-Za-z0-9:_-]{1,80}$/
@@ -18,10 +19,15 @@ export default async function handler(req, res) {
       res.status(400).json({ error: 'invalid_job_id' })
       return
     }
-    try {
-      await redis.hincrby(CLICKS_KEY, jobId, 1)
-    } catch {
-      // Tracking nunca pode quebrar a navegação do usuário: engole o erro.
+    // Anti-abuso: no máx. 60 incrementos por IP por minuto. Limita inflação de
+    // contadores e crescimento ilimitado do hash a partir de um único cliente.
+    // Sempre responde 204 (não revela o limite, não quebra a navegação).
+    if (await rateLimitOk(`rl:clicks:${getClientIp(req)}`, 60, 60)) {
+      try {
+        await redis.hincrby(CLICKS_KEY, jobId, 1)
+      } catch {
+        // Tracking nunca pode quebrar a navegação do usuário: engole o erro.
+      }
     }
     res.status(204).end()
     return

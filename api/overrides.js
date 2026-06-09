@@ -86,6 +86,7 @@ function applyOp(data, op) {
     case 'manual_job': {
       const job = op.job || {}
       if (!job.id) throw badRequest('missing_id')
+      if (job.url != null && job.url !== '' && !isHttpUrl(job.url)) throw badRequest('invalid_url')
       const i = data.manual_jobs.findIndex(j => j.id === job.id)
       const merged = { ...(i >= 0 ? data.manual_jobs[i] : {}), ...cleanPatch(job), ...stamp }
       if (i >= 0) data.manual_jobs[i] = merged
@@ -99,6 +100,17 @@ function applyOp(data, op) {
     }
     default:
       throw badRequest('unknown_kind')
+  }
+}
+
+// Aceita só http(s) — bloqueia javascript:/data: que viraria href no board.
+function isHttpUrl(value) {
+  if (typeof value !== 'string') return false
+  try {
+    const u = new URL(value)
+    return u.protocol === 'http:' || u.protocol === 'https:'
+  } catch {
+    return false
   }
 }
 
