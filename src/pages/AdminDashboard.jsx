@@ -17,7 +17,14 @@ function relativeTime(iso) {
 
 const activeJobCount = companyId => ALL_JOBS.filter(j => j.company === companyId).length
 const visibleJobCount = companyId => JOBS.filter(j => j.company === companyId).length
-const firstJobOfCompany = companyId => ALL_JOBS.find(j => j.company === companyId)
+
+const JOBS_PAGE_SIZE = 25
+
+// Escapa um campo para CSV (aspas + vírgula + quebra de linha).
+function csvCell(value) {
+  const s = String(value ?? '')
+  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
+}
 
 const SCRAPERS = [
   { name: 'LinkedIn', kind: 'Apify', freq: 'cron seg 9h + manual', count: `${COMPANIES.length} empresas`, status: 'ok' },
@@ -50,12 +57,11 @@ function StatusBadge({ status }) {
 export default function AdminDashboard() {
   const navigate = useNavigate()
   const [activeNav, setActiveNav] = useState('Visão geral')
-  const [toast, setToast] = useState(null)
-
-  const showToast = msg => { setToast(msg); setTimeout(() => setToast(null), 4000) }
-
   const [clicks, setClicks] = useState({})
-  useEffect(() => { getClicks().then(setClicks) }, [])
+  useEffect(() => { getClicks().then(setClicks).catch(() => setClicks({})) }, [])
+
+  const [jobQuery, setJobQuery] = useState('')
+  const [jobPage, setJobPage] = useState(0)
 
   const totalClicks = useMemo(
     () => Object.values(clicks).reduce((sum, n) => sum + n, 0),
@@ -176,7 +182,7 @@ export default function AdminDashboard() {
     <div className="wf-box" style={{ padding: 0, overflow: 'hidden' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', borderBottom: '1.5px solid var(--c-line)' }}>
         <span className="wf-label">Empresas investidas</span>
-        <span className="mute hand" style={{ fontSize: 12 }}>{COMPANIES.length} · clique p/ editar</span>
+        <span className="mute hand" style={{ fontSize: 12 }}>{COMPANIES.length} · clique p/ editar empresa</span>
       </div>
       <div style={{
         display: 'grid', gridTemplateColumns: '1.4fr 0.8fr 0.5fr 0.6fr 0.7fr 50px',
@@ -189,11 +195,7 @@ export default function AdminDashboard() {
       {COMPANIES.map(c => (
         <button
           key={c.id}
-          onClick={() => {
-            const job = firstJobOfCompany(c.id)
-            if (job) navigate(`/admin/edit/${job.id}`)
-            else showToast(`${c.name} não tem vagas para editar.`)
-          }}
+          onClick={() => navigate(`/admin/company/${c.id}`)}
           className="admin-company-row"
           style={{
             display: 'grid', gridTemplateColumns: '1.4fr 0.8fr 0.5fr 0.6fr 0.7fr 50px',
@@ -305,11 +307,36 @@ export default function AdminDashboard() {
     </div>
   )
 
-  const jobsTable = () => (
+  const jobsTable = () => {
+    const q = jobQuery.trim().toLowerCase()
+    const filtered = q
+      ? sortedJobs.filter(j =>
+          (j.title?.pt || j.rawTitle || '').toLowerCase().includes(q) ||
+          (COMPANY[j.company]?.name || j.company || '').toLowerCase().includes(q))
+      : sortedJobs
+    const pageCount = Math.max(1, Math.ceil(filtered.length / JOBS_PAGE_SIZE))
+    const page = Math.min(jobPage, pageCount - 1)
+    const pageJobs = filtered.slice(page * JOBS_PAGE_SIZE, (page + 1) * JOBS_PAGE_SIZE)
+    return (
     <div className="wf-box" style={{ padding: 0, overflow: 'hidden' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 16px', borderBottom: '1.5px solid var(--c-line)' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, padding: '12px 16px', borderBottom: '1.5px solid var(--c-line)' }}>
         <span className="wf-label">Vagas</span>
-        <span className="mute hand" style={{ fontSize: 12 }}>{ALL_JOBS.length} no total · {JOBS.length} publicadas · clique p/ editar</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flex: 1, justifyContent: 'flex-end' }}>
+          <input
+            type="text"
+            value={jobQuery}
+            onChange={e => { setJobQuery(e.target.value); setJobPage(0) }}
+            className="wf-input-el wf-input-sm"
+            style={{ height: 28, fontSize: 12, width: 200 }}
+            placeholder="buscar vaga ou empresa…"
+          />
+          <button type="button" className="wf-btn wf-btn-primary wf-btn-sm" style={{ cursor: 'pointer' }} onClick={() => navigate('/admin/edit/new')}>
+            + nova vaga manual
+          </button>
+        </div>
+      </div>
+      <div style={{ padding: '6px 16px', fontSize: 11, fontFamily: 'var(--wf-hand)', color: 'var(--c-mute)', borderBottom: '1px dashed var(--c-line3)' }}>
+        {filtered.length} de {ALL_JOBS.length} · {JOBS.length} publicadas · clique p/ editar
       </div>
       <div style={{
         display: 'grid', gridTemplateColumns: '2fr 1fr 0.8fr 0.6fr 50px',
@@ -319,7 +346,7 @@ export default function AdminDashboard() {
       }}>
         <span>Vaga</span><span>Empresa</span><span>Status</span><span>Cliques</span><span></span>
       </div>
-      {sortedJobs.map(job => (
+      {pageJobs.map(job => (
         <button
           key={job.id}
           onClick={() => navigate(`/admin/edit/${job.id}`)}
@@ -341,8 +368,19 @@ export default function AdminDashboard() {
           <span className="mute">⋯</span>
         </button>
       ))}
+      {pageJobs.length === 0 && (
+        <div className="mute hand" style={{ padding: 16, fontSize: 12 }}>nenhuma vaga encontrada</div>
+      )}
+      {pageCount > 1 && (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 12, padding: '10px 16px' }}>
+          <button type="button" className="wf-chip wf-chip-sm" disabled={page === 0} style={{ cursor: page === 0 ? 'default' : 'pointer', opacity: page === 0 ? 0.4 : 1 }} onClick={() => setJobPage(page - 1)}>← anterior</button>
+          <span className="mute hand" style={{ fontSize: 12 }}>{page + 1} / {pageCount}</span>
+          <button type="button" className="wf-chip wf-chip-sm" disabled={page >= pageCount - 1} style={{ cursor: page >= pageCount - 1 ? 'default' : 'pointer', opacity: page >= pageCount - 1 ? 0.4 : 1 }} onClick={() => setJobPage(page + 1)}>próxima →</button>
+        </div>
+      )}
     </div>
-  )
+    )
+  }
 
   const clicksByCompanyTable = () => (
     <div className="wf-box" style={{ padding: 0, overflow: 'hidden' }}>
@@ -362,8 +400,35 @@ export default function AdminDashboard() {
     </div>
   )
 
+  // Exporta os cliques (vaga, empresa, status, cliques) como CSV — client-side.
+  function exportClicksCsv() {
+    const rows = Object.entries(clicks)
+      .filter(([, n]) => n > 0)
+      .map(([id, n]) => {
+        const meta = jobMeta[id]
+        return [meta?.title || 'Vaga removida', meta?.companyName || '—', meta?.active ? 'ativa' : 'encerrada', n]
+      })
+      .sort((a, b) => b[3] - a[3])
+    const header = ['vaga', 'empresa', 'status', 'cliques']
+    const csv = [header, ...rows].map(r => r.map(csvCell).join(',')).join('\n')
+    const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8;' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `cliques-astella-${new Date().toISOString().slice(0, 10)}.csv`
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    URL.revokeObjectURL(url)
+  }
+
   const metricsView = () => (
     <>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 14 }}>
+        <button type="button" className="wf-btn wf-btn-ghost wf-btn-sm" style={{ cursor: 'pointer' }} disabled={totalClicks === 0} onClick={exportClicksCsv}>
+          ↓ exportar CSV
+        </button>
+      </div>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14, marginBottom: 22 }}>
         {[
           ['Cliques · total',   String(totalClicks), 'em todas as vagas'],
@@ -455,15 +520,6 @@ export default function AdminDashboard() {
 
         {activeNav === 'Métricas' && metricsView()}
       </main>
-
-      {/* Toast */}
-      {toast && (
-        <div style={{ position: 'fixed', bottom: 24, right: 24, zIndex: 50 }} className="toast-enter">
-          <div className="wf-box hand" style={{ padding: '12px 18px', background: 'var(--c-ink)', color: '#fff', fontWeight: 700 }}>
-            <span style={{ color: 'var(--c-teal)', marginRight: 10 }}>✓</span>{toast}
-          </div>
-        </div>
-      )}
 
       <style>{`
         .admin-company-row:hover { background: var(--c-shade) !important; }

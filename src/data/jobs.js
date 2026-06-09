@@ -195,13 +195,20 @@ function manualToViewJob(m) {
   }
 }
 
+// Vagas sincronizadas no shape de view, ANTES de aplicar override (estado do
+// sync puro). applyJobOverride não muta estes objetos, então servem de fonte
+// para "reverter ao sync" no admin.
+const syncViewJobs = jobsPayload.jobs
+  .filter(job => job.is_active)
+  .map(toViewJob)
+
 const mergedJobs = [
-  ...jobsPayload.jobs
-    .filter(job => job.is_active)
-    .map(toViewJob)
-    .map(job => applyJobOverride(job, jobOverrides[job.id])),
+  ...syncViewJobs.map(job => applyJobOverride(job, jobOverrides[job.id])),
   ...manualJobs.map(manualToViewJob),
 ]
+
+// Mapa id → vaga do sync puro (sem override). Usado pelo admin ao reverter.
+export const SYNC_JOB = Object.fromEntries(syncViewJobs.map(j => [j.id, j]))
 
 // Visível no board público: publicada e não oculta.
 function isVisible(job) {

@@ -1,8 +1,20 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import CompanyLogo from '../components/CompanyLogo.jsx'
-import { ALL_JOBS, COMPANY } from '../data/jobs.js'
-import { getOverrides, saveJob, logout } from '../lib/adminApi.js'
+import { ALL_JOBS, COMPANY, SYNC_JOB } from '../data/jobs.js'
+import { getOverrides, saveJob, saveManualJob, deleteManualJob, resetJob, logout } from '../lib/adminApi.js'
+
+// Aceita http(s) ou vazio (link de candidatura de vaga manual). Espelha a regra
+// do servidor (isHttpUrl em api/overrides.js) para dar feedback no campo.
+function isHttpUrlOrEmpty(value) {
+  if (value == null || value === '') return true
+  try {
+    const u = new URL(value)
+    return u.protocol === 'http:' || u.protocol === 'https:'
+  } catch {
+    return false
+  }
+}
 
 const LEVELS = ['Junior', 'Mid', 'Senior', 'Lead']
 const MODES = ['Remoto', 'Híbrido', 'Presencial']
@@ -22,6 +34,7 @@ function buildForm(job, ov) {
     loc: ov.loc ?? job.loc ?? '',
     mode: ov.mode ?? job.mode ?? 'Presencial',
     status: ov.status ?? job.status ?? 'publicada',
+    url: ov.url ?? job.url ?? '',
     featured: has('featured', job.featured),
     bilingual: has('bilingual', job.bilingual),
     confidential: has('confidential', job.confidential),
@@ -61,9 +74,16 @@ export default function AdminEditor() {
 
   const [form, setForm] = useState(() => (sel ? buildForm(sel, null) : null))
 
-  // Reconstrói o form quando muda a vaga selecionada ou chega o override vivo.
+  // Re-hidrata o form na troca de vaga; quando o override vivo chega (async) só
+  // reaplica se o form ainda não foi mexido. dirtyRef marca edição do usuário OU
+  // um reset programático — impede que uma mudança de liveOverrides (inclusive a
+  // que o próprio reset/save dispara) sobrescreva o que está na tela.
+  const dirtyRef = useRef(false)
+  const prevIdRef = useRef(selectedId)
   useEffect(() => {
-    if (sel) setForm(buildForm(sel, liveOv))
+    const idChanged = prevIdRef.current !== selectedId
+    if (idChanged) { prevIdRef.current = selectedId; dirtyRef.current = false }
+    if (sel && (idChanged || !dirtyRef.current)) setForm(buildForm(sel, liveOv))
   }, [selectedId, liveOverrides]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const queue = useMemo(() => {
@@ -71,7 +91,7 @@ export default function AdminEditor() {
     return ALL_JOBS.filter(j => {
       if (statusFilter !== 'todas' && (j.status || 'publicada') !== statusFilter) return false
       if (!q) return true
-      return j.title.pt.toLowerCase().includes(q) || COMPANY[j.company]?.name.toLowerCase().includes(q)
+      return (j.title?.pt || '').toLowerCase().includes(q) || (COMPANY[j.company]?.name || '').toLowerCase().includes(q)
     })
   }, [query, statusFilter])
 
@@ -84,7 +104,7 @@ export default function AdminEditor() {
   }
 
   const company = COMPANY[sel.company] || { name: sel.company, source: sel.source }
-  const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
+  const set = (k, v) => { dirtyRef.current = true; setForm(f => ({ ...f, [k]: v })) }
 
   // Patch enviado ao servidor (só campos administrados).
   function buildPatch(extra = {}) {
@@ -105,23 +125,87 @@ export default function AdminEditor() {
     }
   }
 
+  function reportSaveError(status, error) {
+    if (status === 401) showToast('Sessão expirada — recarregue e entre de novo.')
+    else if (status === 0 || status >= 500) showToast('Indisponível (rode com `vercel dev` ou em produção).')
+    else if (error === 'invalid_url') showToast('Link inválido — use uma URL http(s).')
+    else showToast(`Erro ao salvar: ${error || status}`)
+  }
+
   async function persist(extra = {}) {
     if (saving) return
-    setSaving(true)
+    // Título (PT) é obrigatório — evita publicar vaga com título em branco.
+    if (!(form.title_pt || '').trim()) {
+      showToast('Título (PT) é obrigatório.')
+      return
+    }
     const patch = buildPatch(extra)
-    const { ok, status, error } = await saveJob(selectedId, patch)
+    // Vaga manual carrega url editável; validamos antes (servidor revalida).
+    if (sel.manual && !isHttpUrlOrEmpty(form.url)) {
+      showToast('Link inválido — use uma URL http(s).')
+      return
+    }
+    setSaving(true)
+    const res = sel.manual
+      ? await saveManualJob({ id: selectedId, company: sel.company, ...patch, url: form.url || '' })
+      : await saveJob(selectedId, patch) // url omitido: jobs.js ignora url em vaga sincronizada
+    const { ok, status, error } = res
     setSaving(false)
     if (ok) {
       setForm(f => ({ ...f, ...extra }))
-      setLiveOverrides(prev => ({ ...(prev || {}), jobs: { ...(prev?.jobs || {}), [selectedId]: { ...(prev?.jobs?.[selectedId] || {}), ...patch } } }))
+      if (sel.manual) {
+        const merged = { id: selectedId, company: sel.company, ...patch, url: form.url || '' }
+        setLiveOverrides(prev => {
+          const list = (prev?.manual_jobs || []).filter(j => j.id !== selectedId)
+          return { ...(prev || {}), manual_jobs: [...list, merged] }
+        })
+      } else {
+        setLiveOverrides(prev => ({ ...(prev || {}), jobs: { ...(prev?.jobs || {}), [selectedId]: { ...(prev?.jobs?.[selectedId] || {}), ...patch } } }))
+      }
       setLastSaved(new Date())
       showToast('Salvo. O site público atualiza em ~1 min.')
-    } else if (status === 401) {
-      showToast('Sessão expirada — recarregue e entre de novo.')
-    } else if (status === 0 || status >= 500) {
-      showToast('Indisponível (rode com `vercel dev` ou em produção).')
     } else {
-      showToast(`Erro ao salvar: ${error || status}`)
+      reportSaveError(status, error)
+    }
+  }
+
+  // Reverte uma vaga SINCRONIZADA ao estado do sync (descarta o override).
+  async function handleResetToSync() {
+    if (saving || sel.manual) return
+    if (!window.confirm('Reverter esta vaga para o estado do sync? As edições do admin serão descartadas.')) return
+    setSaving(true)
+    const { ok, status, error } = await resetJob(selectedId)
+    setSaving(false)
+    if (ok) {
+      // Reconstrói do sync PURO (SYNC_JOB), não de `sel` — que já tem o override
+      // do build embutido e mostraria os valores editados após o reset. dirtyRef
+      // impede que o setLiveOverrides abaixo re-hidrate `sel` por cima do sync.
+      dirtyRef.current = true
+      setForm(buildForm(SYNC_JOB[selectedId] || sel, null))
+      setLiveOverrides(prev => {
+        const jobs = { ...(prev?.jobs || {}) }
+        delete jobs[selectedId]
+        return { ...(prev || {}), jobs }
+      })
+      setLastSaved(null)
+      showToast('Revertida ao sync. O site público atualiza em ~1 min.')
+    } else {
+      reportSaveError(status, error)
+    }
+  }
+
+  // Exclui uma vaga MANUAL (não existe no sync, some de vez).
+  async function handleDeleteManual() {
+    if (saving || !sel.manual) return
+    if (!window.confirm('Excluir esta vaga manual? Esta ação não pode ser desfeita.')) return
+    setSaving(true)
+    const { ok, status, error } = await deleteManualJob(selectedId)
+    setSaving(false)
+    if (ok) {
+      showToast('Vaga manual excluída. Some do site em ~1 min.')
+      navigate('/admin')
+    } else {
+      reportSaveError(status, error)
     }
   }
 
@@ -147,7 +231,7 @@ export default function AdminEditor() {
         <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
           <button onClick={() => navigate('/admin')} className="wf-chip wf-chip-sm" style={{ cursor: 'pointer' }}>← dashboard</button>
           <button
-            onClick={async () => { await logout(); navigate('/admin') }}
+            onClick={async () => { await logout(); window.location.reload() }}
             className="wf-chip wf-chip-sm"
             style={{ cursor: 'pointer' }}
           >
@@ -174,14 +258,15 @@ export default function AdminEditor() {
             </div>
             <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
               {[['todas', 'Todas'], ['publicada', 'Publicadas'], ['rascunho', 'Rascunho'], ['arquivada', 'Arquivadas']].map(([val, label]) => (
-                <span
+                <button
+                  type="button"
                   key={val}
                   onClick={() => setStatusFilter(val)}
                   className={`wf-chip wf-chip-sm${statusFilter === val ? ' wf-chip-on' : ''}`}
-                  style={{ cursor: 'pointer' }}
+                  style={{ cursor: 'pointer', border: statusFilter === val ? 'none' : undefined }}
                 >
                   {label}
-                </span>
+                </button>
               ))}
             </div>
           </div>
@@ -204,7 +289,7 @@ export default function AdminEditor() {
                 >
                   <CompanyLogo id={j.company} size="sm" />
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div className="hand wf-truncate" style={{ fontWeight: 700, fontSize: 13 }}>{j.title.pt}</div>
+                    <div className="hand wf-truncate" style={{ fontWeight: 700, fontSize: 13 }}>{j.title?.pt || '—'}</div>
                     <div className="mute hand wf-truncate" style={{ fontSize: 11, marginTop: 2 }}>{COMPANY[j.company]?.name || j.company} · {j.posted === '0d' ? 'hoje' : j.posted}</div>
                   </div>
                   {j.hidden && <span className="wf-chip wf-chip-sm" style={{ background: 'var(--c-shade)', color: 'var(--c-mute)', flexShrink: 0 }}>oculta</span>}
@@ -326,10 +411,26 @@ export default function AdminEditor() {
 
           {/* Link */}
           <div className="wf-label mute" style={{ marginBottom: 6 }}>LINK DE CANDIDATURA</div>
-          <div className="wf-input" style={{ marginBottom: 4 }}>
-            <span className="mute" style={{ opacity: 0.6 }}>↗</span>
-            <a href={sel.url} target="_blank" rel="noreferrer" className="hand" style={{ fontSize: 13, color: 'var(--c-ink)', textDecoration: 'none' }}>{sel.url}</a>
-          </div>
+          {sel.manual ? (
+            <>
+              <input
+                type="url"
+                className="wf-input-el"
+                value={form.url}
+                onChange={e => set('url', e.target.value)}
+                placeholder="https://…"
+                style={{ width: '100%', marginBottom: 4, borderColor: isHttpUrlOrEmpty(form.url) ? undefined : 'var(--c-danger, #E05145)' }}
+              />
+              {!isHttpUrlOrEmpty(form.url) && (
+                <div className="hand" style={{ fontSize: 11, marginBottom: 4, color: '#E05145' }}>use uma URL http(s) válida</div>
+              )}
+            </>
+          ) : (
+            <div className="wf-input" style={{ marginBottom: 4 }}>
+              <span className="mute" style={{ opacity: 0.6 }}>↗</span>
+              <a href={sel.url} target="_blank" rel="noreferrer" className="hand" style={{ fontSize: 13, color: 'var(--c-ink)', textDecoration: 'none' }}>{sel.url}</a>
+            </div>
+          )}
           <div className="mute hand" style={{ fontSize: 11, marginBottom: 24 }}>candidatos serão redirecionados em nova aba</div>
 
           {/* Save bar */}
@@ -391,6 +492,36 @@ export default function AdminEditor() {
               </div>
             ))}
           </div>
+
+          {/* Ações de origem: reverter (sincronizada) ou excluir (manual) */}
+          {(sel.manual || sel.edited) && (
+            <>
+              <div className="wf-divider-thin" style={{ marginTop: 16 }} />
+              <div style={{ marginTop: 16 }}>
+                {sel.manual ? (
+                  <button
+                    type="button"
+                    className="wf-btn wf-btn-ghost wf-btn-sm"
+                    disabled={saving}
+                    onClick={handleDeleteManual}
+                    style={{ width: '100%', color: '#E05145', borderColor: 'rgba(224,81,69,0.4)' }}
+                  >
+                    Excluir vaga manual
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="wf-btn wf-btn-ghost wf-btn-sm"
+                    disabled={saving}
+                    onClick={handleResetToSync}
+                    style={{ width: '100%' }}
+                  >
+                    ↺ Reverter para o sync
+                  </button>
+                )}
+              </div>
+            </>
+          )}
         </aside>
       </div>
 
