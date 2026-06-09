@@ -205,7 +205,7 @@ export default function AdminEditor() {
                   <CompanyLogo id={j.company} size="sm" />
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div className="hand wf-truncate" style={{ fontWeight: 700, fontSize: 13 }}>{j.title.pt}</div>
-                    <div className="mute hand wf-truncate" style={{ fontSize: 11, marginTop: 2 }}>{COMPANY[j.company]?.name || j.company} · {j.posted}</div>
+                    <div className="mute hand wf-truncate" style={{ fontSize: 11, marginTop: 2 }}>{COMPANY[j.company]?.name || j.company} · {j.posted === '0d' ? 'hoje' : j.posted}</div>
                   </div>
                   {j.hidden && <span className="wf-chip wf-chip-sm" style={{ background: 'var(--c-shade)', color: 'var(--c-mute)', flexShrink: 0 }}>oculta</span>}
                   {j.featured && <span className="wf-chip wf-chip-sm" style={{ flexShrink: 0 }}>★</span>}
@@ -226,7 +226,7 @@ export default function AdminEditor() {
               <CompanyLogo id={sel.company} size="lg" />
               <div>
                 <div className="wf-label mute">
-                  {sel.manual ? 'VAGA MANUAL' : `VAGA · puxada de ${company.source} · há ${sel.posted}`}
+                  {sel.manual ? 'VAGA MANUAL' : `VAGA · puxada de ${company.source} · ${sel.posted === '0d' ? 'hoje' : 'há ' + sel.posted}`}
                 </div>
                 <h2 className="wf-h2" style={{ marginTop: 4 }}>{form.title_pt || '(sem título)'}</h2>
                 <div className="mute hand" style={{ fontSize: 13, marginTop: 4 }}>

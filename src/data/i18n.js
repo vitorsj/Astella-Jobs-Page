@@ -15,7 +15,6 @@ export const I18N = {
       People: "Pessoas", Legal: "Jurídico", Other: "Outras"
     },
     modes: { Remoto: "Remoto", Híbrido: "Híbrido", Presencial: "Presencial" },
-    nav: { jobs: "Vagas", companies: "Empresas", about: "Sobre", contact: "Contato" },
     hero_eyebrow: "ASTELLA · CAREERS",
     new_today: "Novo hoje",
     load_more: "Carregar mais",
@@ -46,7 +45,6 @@ export const I18N = {
       People: "People", Legal: "Legal", Other: "Other"
     },
     modes: { Remoto: "Remote", Híbrido: "Hybrid", Presencial: "On-site" },
-    nav: { jobs: "Jobs", companies: "Companies", about: "About", contact: "Contact" },
     hero_eyebrow: "ASTELLA · CAREERS",
     new_today: "New today",
     load_more: "Load more",

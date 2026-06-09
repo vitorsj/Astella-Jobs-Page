@@ -44,11 +44,24 @@ function normalizeMode(remote, location) {
   return 'Presencial'
 }
 
+// Só aceita URLs http(s) absolutas. Bloqueia javascript:/data: e também
+// protocolo-relativas (//evil.com) — links de vaga são sempre absolutos, então
+// sem base no parser: relativas/protocolo-relativas falham e viram '#'.
+function safeUrl(url) {
+  if (typeof url !== 'string') return '#'
+  try {
+    const u = new URL(url)
+    return u.protocol === 'http:' || u.protocol === 'https:' ? url : '#'
+  } catch {
+    return '#'
+  }
+}
+
 function postedLabel(createdAt) {
   const generatedAt = new Date(jobsPayload.generated_at)
   const created = new Date(createdAt)
-  const days = Math.max(1, Math.round((generatedAt - created) / 86400000))
-  return days === 1 ? '1d' : `${days}d`
+  const days = Math.max(0, Math.round((generatedAt - created) / 86400000))
+  return `${days}d`
 }
 
 // Remove chaves null/undefined de um patch antes de aplicar (null = "não mexe").
@@ -114,7 +127,7 @@ function toViewJob(job) {
     mode: normalizeMode(job.remote, job.location),
     remote: job.remote,
     posted: postedLabel(job.posted_at || job.created_at),
-    url: job.url,
+    url: safeUrl(job.url),
     createdAt: job.created_at,
     postedAt: job.posted_at,
     lastSeenAt: job.last_seen_at,
@@ -166,7 +179,7 @@ function manualToViewJob(m) {
     mode: m.mode || 'Presencial',
     remote: m.mode === 'Remoto',
     posted: m.posted || 'novo',
-    url: m.url || '#',
+    url: safeUrl(m.url),
     createdAt: m.created_at || null,
     postedAt: m.created_at || null,
     lastSeenAt: m.created_at || null,

@@ -18,13 +18,14 @@ export default function JobBoardV2() {
   const titleOf = j => j.title[lang] || j.title.pt
   const levelOf = l => t.levels[l] || l
   const modeOf  = m => t.modes[m]  || m
+  const areaOf  = a => t.areas[a]  || a
 
   const filteredJobs = useMemo(() => JOBS.filter(j => {
     const q = search.toLowerCase()
     if (
       q &&
       !titleOf(j).toLowerCase().includes(q) &&
-      !COMPANY[j.company].name.toLowerCase().includes(q) &&
+      !(COMPANY[j.company]?.name || '').toLowerCase().includes(q) &&
       !j.area.toLowerCase().includes(q)
     ) return false
     if (selCompany && j.company !== selCompany) return false
@@ -126,7 +127,7 @@ export default function JobBoardV2() {
               {COMPANIES.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
             </PillSelect>
             <PillSelect value={selArea} onChange={setSelArea} label={t.role}>
-              {AREAS.map(a => <option key={a} value={a}>{a}</option>)}
+              {AREAS.map(a => <option key={a} value={a}>{areaOf(a)}</option>)}
             </PillSelect>
             <PillSelect value={selLevel} onChange={setSelLevel} label={t.level}>
               {LEVELS.map(l => <option key={l} value={l}>{levelOf(l)}</option>)}
@@ -168,7 +169,7 @@ export default function JobBoardV2() {
             {lang === 'pt' ? 'Nenhuma vaga para os filtros selecionados.' : 'No jobs match the selected filters.'}
           </div>
         ) : companyIds.map(cid => {
-          const c = COMPANY[cid]
+          const c = COMPANY[cid] || { name: cid }
           const jobs = grouped[cid]
           const isExpanded = expanded[cid]
           const displayJobs = isExpanded ? jobs : jobs.slice(0, INITIAL_VISIBLE)
@@ -190,7 +191,11 @@ export default function JobBoardV2() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="jbv2-job-row"
-                  onClick={() => trackJobClick(job.id)}
+                  onClick={(e) => {
+                    // URL inválida virou '#': não abre aba morta nem conta clique.
+                    if (job.url === '#') { e.preventDefault(); return }
+                    trackJobClick(job.id)
+                  }}
                 >
                   <CompanyLogo id={job.company} />
                   <div className="jbv2-jleft">
@@ -200,7 +205,7 @@ export default function JobBoardV2() {
                       <span className="jbv2-dot">·</span>
                       <span className="jbv2-tag jbv2-tag-level">{levelOf(job.level)}</span>
                       <span className={`jbv2-tag jbv2-tag-${modeKey(job.mode)}`}>{modeOf(job.mode)}</span>
-                      <span className="jbv2-tag">{job.area}</span>
+                      <span className="jbv2-tag">{areaOf(job.area)}</span>
                     </div>
                   </div>
                   <div className="jbv2-jright">
@@ -283,11 +288,13 @@ function relTime(posted, lang) {
   const num = parseInt(posted, 10)
   if (Number.isNaN(num)) return posted
   if (lang === 'pt') {
+    if (num === 0) return 'hoje'
     if (num === 1) return 'há 1 dia'
     if (num < 7) return `há ${num} dias`
     if (num < 14) return 'há 1 sem'
     return `há ${Math.round(num / 7)} sem`
   }
+  if (num === 0) return 'today'
   if (num === 1) return '1d ago'
   if (num < 7) return `${num}d ago`
   if (num < 14) return '1w ago'
