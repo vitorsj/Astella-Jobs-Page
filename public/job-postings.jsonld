@@ -2,34 +2,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Business Development (Risco Sacado) - São Paulo/SP",
-    "datePosted": "2026-03-02",
-    "validThrough": "2026-06-13",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Amicci",
-      "sameAs": "https://www.linkedin.com/company/10043419/",
-      "logo": "/logos/amicci.jpeg"
-    },
-    "industry": "Sales",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4382490885/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Engenheiro de Dados",
     "datePosted": "2026-05-12",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -54,7 +29,7 @@
     "@type": "JobPosting",
     "title": "Jovem Aprendiz em Embalagens",
     "datePosted": "2026-05-27",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -79,7 +54,7 @@
     "@type": "JobPosting",
     "title": "Jovem Aprendiz em Embalagens - São Paulo/SP",
     "datePosted": "2026-05-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -104,7 +79,7 @@
     "@type": "JobPosting",
     "title": "Analista de Suporte - Sucesso do Cliente (Cascavel/PR)",
     "datePosted": "2026-06-05",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -129,7 +104,7 @@
     "@type": "JobPosting",
     "title": "Executivo/a de Contas (AE)",
     "datePosted": "2026-05-27",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -154,7 +129,7 @@
     "@type": "JobPosting",
     "title": "Full Stack Developer - Node.js + Angular (Desenvolvimento AI-First) - São Paulo/SP ou Cascavel/PR",
     "datePosted": "2026-05-06",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -179,7 +154,7 @@
     "@type": "JobPosting",
     "title": "Implantador(a) de Sistemas",
     "datePosted": "2026-04-30",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -204,7 +179,7 @@
     "@type": "JobPosting",
     "title": "Sales Development Representative (SDR)",
     "datePosted": "2026-05-27",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -229,7 +204,7 @@
     "@type": "JobPosting",
     "title": "AI Engineer",
     "datePosted": "2026-04-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -254,7 +229,7 @@
     "@type": "JobPosting",
     "title": "Account Executive (Multiple Positions Open)",
     "datePosted": "2026-04-18",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -279,7 +254,7 @@
     "@type": "JobPosting",
     "title": "Controller",
     "datePosted": "2026-05-29",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -304,7 +279,7 @@
     "@type": "JobPosting",
     "title": "Delivery Manager",
     "datePosted": "2026-04-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -329,7 +304,7 @@
     "@type": "JobPosting",
     "title": "Frontend Engineer",
     "datePosted": "2026-05-06",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -352,34 +327,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Java Developer",
-    "datePosted": "2026-04-18",
-    "validThrough": "2026-06-13",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "BotCity",
-      "sameAs": "https://www.linkedin.com/company/35557341/",
-      "logo": "/logos/botcity.jpeg"
-    },
-    "industry": "Engineering",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4402780331/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Marketing Analyst - Digital Performance",
     "datePosted": "2026-05-09",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -404,7 +354,7 @@
     "@type": "JobPosting",
     "title": "Product Owner",
     "datePosted": "2026-04-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -429,7 +379,7 @@
     "@type": "JobPosting",
     "title": "Python Developer",
     "datePosted": "2026-05-30",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -454,7 +404,7 @@
     "@type": "JobPosting",
     "title": "QA Lead",
     "datePosted": "2026-03-31",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -479,7 +429,7 @@
     "@type": "JobPosting",
     "title": "Specialist Backend Java  (Multiple Positions Open)",
     "datePosted": "2026-04-25",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -504,7 +454,7 @@
     "@type": "JobPosting",
     "title": "UX Designer",
     "datePosted": "2026-04-25",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -529,7 +479,7 @@
     "@type": "JobPosting",
     "title": "Analista Comercial",
     "datePosted": "2026-05-26",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -552,34 +502,9 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Analista Fiscal Sênior",
-    "datePosted": "2026-03-06",
-    "validThrough": "2026-06-13",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Cayena",
-      "sameAs": "https://www.linkedin.com/company/cayena/",
-      "logo": "/logos/cayena.png"
-    },
-    "industry": "Finance",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4392443900/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Analista de Sucesso do Fornecedor",
     "datePosted": "2026-05-26",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -602,9 +527,34 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
+    "title": "Especialista Fiscal",
+    "datePosted": "2026-06-08",
+    "validThrough": "2026-06-14",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Cayena",
+      "sameAs": "https://www.linkedin.com/company/cayena/",
+      "logo": "/logos/cayena.png"
+    },
+    "industry": "Finance",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4426013359/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
     "title": "Executivo(a) de Crescimento de Parcerias - Farmer",
     "datePosted": "2026-05-19",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -629,7 +579,7 @@
     "@type": "JobPosting",
     "title": "Key Account Executive",
     "datePosted": "2026-03-09",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -654,7 +604,7 @@
     "@type": "JobPosting",
     "title": "Programa Trainee Cayena - 2026",
     "datePosted": "2026-05-07",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -679,7 +629,7 @@
     "@type": "JobPosting",
     "title": "Representante Comercial de Trade Mkt digital/ADS - Hunter",
     "datePosted": "2026-05-25",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -704,7 +654,7 @@
     "@type": "JobPosting",
     "title": "Senior QA",
     "datePosted": "2026-04-27",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -729,7 +679,7 @@
     "@type": "JobPosting",
     "title": "Gerente de CS",
     "datePosted": "2026-05-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -754,7 +704,7 @@
     "@type": "JobPosting",
     "title": "Engenheiro(a) de Inteligência Artificial",
     "datePosted": "2026-04-18",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -779,7 +729,7 @@
     "@type": "JobPosting",
     "title": "Full-stack",
     "datePosted": "2026-04-18",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -804,7 +754,7 @@
     "@type": "JobPosting",
     "title": "Cientista de Dados Pleno",
     "datePosted": "2026-04-29",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -829,7 +779,7 @@
     "@type": "JobPosting",
     "title": "Assistente de Compras",
     "datePosted": "2026-06-03",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -854,7 +804,7 @@
     "@type": "JobPosting",
     "title": "AI TECH LEAD III",
     "datePosted": "2026-06-04",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -879,7 +829,7 @@
     "@type": "JobPosting",
     "title": "Analista de AppSec",
     "datePosted": "2026-04-28",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -904,7 +854,7 @@
     "@type": "JobPosting",
     "title": "Analista de CS Implementação Júnior - Omie ERP",
     "datePosted": "2026-05-05",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -929,7 +879,7 @@
     "@type": "JobPosting",
     "title": "Analista de CS Implementação Pleno - Omie ERP",
     "datePosted": "2026-05-05",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -954,7 +904,7 @@
     "@type": "JobPosting",
     "title": "Analista de Comunicação Sr (Influência e Conteúdo)",
     "datePosted": "2026-05-21",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -979,7 +929,7 @@
     "@type": "JobPosting",
     "title": "Analista de Mídia e Performance Pleno",
     "datePosted": "2026-05-06",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1004,7 +954,7 @@
     "@type": "JobPosting",
     "title": "Analista de Mídias Sociais Pleno",
     "datePosted": "2026-06-02",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1027,9 +977,34 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
+    "title": "Analista de Novas Parcerias Sr. (Omie.Store)",
+    "datePosted": "2026-05-06",
+    "validThrough": "2026-06-14",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4409905023/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
     "title": "Analista de Operações PL (Serviços Financeiros)",
     "datePosted": "2026-05-12",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1054,7 +1029,7 @@
     "@type": "JobPosting",
     "title": "Analista de Revenue Ops Sênior (CS OPS)",
     "datePosted": "2026-06-04",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1079,7 +1054,7 @@
     "@type": "JobPosting",
     "title": "Analista de Segurança (Blue Team - SOC/CSIRT)",
     "datePosted": "2026-04-28",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1104,7 +1079,7 @@
     "@type": "JobPosting",
     "title": "Analista de Sucesso do Cliente Pleno - Engajamento",
     "datePosted": "2026-05-21",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1129,7 +1104,7 @@
     "@type": "JobPosting",
     "title": "Analista de Sucesso do Cliente Pleno - Health Score",
     "datePosted": "2026-05-14",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1154,7 +1129,7 @@
     "@type": "JobPosting",
     "title": "Analista de Sucesso do Cliente SR - Ouvidoria e Reclame aqui",
     "datePosted": "2026-06-02",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1179,7 +1154,7 @@
     "@type": "JobPosting",
     "title": "Analista de Suporte Técnico Jr (Omie)",
     "datePosted": "2026-06-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1204,7 +1179,7 @@
     "@type": "JobPosting",
     "title": "Analytics Engineer Sênior",
     "datePosted": "2026-06-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1229,7 +1204,7 @@
     "@type": "JobPosting",
     "title": "Arquiteto(a) Cloud (AWS) Sênior",
     "datePosted": "2026-06-03",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1254,7 +1229,7 @@
     "@type": "JobPosting",
     "title": "Arquiteto(a) de Dados",
     "datePosted": "2026-04-10",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1279,7 +1254,7 @@
     "@type": "JobPosting",
     "title": "Cientista de Dados I (GenAI) - Performance Comercial",
     "datePosted": "2026-05-25",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1304,7 +1279,7 @@
     "@type": "JobPosting",
     "title": "Consultor(a) de Estratégia Contábil",
     "datePosted": "2026-05-06",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1329,7 +1304,7 @@
     "@type": "JobPosting",
     "title": "Desenvolvedor Fullstack SR (DELPHI)",
     "datePosted": "2026-04-29",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1354,7 +1329,7 @@
     "@type": "JobPosting",
     "title": "Desenvolvedor Mobile SR (Android / Kotlin)",
     "datePosted": "2026-04-29",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1379,7 +1354,7 @@
     "@type": "JobPosting",
     "title": "Desenvolvedor(a) Back End (Serviços Financeiros)",
     "datePosted": "2026-04-07",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1404,7 +1379,7 @@
     "@type": "JobPosting",
     "title": "Desenvolvedor(a) Python (Desenvolvimento)",
     "datePosted": "2026-05-07",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1429,7 +1404,7 @@
     "@type": "JobPosting",
     "title": "Especialista de Marketing (OneFlow)",
     "datePosted": "2026-05-07",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1454,7 +1429,7 @@
     "@type": "JobPosting",
     "title": "Especialista de Remuneração",
     "datePosted": "2026-05-20",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1479,7 +1454,7 @@
     "@type": "JobPosting",
     "title": "Estagiário(a) de Trade Marketing",
     "datePosted": "2026-06-03",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1504,7 +1479,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas - Cascavel/PR (Franquias)",
     "datePosted": "2026-03-13",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1529,7 +1504,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas - Curitiba Novo Mundo/PR (Franquias)",
     "datePosted": "2026-06-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1554,7 +1529,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas - Itajaí/SC (Franquias)",
     "datePosted": "2026-03-10",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1579,7 +1554,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas - Joinville/SC (Franquias)",
     "datePosted": "2026-05-26",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1604,7 +1579,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas - Pouso Alegre/MG (Franquias)",
     "datePosted": "2026-05-16",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1629,7 +1604,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas Jr - Penha/SP (Franquias)",
     "datePosted": "2026-05-26",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1654,7 +1629,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Contas Sênior - Porto Alegre/RS",
     "datePosted": "2026-04-10",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1679,7 +1654,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Negócios (Comercial) - São Gonçalo/RJ - (Franquias)",
     "datePosted": "2026-06-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1704,7 +1679,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas (Closer) - Curitiba/PR (Franquias)",
     "datePosted": "2026-05-12",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1729,7 +1704,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas (Closer) - Montes Claros/MG (Franquias)",
     "datePosted": "2026-05-09",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1754,7 +1729,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas (Key Account)",
     "datePosted": "2026-03-19",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1779,7 +1754,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas Hunter (G-Click)",
     "datePosted": "2026-05-13",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1804,7 +1779,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas Jr. (Closer) - Campinas/SP (Franquias)",
     "datePosted": "2026-05-28",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1829,7 +1804,7 @@
     "@type": "JobPosting",
     "title": "Executivo(a) de Vendas Sênior - Pouso Alegre/MG (Franquias)",
     "datePosted": "2026-05-16",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1854,7 +1829,7 @@
     "@type": "JobPosting",
     "title": "Gerente Comercial (Produto Contábil)",
     "datePosted": "2026-03-25",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1879,7 +1854,7 @@
     "@type": "JobPosting",
     "title": "Gerente Comercial - Porto Alegre/RS (Franquias)",
     "datePosted": "2026-05-12",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1904,7 +1879,7 @@
     "@type": "JobPosting",
     "title": "Gerente Comercial - Zona Oeste/SP (Franquias)",
     "datePosted": "2026-05-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1929,7 +1904,7 @@
     "@type": "JobPosting",
     "title": "Product Designer",
     "datePosted": "2026-05-18",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1954,7 +1929,7 @@
     "@type": "JobPosting",
     "title": "SDR (Pré-Vendas) - São Gonçalo/RJ (Franquias)",
     "datePosted": "2026-06-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -1979,7 +1954,7 @@
     "@type": "JobPosting",
     "title": "SDR (Pré-Vendas) - São José do Rio Preto/SP (Franquias)",
     "datePosted": "2026-06-08",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2004,7 +1979,7 @@
     "@type": "JobPosting",
     "title": "SDR - Pouso Alegre/MG (Franquias)",
     "datePosted": "2026-05-12",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2029,7 +2004,7 @@
     "@type": "JobPosting",
     "title": "SDR Inbound",
     "datePosted": "2026-05-15",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2054,7 +2029,7 @@
     "@type": "JobPosting",
     "title": "SDR Outbound",
     "datePosted": "2026-04-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2079,7 +2054,7 @@
     "@type": "JobPosting",
     "title": "SDR Outbound | Omie.GClick",
     "datePosted": "2026-05-13",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2104,7 +2079,7 @@
     "@type": "JobPosting",
     "title": "Sales Enablement Pleno",
     "datePosted": "2026-05-13",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2129,7 +2104,7 @@
     "@type": "JobPosting",
     "title": "Sales Enablement Pleno (Serviços Financeiros)",
     "datePosted": "2026-05-21",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2154,7 +2129,7 @@
     "@type": "JobPosting",
     "title": "Supervisor(a) de Implementação (Omie)",
     "datePosted": "2026-04-30",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2179,7 +2154,7 @@
     "@type": "JobPosting",
     "title": "Talent Acquisition Analyst",
     "datePosted": "2026-04-16",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2204,7 +2179,7 @@
     "@type": "JobPosting",
     "title": "Team Leader Comercial (Serviços Financeiros)",
     "datePosted": "2026-05-21",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2229,7 +2204,7 @@
     "@type": "JobPosting",
     "title": "Tech Lead Engenheiro(a) de IA (GenAI)",
     "datePosted": "2026-05-13",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2254,7 +2229,7 @@
     "@type": "JobPosting",
     "title": "Analista de Afiliados Pleno",
     "datePosted": "2026-06-02",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2279,7 +2254,7 @@
     "@type": "JobPosting",
     "title": "Analista de Influência Sênior",
     "datePosted": "2026-06-02",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2304,7 +2279,7 @@
     "@type": "JobPosting",
     "title": "Analista de Inteligência Comercial Sênior",
     "datePosted": "2026-03-03",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2329,7 +2304,7 @@
     "@type": "JobPosting",
     "title": "Analista de Logística Junior",
     "datePosted": "2026-05-18",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2354,7 +2329,7 @@
     "@type": "JobPosting",
     "title": "Analista de Marketing de Produto e Inovação Sênior",
     "datePosted": "2026-05-18",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2379,7 +2354,7 @@
     "@type": "JobPosting",
     "title": "Analista de TI Sênior",
     "datePosted": "2026-05-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2404,7 +2379,7 @@
     "@type": "JobPosting",
     "title": "Especialista em BizOps",
     "datePosted": "2026-04-22",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2429,7 +2404,7 @@
     "@type": "JobPosting",
     "title": "Especialista em Pesquisa Clínica",
     "datePosted": "2026-03-13",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2454,7 +2429,7 @@
     "@type": "JobPosting",
     "title": "Executivo Key Accounts - Perfumaria e Novos Canais",
     "datePosted": "2026-04-29",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2479,7 +2454,7 @@
     "@type": "JobPosting",
     "title": "Executivo de Contas [Farma Indireto]",
     "datePosted": "2026-04-29",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
@@ -2504,7 +2479,7 @@
     "@type": "JobPosting",
     "title": "Gerente de Marketplaces",
     "datePosted": "2026-05-14",
-    "validThrough": "2026-06-13",
+    "validThrough": "2026-06-14",
     "employmentType": "FULL_TIME",
     "hiringOrganization": {
       "@type": "Organization",
