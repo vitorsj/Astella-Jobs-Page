@@ -727,6 +727,81 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
+    "title": "Analista Sênior de Eventos & Brand Experience",
+    "datePosted": "2026-03-30",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/",
+      "logo": "/logos/lastlink.jpeg"
+    },
+    "industry": "Marketing",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4393035167/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de CX Premium",
+    "datePosted": "2026-06-02",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Lastlink",
+      "sameAs": "https://www.linkedin.com/company/lastlink/",
+      "logo": "/logos/lastlink.jpeg"
+    },
+    "industry": "Sales",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4424235604/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Jovem Aprendiz Leapy",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Leapy",
+      "sameAs": "https://www.linkedin.com/company/82977843/",
+      "logo": "/logos/leapy.jpeg"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4411513331/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Greater São Paulo Area",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
     "title": "Analista de Revenue Operations Junior",
     "datePosted": "2026-05-14",
     "validThrough": "2026-06-16",
@@ -1077,6 +1152,31 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
+    "title": "Analista de Serviços Financeiros Pl.",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Finance",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4424880450/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
     "title": "Analista de Sucesso do Cliente Pleno - Engajamento",
     "datePosted": "2026-05-21",
     "validThrough": "2026-06-16",
@@ -1127,6 +1227,31 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
+    "title": "Analista de Sucesso do Cliente Pleno - Top Account - Engajamento",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4424870502/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
     "title": "Analista de Sucesso do Cliente SR - Ouvidoria e Reclame aqui",
     "datePosted": "2026-06-02",
     "validThrough": "2026-06-16",
@@ -1140,6 +1265,31 @@
     "industry": "Other",
     "directApply": false,
     "url": "https://www.linkedin.com/jobs/view/4419627714/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de Suporte Técnico Jr (HUB)",
+    "datePosted": "2026-06-11",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Customer Success",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4424825198/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
@@ -1190,6 +1340,31 @@
     "industry": "Customer Success",
     "directApply": false,
     "url": "https://www.linkedin.com/jobs/view/4422206651/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Analista de Suporte Técnico Júnior (G-Click)",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Customer Success",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4424880455/?utm_source=astella&utm_medium=jobs_board",
     "jobLocation": {
       "@type": "Place",
       "address": {
@@ -1302,6 +1477,31 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
+    "title": "Consultor(a) SR de Estratégia Contábil",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Engineering",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4428113885/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
     "title": "Consultor(a) de Estratégia Contábil",
     "datePosted": "2026-05-06",
     "validThrough": "2026-06-16",
@@ -1320,6 +1520,31 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Coordenador comercial",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Sales",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4425305884/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Itajaí, Santa Catarina, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -1452,31 +1677,6 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Especialista de Marketing (OneFlow)",
-    "datePosted": "2026-05-07",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Marketing",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4409262639/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Especialista de Produto (Implantação) | Vila Velha/ES (Franquias)",
     "datePosted": "2026-06-11",
     "validThrough": "2026-06-16",
@@ -1552,81 +1752,6 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Executivo(a) de Contas - Curitiba Novo Mundo/PR (Franquias)",
-    "datePosted": "2026-06-08",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Other",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4421994677/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Curitiba, Paraná, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Executivo(a) de Contas - Joinville/SC (Franquias)",
-    "datePosted": "2026-05-26",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Engineering",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4425908420/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Joinville, Santa Catarina, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Executivo(a) de Contas - Pouso Alegre/MG (Franquias)",
-    "datePosted": "2026-05-16",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Other",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4412087526/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pouso Alegre, Minas Gerais, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Executivo(a) de Contas Jr - Penha/SP (Franquias)",
     "datePosted": "2026-05-26",
     "validThrough": "2026-06-16",
@@ -1645,6 +1770,31 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São Paulo, São Paulo, Brazil",
+        "addressCountry": "BR"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Executivo(a) de Contas Sr. - Campinas/SP (Franquias)",
+    "datePosted": "2026-06-12",
+    "validThrough": "2026-06-16",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Omie",
+      "sameAs": "https://www.linkedin.com/company/2709760/",
+      "logo": "/logos/omie.jpeg"
+    },
+    "industry": "Other",
+    "directApply": false,
+    "url": "https://www.linkedin.com/jobs/view/4424883417/?utm_source=astella&utm_medium=jobs_board",
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Campinas, São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -1727,31 +1877,6 @@
   {
     "@context": "https://schema.org",
     "@type": "JobPosting",
-    "title": "Executivo(a) de Vendas (Closer) - Curitiba/PR (Franquias)",
-    "datePosted": "2026-05-12",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Sales",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4410319654/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Curitiba, Paraná, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
     "title": "Executivo(a) de Vendas (Closer) - Montes Claros/MG (Franquias)",
     "datePosted": "2026-05-09",
     "validThrough": "2026-06-16",
@@ -1770,31 +1895,6 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Montes Claros, Minas Gerais, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Executivo(a) de Vendas (Key Account)",
-    "datePosted": "2026-03-19",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Engineering",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4425601622/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "São Paulo, São Paulo, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -1845,31 +1945,6 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Campinas, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "Executivo(a) de Vendas Sênior - Pouso Alegre/MG (Franquias)",
-    "datePosted": "2026-05-16",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Sales",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4412078644/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pouso Alegre, Minas Gerais, Brazil",
         "addressCountry": "BR"
       }
     }
@@ -1995,31 +2070,6 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "São José do Rio Preto, São Paulo, Brazil",
-        "addressCountry": "BR"
-      }
-    }
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    "title": "SDR - Pouso Alegre/MG (Franquias)",
-    "datePosted": "2026-05-12",
-    "validThrough": "2026-06-16",
-    "employmentType": "FULL_TIME",
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "Omie",
-      "sameAs": "https://www.linkedin.com/company/2709760/",
-      "logo": "/logos/omie.jpeg"
-    },
-    "industry": "Other",
-    "directApply": false,
-    "url": "https://www.linkedin.com/jobs/view/4410167324/?utm_source=astella&utm_medium=jobs_board",
-    "jobLocation": {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Pouso Alegre, Minas Gerais, Brazil",
         "addressCountry": "BR"
       }
     }
