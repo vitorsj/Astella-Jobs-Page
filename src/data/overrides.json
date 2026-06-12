@@ -17,10 +17,11 @@
       "featured": true,
       "bilingual": false,
       "confidential": false,
-      "hidden": false,
+      "hidden": true,
       "source": "Manual",
-      "updated_at": "2026-06-12T18:56:52.924Z",
-      "updated_by": "admin"
+      "updated_at": "2026-06-12T20:05:54.730Z",
+      "updated_by": "admin",
+      "description": ""
     }
   ]
 }
