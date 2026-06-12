@@ -17,9 +17,9 @@
       "featured": true,
       "bilingual": false,
       "confidential": false,
-      "hidden": true,
+      "hidden": false,
       "source": "Manual",
-      "updated_at": "2026-06-12T20:05:54.730Z",
+      "updated_at": "2026-06-12T20:06:33.123Z",
       "updated_by": "admin",
       "description": ""
     }
